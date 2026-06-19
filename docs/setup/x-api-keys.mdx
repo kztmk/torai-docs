@@ -1,0 +1,40 @@
+---
+sidebar_position: 2
+title: X API キー 4 種の取得
+description: X Developer Console で API Key、API Key Secret、Access Token、Access Token Secret を取得します。
+---
+
+# X API キー 4 種の取得
+
+投稿に使用する X アカウントごとに、X Developer Console で API キー一式を取得します。
+
+## 取得するキー
+
+- API Key
+- API Key Secret
+- Access Token
+- Access Token Secret
+
+## 手順の流れ
+
+1. X Developer Console にログインする
+2. Developer Agreement に同意する
+3. Project と App を作成する
+4. User Authentication Settings を開く
+5. OAuth 1.0a を有効にする
+6. App permissions を用途に合わせて選択する
+7. Type of App で Web App, Automated App, or Bot を選択する
+8. Callback URL と Website URL を設定する
+9. Keys and tokens で API Key / API Key Secret を保存する
+10. Access Token / Access Token Secret を生成して保存する
+
+## 重要な注意点
+
+- キーは一度しか表示されない場合があるため、安全な場所に保存します。
+- 権限を変更した場合は Access Token / Access Token Secret を再生成します。
+- キーを Git にコミットしないでください。
+- X API は従量課金のため、Usage と課金状況を定期的に確認します。
+
+## 虎威へ登録する情報
+
+虎威の X アカウント管理画面で、取得した 4 種のキーを対象の X アカウントに登録します。
