@@ -1,0 +1,8 @@
+{
+  "label": "リファレンス",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "用語、制限、関連リンク、更新履歴などの補足情報です。"
+  }
+}

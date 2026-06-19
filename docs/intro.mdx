@@ -1,44 +1,45 @@
 ---
 sidebar_position: 1
+title: はじめに
+description: 虎威の概要、利用前に確認すること、マニュアル全体の読み進め方。
 ---
 
-# Tutorial Intro
+# はじめに
 
-Let's discover **Docusaurus in less than 5 minutes**.
+虎威は、X のポスト作成、予約投稿、スレッド投稿、AI による投稿案作成を支援する Web アプリケーションです。
 
-## Getting Started
+旧版マニュアルでは買い切り利用と X API の無料枠を前提にしていましたが、現行版では次の 2 点を先に理解しておく必要があります。
 
-Get started by **creating a new site**.
+- X API の利用は従量課金を前提に確認する
+- 虎威の提供形態はサブスクリプションとして扱う
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## このマニュアルの読み方
 
-### What you'll need
+初めて利用する場合は、次の順で読み進めてください。
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+1. 利用前の準備
+2. 初期設定
+3. 虎威の使い方
+4. サブスクリプションと利用状況の確認
+5. 困ったとき
 
-## Generate a new site
+## 旧版からの主な変更点
 
-Generate a new Docusaurus site using the **classic template**.
+### X API の扱い
 
-The classic template will automatically be added to your project after you run the command:
+X の開発者サイトで X アカウントごとに Project / App を作成し、API Key、API Key Secret、Access Token、Access Token Secret を取得します。
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+投稿は X API の利用量に応じて課金される前提で、X Developer Console の Usage や課金状況を確認してください。
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+### 虎威の契約
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+虎威の利用にはサブスクリプション契約が必要です。契約状態、更新、解約、支払い方法は「サブスクリプション」章で説明します。
 
-## Start your site
+## 旧版マニュアルから引き継ぐ内容
 
-Run the development server:
+旧版の章立てから、Google シート / Apps Script の設定、X アカウント管理、ポスト作成、スケジュール、スレッド投稿、自動投稿、メンテナンスの流れを引き継ぎます。
 
-```bash
-cd my-website
-npm run start
-```
+画面や外部サービスの仕様変更がある箇所は、現行版に合わせて順次更新します。
 
 The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
 

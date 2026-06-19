@@ -1,0 +1,8 @@
+{
+  "label": "困ったとき",
+  "position": 6,
+  "link": {
+    "type": "generated-index",
+    "description": "投稿できない、認証できない、課金や契約状態が分からない場合の確認手順です。"
+  }
+}

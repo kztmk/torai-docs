@@ -1,0 +1,8 @@
+{
+  "label": "初期設定",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Google シート、Apps Script、X API キー、Gemini API Key、虎威への登録を行います。"
+  }
+}
