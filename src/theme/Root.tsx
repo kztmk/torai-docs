@@ -29,7 +29,7 @@ export default function Root({children}: {children: ReactNode}): ReactNode {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <CssBaseline enableColorScheme />
+        <CssBaseline />
         {children}
       </ThemeProvider>
     </StyledEngineProvider>

@@ -28,3 +28,17 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+html,
+body,
+.main-wrapper,
+main,
+.theme-doc-markdown,
+.theme-doc-sidebar-container {
+  background: #fff;
+}
+
+body,
+.theme-doc-markdown {
+  color: #1f2933;
+}
