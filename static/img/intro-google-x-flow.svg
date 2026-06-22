@@ -1,64 +1,58 @@
-<svg width="1400" height="620" viewBox="0 0 1400 620" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">虎威のデータ保存とX投稿の流れ</title>
-  <desc id="desc">虎威のフロントとバックエンドがユーザーのGoogleシートとGoogleドライブへデータを保存し、ユーザーのApps ScriptがXへ自動投稿する流れを示す図。</desc>
-  <rect width="1400" height="620" rx="34" fill="#F7F9FC"/>
-  <rect x="44" y="42" width="1312" height="536" rx="30" fill="#FFFFFF" stroke="#D8E0EA" stroke-width="2"/>
+<svg width="1200" height="540" viewBox="0 0 1200 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">虎威フロントとGoogle側バックエンドの流れ</title>
+  <desc id="desc">虎威はフロント画面で、投稿本文や画像動画をユーザーのGoogle環境へ渡す。Google側バックエンドがGoogleシートとGoogleドライブへ保存し、ユーザーのApps ScriptがXへ投稿する流れを示す図。</desc>
+  <rect width="1200" height="540" rx="30" fill="#F7F9FC"/>
+  <rect x="42" y="40" width="1116" height="460" rx="28" fill="#FFFFFF" stroke="#D8E0EA" stroke-width="2"/>
 
-  <text x="700" y="92" text-anchor="middle" fill="#162033" font-family="Arial, sans-serif" font-size="30" font-weight="700">虎威はデータを保存し、あなたの Apps Script が X へ投稿します</text>
-  <text x="700" y="132" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="18">投稿本文は Google シートへ、画像・動画は Google ドライブへ保存されます</text>
+  <text x="600" y="88" text-anchor="middle" fill="#162033" font-family="Arial, sans-serif" font-size="30" font-weight="700">虎威はフロント、保存と投稿実行はあなたの Google 環境側です</text>
+  <text x="600" y="124" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="18">虎威で作成した投稿データを Google 側へ渡し、Apps Script が X へ投稿します</text>
 
-  <rect x="84" y="200" width="248" height="252" rx="22" fill="#EEF7F4" stroke="#6CBFA7" stroke-width="2"/>
-  <text x="208" y="240" text-anchor="middle" fill="#153A34" font-family="Arial, sans-serif" font-size="25" font-weight="700">虎威</text>
-  <rect x="114" y="268" width="188" height="62" rx="15" fill="#FFFFFF" stroke="#83CDB9" stroke-width="2"/>
-  <text x="208" y="295" text-anchor="middle" fill="#163B3C" font-family="Arial, sans-serif" font-size="20" font-weight="700">フロント</text>
-  <text x="208" y="320" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="14">投稿作成・設定画面</text>
-  <rect x="114" y="354" width="188" height="62" rx="15" fill="#FFFFFF" stroke="#83CDB9" stroke-width="2"/>
-  <text x="208" y="381" text-anchor="middle" fill="#163B3C" font-family="Arial, sans-serif" font-size="20" font-weight="700">バックエンド</text>
-  <text x="208" y="406" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="14">保存・連携処理</text>
+  <rect x="96" y="202" width="248" height="168" rx="22" fill="#EEF7F4" stroke="#6CBFA7" stroke-width="2"/>
+  <text x="220" y="246" text-anchor="middle" fill="#153A34" font-family="Arial, sans-serif" font-size="27" font-weight="700">虎威</text>
+  <rect x="126" y="274" width="188" height="62" rx="15" fill="#FFFFFF" stroke="#83CDB9" stroke-width="2"/>
+  <text x="220" y="301" text-anchor="middle" fill="#163B3C" font-family="Arial, sans-serif" font-size="22" font-weight="700">フロント</text>
+  <text x="220" y="326" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="14">投稿作成・設定画面</text>
 
-  <path d="M352 284H438" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round"/>
-  <path d="M426 268L442 284L426 300" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="395" y="262" text-anchor="middle" fill="#344255" font-family="Arial, sans-serif" font-size="16" font-weight="700">ポストデータ</text>
+  <path d="M370 286H464" stroke="#5E6B7B" stroke-width="5" stroke-linecap="round"/>
+  <path d="M450 268L468 286L450 304" stroke="#5E6B7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="417" y="260" text-anchor="middle" fill="#344255" font-family="Arial, sans-serif" font-size="17" font-weight="700">投稿データ</text>
+  <text x="417" y="330" text-anchor="middle" fill="#344255" font-family="Arial, sans-serif" font-size="17" font-weight="700">画像・動画</text>
 
-  <path d="M352 392H438" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round"/>
-  <path d="M426 376L442 392L426 408" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="395" y="434" text-anchor="middle" fill="#344255" font-family="Arial, sans-serif" font-size="16" font-weight="700">画像・動画</text>
+  <rect x="488" y="168" width="384" height="240" rx="26" fill="#F4F8FF" stroke="#B9D0F5" stroke-width="2"/>
+  <text x="680" y="209" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="25" font-weight="700">あなたの Google 環境</text>
+  <rect x="534" y="232" width="292" height="52" rx="15" fill="#FFFFFF" stroke="#8AB4F8" stroke-width="2"/>
+  <text x="680" y="265" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="20" font-weight="700">Google側バックエンド</text>
 
-  <rect x="456" y="200" width="244" height="112" rx="20" fill="#EAF3FF" stroke="#8AB4F8" stroke-width="2"/>
-  <rect x="482" y="233" width="42" height="48" rx="6" fill="#34A853"/>
-  <path d="M494 247H514M494 259H514M494 271H514" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
-  <text x="548" y="246" fill="#172033" font-family="Arial, sans-serif" font-size="20" font-weight="700">あなたの</text>
-  <text x="548" y="274" fill="#172033" font-family="Arial, sans-serif" font-size="20" font-weight="700">Google シート</text>
-  <text x="548" y="297" fill="#526174" font-family="Arial, sans-serif" font-size="14">本文・予約日時・設定</text>
+  <rect x="532" y="306" width="136" height="66" rx="16" fill="#EAF3FF" stroke="#8AB4F8" stroke-width="2"/>
+  <rect x="550" y="322" width="32" height="34" rx="5" fill="#34A853"/>
+  <path d="M558 332H574M558 342H574M558 352H574" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <text x="602" y="336" fill="#172033" font-family="Arial, sans-serif" font-size="16" font-weight="700">Google</text>
+  <text x="602" y="357" fill="#172033" font-family="Arial, sans-serif" font-size="16" font-weight="700">シート</text>
 
-  <rect x="456" y="344" width="244" height="112" rx="20" fill="#FFF7E8" stroke="#F5C064" stroke-width="2"/>
-  <path d="M504 372L534 424H474L504 372Z" fill="#0F9D58"/>
-  <path d="M504 372H562L592 424H534L504 372Z" fill="#F4B400"/>
-  <path d="M474 424H534L592 424L562 476H504L474 424Z" transform="translate(0 -52)" fill="#4285F4" opacity="0.95"/>
-  <text x="548" y="390" fill="#172033" font-family="Arial, sans-serif" font-size="20" font-weight="700">あなたの</text>
-  <text x="548" y="418" fill="#172033" font-family="Arial, sans-serif" font-size="20" font-weight="700">Google ドライブ</text>
-  <text x="548" y="441" fill="#526174" font-family="Arial, sans-serif" font-size="14">投稿用の画像・動画</text>
+  <rect x="692" y="306" width="136" height="66" rx="16" fill="#FFF7E8" stroke="#F5C064" stroke-width="2"/>
+  <path d="M724 322L742 356H706L724 322Z" fill="#0F9D58"/>
+  <path d="M724 322H759L778 356H742L724 322Z" fill="#F4B400"/>
+  <path d="M706 356H742L778 356L760 390H724L706 356Z" transform="translate(0 -34)" fill="#4285F4" opacity="0.95"/>
+  <text x="770" y="336" fill="#172033" font-family="Arial, sans-serif" font-size="16" font-weight="700">Google</text>
+  <text x="770" y="357" fill="#172033" font-family="Arial, sans-serif" font-size="16" font-weight="700">ドライブ</text>
 
-  <path d="M724 258C772 258 790 310 824 310" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round"/>
-  <path d="M812 294L828 310L812 326" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M724 400C772 400 790 326 824 326" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M872 286H920" stroke="#5E6B7B" stroke-width="5" stroke-linecap="round"/>
+  <path d="M906 268L924 286L906 304" stroke="#5E6B7B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="896" y="260" text-anchor="middle" fill="#344255" font-family="Arial, sans-serif" font-size="17" font-weight="700">保存データ</text>
 
-  <rect x="848" y="236" width="220" height="150" rx="24" fill="#F1F7FF" stroke="#8AB4F8" stroke-width="2"/>
-  <circle cx="912" cy="294" r="18" fill="#4285F4"/>
-  <circle cx="942" cy="314" r="18" fill="#34A853"/>
-  <circle cx="898" cy="336" r="18" fill="#FBBC04"/>
-  <circle cx="958" cy="274" r="18" fill="#EA4335"/>
-  <path d="M912 294L942 314L898 336M942 314L958 274" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
-  <text x="958" y="408" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="20" font-weight="700">あなたの Apps Script</text>
-  <text x="958" y="434" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="14">保存データを読み取り投稿</text>
+  <rect x="940" y="218" width="144" height="136" rx="22" fill="#F1F7FF" stroke="#8AB4F8" stroke-width="2"/>
+  <circle cx="986" cy="270" r="16" fill="#4285F4"/>
+  <circle cx="1012" cy="288" r="16" fill="#34A853"/>
+  <circle cx="974" cy="308" r="16" fill="#FBBC04"/>
+  <circle cx="1026" cy="252" r="16" fill="#EA4335"/>
+  <path d="M986 270L1012 288L974 308M1012 288L1026 252" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <text x="1012" y="376" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="17" font-weight="700">あなたの Apps Script</text>
 
-  <path d="M1092 316H1170" stroke="#222222" stroke-width="5" stroke-linecap="round"/>
-  <path d="M1156 298L1176 316L1156 334" stroke="#222222" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="1132" y="288" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="17" font-weight="700">自動投稿</text>
+  <path d="M1092 286H1130" stroke="#222222" stroke-width="5" stroke-linecap="round"/>
+  <path d="M1116 268L1134 286L1116 304" stroke="#222222" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1112" y="258" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="17" font-weight="700">Xへ投稿</text>
+  <text x="1140" y="318" text-anchor="middle" fill="#111827" font-family="Arial, sans-serif" font-size="76" font-weight="700">X</text>
 
-  <text x="1246" y="352" text-anchor="middle" fill="#111827" font-family="Arial, sans-serif" font-size="118" font-weight="700">X</text>
-
-  <rect x="240" y="494" width="920" height="60" rx="22" fill="#F2F5F8"/>
-  <text x="700" y="519" text-anchor="middle" fill="#3A4656" font-family="Arial, sans-serif" font-size="16" font-weight="700">虎威が投稿を直接実行するのではなく、あなたの Google 環境に保存したデータを</text>
-  <text x="700" y="542" text-anchor="middle" fill="#3A4656" font-family="Arial, sans-serif" font-size="16" font-weight="700">あなたの Apps Script が投稿します</text>
+  <rect x="234" y="438" width="732" height="42" rx="21" fill="#F2F5F8"/>
+  <text x="600" y="465" text-anchor="middle" fill="#3A4656" font-family="Arial, sans-serif" font-size="16" font-weight="700">虎威がバックエンドを持つのではなく、Google側バックエンドとあなたの Apps Script が処理します</text>
 </svg>
