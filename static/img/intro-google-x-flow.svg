@@ -1,0 +1,41 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">虎威で使うサービスの流れ</title>
+  <desc id="desc">Google アカウントの Apps Script、スプレッドシート、Google ドライブを虎威が連携し、X への投稿と Discord 通知につなげる流れを示す図。</desc>
+  <rect width="1200" height="520" rx="32" fill="#F6F8FB"/>
+  <rect x="56" y="56" width="1088" height="408" rx="28" fill="white" stroke="#D7DEE8" stroke-width="2"/>
+  <text x="600" y="116" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="34" font-weight="700">虎威は Google と X 投稿をつなぎます</text>
+  <text x="600" y="154" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="18">Apps Script・スプレッドシート・Google ドライブを使い、ポスト作成と自動投稿を支援します</text>
+
+  <rect x="106" y="210" width="260" height="184" rx="20" fill="#EEF5FF" stroke="#8AB4F8" stroke-width="2"/>
+  <circle cx="156" cy="264" r="26" fill="#4285F4"/>
+  <text x="156" y="273" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">G</text>
+  <text x="196" y="256" fill="#172033" font-family="Arial, sans-serif" font-size="24" font-weight="700">Google</text>
+  <text x="196" y="286" fill="#526174" font-family="Arial, sans-serif" font-size="16">あなたのアカウント</text>
+  <text x="136" y="335" fill="#2B3A4A" font-family="Arial, sans-serif" font-size="18">Apps Script</text>
+  <text x="136" y="365" fill="#2B3A4A" font-family="Arial, sans-serif" font-size="18">スプレッドシート</text>
+  <text x="136" y="395" fill="#2B3A4A" font-family="Arial, sans-serif" font-size="18">Google ドライブ</text>
+
+  <path d="M390 302H482" stroke="#7A8797" stroke-width="4" stroke-linecap="round"/>
+  <path d="M470 286L486 302L470 318" stroke="#7A8797" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="500" y="196" width="200" height="212" rx="28" fill="#163B3C"/>
+  <rect x="524" y="220" width="152" height="164" rx="22" fill="#F7FBF7" opacity="0.98"/>
+  <text x="600" y="280" text-anchor="middle" fill="#163B3C" font-family="Arial, sans-serif" font-size="46" font-weight="700">虎威</text>
+  <text x="600" y="326" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="17">ポスト作成支援</text>
+  <text x="600" y="354" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="17">自動投稿設定</text>
+
+  <path d="M724 302H816" stroke="#7A8797" stroke-width="4" stroke-linecap="round"/>
+  <path d="M804 286L820 302L804 318" stroke="#7A8797" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="840" y="210" width="254" height="184" rx="20" fill="#F2F4F7" stroke="#B9C2CE" stroke-width="2"/>
+  <circle cx="892" cy="264" r="26" fill="#111827"/>
+  <text x="892" y="273" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">X</text>
+  <text x="934" y="256" fill="#172033" font-family="Arial, sans-serif" font-size="24" font-weight="700">X</text>
+  <text x="934" y="286" fill="#526174" font-family="Arial, sans-serif" font-size="16">ポスト投稿</text>
+  <text x="880" y="345" fill="#2B3A4A" font-family="Arial, sans-serif" font-size="18">予約投稿</text>
+  <text x="880" y="375" fill="#2B3A4A" font-family="Arial, sans-serif" font-size="18">自動投稿</text>
+
+  <path d="M698 396C782 462 930 452 994 404" stroke="#5865F2" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 10"/>
+  <rect x="786" y="404" width="240" height="58" rx="18" fill="#EEF0FF" stroke="#AEB5FF" stroke-width="2"/>
+  <text x="906" y="440" text-anchor="middle" fill="#24306F" font-family="Arial, sans-serif" font-size="20" font-weight="700">Discord 通知にも対応</text>
+</svg>
