@@ -1,40 +1,190 @@
 ---
 sidebar_position: 2
-title: X API キー 4 種の取得
-description: X Developer Console で API Key、API Key Secret、Access Token、Access Token Secret を取得します。
+title: X アプリ権限設定と API キー 4 種の取得
+description: X Developer Console でアプリ権限を設定し、API Key、API Key Secret、Access Token、Access Token Secret を取得します。
 ---
 
-# X API キー 4 種の取得
+# X アプリ権限設定と API キー 4 種の取得
 
-投稿に使用する X アカウントごとに、X Developer Console で API キー一式を取得します。
+虎威で X へ自動投稿するには、X Developer Console で投稿用の App を作成し、OAuth 1.0a 用のキー 4 種を取得します。
 
-## 取得するキー
+取得するキーは次の 4 つです。
 
 - API Key
 - API Key Secret
 - Access Token
 - Access Token Secret
 
-## 手順の流れ
+:::caution
+キーは一度しか表示されない場合があります。表示されたら、パスワードマネージャーなど安全な場所に保存してください。スクリーンショット、チャット、Git、公開フォルダなどに残さないでください。
+:::
 
-1. X Developer Console にログインする
-2. Developer Agreement に同意する
-3. Project と App を作成する
-4. User Authentication Settings を開く
-5. OAuth 1.0a を有効にする
-6. App permissions を用途に合わせて選択する
-7. Type of App で Web App, Automated App, or Bot を選択する
-8. Callback URL と Website URL を設定する
-9. Keys and tokens で API Key / API Key Secret を保存する
-10. Access Token / Access Token Secret を生成して保存する
+## 事前に準備するもの
 
-## 重要な注意点
+作業を始める前に、次のものを用意してください。
 
-- キーは一度しか表示されない場合があるため、安全な場所に保存します。
-- 権限を変更した場合は Access Token / Access Token Secret を再生成します。
-- キーを Git にコミットしないでください。
-- X API は従量課金のため、Usage と課金状況を定期的に確認します。
+- 投稿に使用する X アカウント
+- X Developer Console にアクセスできる状態
+- X API の利用に必要な支払い設定、またはクレジット
+- Apps Script の Web アプリ URL
+- 虎威の Web サイト URL
 
-## 虎威へ登録する情報
+Apps Script の Web アプリ URL は、X の Callback URL / Redirect URL に入力します。まだ URL がない場合は、先に Google シートと Apps Script の設定を進めてください。
+
+## 1. X Developer Console にアクセスする
+
+[X Developer Console](https://console.x.com) にアクセスし、投稿に使用する X アカウントでサインインします。
+
+![X Developer Console のサインイン画面](/img/setup/x-api-keys/x-devconsole-signin0-j.png)
+
+初回アクセス時は Developer Agreement への同意やプロフィール情報の入力が求められる場合があります。画面の案内に従って進めます。
+
+## 2. 支払い設定とクレジットを確認する
+
+X API の利用には、X 側の課金やクレジットが必要になる場合があります。Developer Console のダッシュボードで、支払い設定、クレジット、使用状況を確認します。
+
+![Developer Console のダッシュボード](/img/setup/x-api-keys/step2_x-devconsole-dashboard.png)
+
+クレジットを購入する場合は、画面の案内に従って支払い情報を登録します。
+
+![クレジット購入の開始](/img/setup/x-api-keys/step3_x-devconsole-payment0.png)
+
+![支払い情報の入力](/img/setup/x-api-keys/step3_x-devconsole-payment1.png)
+
+![購入内容の確認](/img/setup/x-api-keys/step3_x-devconsole-payment2.png)
+
+![クレジット購入の完了](/img/setup/x-api-keys/step3_x-devconsole-payment3.png)
+
+クレジット残高や自動チャージの設定も確認しておくと、残高不足による投稿失敗を避けやすくなります。
+
+![クレジット残高の確認](/img/setup/x-api-keys/step3_x-devconsole-paymentCap0.png)
+
+![自動チャージ設定の確認](/img/setup/x-api-keys/step3_x-devconsole-paymentCap1.png)
+
+## 3. Project と App を作成する
+
+Developer Console の「アプリ」またはダッシュボードから、新しい Project / App を作成します。
+
+![App 作成の入口](/img/setup/x-api-keys/step2-x-devconsole-addApp0.png)
+
+Project 名、App 名、説明、利用目的などを入力します。名前はあとから見ても用途が分かるものにしてください。
+
+![Project と App の作成 1](/img/setup/x-api-keys/step2_x-devconsole-addApp0.png)
+
+![Project と App の作成 2](/img/setup/x-api-keys/step2_x-devconsole-addApp1.png)
+
+![Project と App の作成 3](/img/setup/x-api-keys/step2_x-devconsole-addApp2.png)
+
+![Project と App の作成 4](/img/setup/x-api-keys/step2_x-devconsole-addApp3.png)
+
+![Project と App の作成 5](/img/setup/x-api-keys/step2_x-devconsole-addApp4.png)
+
+App 作成時に API Key / API Key Secret が表示される場合があります。表示された場合は、この時点で必ず保存してください。
+
+## 4. User Authentication Settings を開く
+
+作成した App の設定画面を開き、User Authentication Settings または Authentication Settings の編集画面へ進みます。
+
+![User Authentication Settings を開く](/img/setup/x-api-keys/step3_x-devconsole-changeSettings0.png)
+
+この画面では、虎威から投稿するための権限とアプリ種別を設定します。
+
+## 5. アプリ権限を設定する
+
+OAuth 1.0a を有効にし、App permissions を選択します。
+
+投稿だけを行う場合は、通常は「Read and write」または画面上の「読み取りと書き込み」を選択します。
+
+DM 送受信も使う場合だけ、「Read, write, and DMs」または画面上の「読み書きおよびダイレクトメッセージ」を選択します。
+
+:::info
+虎威で X へ投稿するには、Read only では足りません。Read only のままだと投稿時に権限エラーになります。
+:::
+
+Type of App は「Web App, Automated App, or Bot」または画面上の「ウェブアプリ、自動化アプリまたはボット」を選択します。
+
+Callback URL / Redirect URL には Apps Script の Web アプリ URL を入力します。Website URL には虎威の Web サイト URL を入力します。
+
+![アプリ権限とアプリ種別の設定](/img/setup/x-api-keys/step3_x-devconsole-changeSettings2.png)
+
+入力が終わったら Save または「変更を保存する」をクリックします。
+
+:::caution
+アプリ権限を変更した場合は、Access Token と Access Token Secret を必ず再生成してください。古いトークンには新しい権限が反映されません。
+:::
+
+## 6. Keys and Tokens を開く
+
+App の「Keys and tokens」または「キーとトークン」画面を開きます。
+
+![Keys and tokens 画面](/img/setup/x-api-keys/step5-x-devcondole-4keys.png)
+
+この画面で API Key / API Key Secret の確認や再生成、Access Token / Access Token Secret の生成を行います。
+
+## 7. API Key と API Key Secret を保存する
+
+API Key and Secret の欄で、API Key と API Key Secret を表示または再生成します。
+
+![API Key と API Key Secret の再生成](/img/setup/x-api-keys/step5-x-devcondole-4keys0.png)
+
+再生成する場合は確認画面が表示されます。既存のキーを使っている連携がある場合、再生成後は古いキーが使えなくなります。
+
+![API Key と API Key Secret の再生成確認](/img/setup/x-api-keys/step5-x-devcondole-4keys1.png)
+
+表示された API Key と API Key Secret を保存します。
+
+![API Key と API Key Secret の表示](/img/setup/x-api-keys/step5-x-devcondole-4keys2.png)
+
+## 8. Access Token と Access Token Secret を生成する
+
+Access Token and Secret の欄で Generate または Regenerate をクリックします。
+
+![Access Token と Access Token Secret の生成](/img/setup/x-api-keys/step5-x-devcondole-4keys3.png)
+
+表示された Access Token と Access Token Secret を保存します。
+
+![Access Token と Access Token Secret の表示](/img/setup/x-api-keys/step5-x-devcondole-4keys4.png)
+
+これで、虎威に登録する 4 種のキーが揃います。
+
+## 9. 虎威へ登録する
 
 虎威の X アカウント管理画面で、取得した 4 種のキーを対象の X アカウントに登録します。
+
+- API Key
+- API Key Secret
+- Access Token
+- Access Token Secret
+
+登録後、テスト投稿または通常の投稿作成画面で、正しく投稿できるか確認してください。
+
+## よくある失敗
+
+### 投稿できない
+
+App permissions が Read only になっている可能性があります。Read and write 以上に変更し、Access Token / Access Token Secret を再生成してください。
+
+### 権限を変更したのに反映されない
+
+権限変更後に古い Access Token / Access Token Secret を使っている可能性があります。Keys and tokens で Regenerate し、虎威に登録し直してください。
+
+### キーを保存し忘れた
+
+再表示できないキーは Regenerate してください。再生成すると古いキーは使えなくなるため、虎威側の登録情報も更新します。
+
+### クレジット不足で投稿できない
+
+Developer Console のダッシュボードでクレジット残高、支払い設定、Usage を確認してください。
+
+## セキュリティ上の注意
+
+- 4 種のキーは他人に共有しないでください。
+- GitHub、チャット、メール、公開フォルダへ貼り付けないでください。
+- 不正利用が疑われる場合は、すぐに Regenerate してください。
+- 使わなくなった App やキーは削除、または再生成してください。
+
+## 参考
+
+- [X Developer Console](https://console.x.com)
+- [X Developer Platform: Apps](https://docs.x.com/fundamentals/developer-apps)
+- [X Developer Platform: Authentication](https://docs.x.com/fundamentals/authentication/overview)
