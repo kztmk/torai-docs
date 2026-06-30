@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
       link: {type: 'generated-index'},
       items: [
         'setup/google-sheet',
+        'setup/apps-script-deploy-link',
         'setup/x-api-keys',
         'setup/gemini-api-key',
         'setup/torai-sign-in',

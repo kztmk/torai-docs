@@ -1,0 +1,333 @@
+---
+sidebar_position: 1
+title: Google スプレッドシートの設定
+description: 虎威用 Apps Script コードを貼り付け、Web アプリとしてデプロイし、Google Sheet と虎威を連携します。
+---
+
+# Apps Script の貼り付け・デプロイ・虎威連携
+
+このページでは、虎威用の Apps Script コードをコピーして貼り付け、Web アプリとしてデプロイし、虎威と Google Sheet を連携する手順を説明します。
+
+Google Sheet の作成がまだの場合は、先に [Google シートと Apps Script の設定](./google-sheet) を進めてください。
+
+## 作業の流れ
+
+1. Google Sheet から Apps Script を開く
+2. 虎威用コードをコピーする
+3. Apps Script に貼り付ける
+4. 保存する
+5. Web アプリとしてデプロイする
+6. Web アプリ URL をコピーする
+7. Google Sheet を再読み込みする
+8. 虎威に GAS URL を登録する
+9. Google Sheet の本人確認コードを虎威へ貼り付ける
+10. 連携完了を確認する
+
+:::caution
+Apps Script と虎威アカウントの連携は、乗っ取り防止のため別アカウントへ移転できません。別の虎威アカウントで使う場合は、新しい Google Sheet と Apps Script を作り直してください。
+:::
+
+## 事前準備
+
+虎威用のプログラムコードをダウンロードします。不具合対応で随時アップデートされますので最新版をダウンロードしてください。
+
+アップデート版をリリースした際には以下のチャンネルでお知らせいたします。
+
+- 会員用メール
+- 虎威内でのお知らせメッセージ
+
+[Google Apps Script用コード](https://github.com/kztmk/x_Autopost/releases 'ダウンロードはこちら')
+
+<span style={{ color: 'green', fontWeight: 'bold' }}>Latest</span>
+(最新)マークがあるものをダウンロードしてください。
+
+[![alt](/img/setup/g-sheet/release_x_autopost.jpg)](https://github.com/kztmk/x_Autopost/releases)
+
+## 1. Google Sheet から Apps Script を開く
+
+虎威で使う Google Sheet を開きます。
+
+![Googleスプレッドシートを開く](/img/setup/g-sheet/step1_opengsheet.jpg)
+
+空白のスプレッドシートを選択します。
+
+![空白のスプレッドシートを選択](/img/setup/g-sheet/step1_select_emptysheet.jpg)
+
+シートに名前を付けます。ご自身で他のシートと区別がつく名前をつけます。
+
+![シートに名前を付けます](/img/setup/g-sheet/step1_saveas.jpg)
+
+上部メニューから「拡張機能」→「Apps Script」をクリックします。
+
+![メニューからApps Scriptを選択](/img/setup/g-sheet/step1_apps_script.jpg)
+
+Apps Script エディタが別タブで開きます。
+
+![スクリプトエディタが開きます](/img/setup/g-sheet/step1_open_codeEditor.jpg)
+
+## 2. 既存のコードを削除する
+
+ファイル欄に「コード（または、code）」を選択します。
+選択したファイルに初期コードや古いコードが入っている場合は、エディタ内のコードをすべて削除します。
+
+![コードを全削除](/img/setup/g-sheet/step2_deleteAll.jpg)
+
+![コードを全削除](/img/setup/g-sheet/step2_deleteAll2.jpg)
+
+:::caution
+古いコードが一部だけ残っていると、デプロイ後に予期しないエラーが出る場合があります。更新時は、古いコードを残さず全文を差し替えてください。
+:::
+
+## 3. 虎威用 Apps Script コードをコピーする
+
+ダウンロードしたzipファイルを解凍し、「code.js」をテキストエディタで開きます。
+表示されたコードを全文を選択してコピーします。
+
+![コードを開く](/img/setup/g-sheet/step2_open_code.jpg)
+
+:::info
+コードの一部だけをコピーすると正しく動作しません。先頭から末尾まで全文をコピーしてください。
+:::
+
+## 4. Apps Script に貼り付ける
+
+Apps Script エディタへ戻り、コピーしたコードを貼り付けます。
+
+![コードを貼り付け](/img/setup/g-sheet/step2_paste_code.jpg)
+
+貼り付け後、コードの先頭や末尾が欠けていないか確認します。
+
+確認ポイント:
+
+- 先頭からコードが貼り付いている
+- 末尾まで貼り付いている
+- 余分な説明文や見出しを貼り付けていない
+- 途中に空白だけの別コードが残っていない
+
+## 5. 保存する
+
+Apps Script エディタ上部の保存アイコンをクリックします。
+
+![コードを保存](/img/setup/g-sheet/step5_save_code.jpg)
+
+保存後、エラーが表示されていないことを確認します。エラーは表示されます。
+
+![表示されたエラー](/img/setup/g-sheet/step5_save_error.jpg)
+
+コードを貼り付け完了しましたら、このスクリプトに名前を付けます。
+
+初期状態では「無題のプロジェクト」とありますので、タイトルをクリックします。
+
+![無題のプロジェクト](/img/setup/g-sheet/step5_rename.jpg)
+
+スクリプトの名前を入力します。
+
+![スクリプト名を入力](/img/setup/g-sheet/step5_enter_name.jpg)
+
+## 6. Web アプリとしてデプロイする
+
+右上の「デプロイ」ボタンをクリックし、「新しいデプロイ」を選択します。
+
+![デプロイします。](/img/setup/g-sheet/step6_deploy1.jpg)
+
+「新しいデプロイ」が開きますので「設定」をクリックします。
+
+![設定を選択](/img/setup/g-sheet/step6_settings.jpg)
+
+種類の選択で「ウェブアプリ」を選びます。
+
+![ウェブアプリを選択](/img/setup/g-sheet/step6_webapp.jpg)
+
+次のように設定します。
+
+| 項目                   | 設定                                 |
+| ---------------------- | ------------------------------------ |
+| 説明                   | `虎威 自動投稿` など分かりやすい名前 |
+| 次のユーザーとして実行 | 自分                                 |
+| アクセスできるユーザー | 全員                                 |
+
+![デプロイ詳細](/img/setup/g-sheet/step6_deploy_details.jpg)
+
+設定したら「デプロイ」をクリックします。
+
+## 7. Google の権限を許可する
+
+初回デプロイ時は、Google から権限の許可を求められます。
+
+「アクセスを承認」をクリックします。
+
+![初回アクセスを承認](/img/setup/g-sheet/step7_confirm_access.jpg)
+
+アクセスを認めるGoogle アカウントを選択します。ここでは、Google Sheet と Apps Script を作成したアカウントを選びます。
+
+「Google が確認していないアプリ」と表示される場合は、「詳細（Advanced）」を開き、プロジェクト名のリンクから続行します。
+
+![承認していないアプリ](/img/setup/g-sheet/step7_advanced.jpg)
+
+「リスクを理解し、デベロッパーを信頼できる場合のみ続行してください。」と表示されますので、その下の行のスクリプト名に移動をクリックします。
+
+![スクリプトへ移動](/img/setup/g-sheet/step7_back_to_script.jpg)
+
+権限の内容を確認し、「許可」をクリックします。
+
+![すべてのアクセスを承認](/img/setup/g-sheet/step7_apply_all.jpg)
+
+## 8. Web アプリ URL をコピーする
+
+デプロイが完了すると、Web アプリ URL が表示されます。
+
+「コピー」ボタンをクリックして URL をコピーします。
+
+![ウェブアプリのURLをコピー](/img/setup/g-sheet/step8_copy_url.jpg)
+
+:::caution
+虎威に登録するのは `/exec` で終わる Web アプリ URL です。Apps Script エディタのURL、Google Sheet のURL、`/dev` のURLは使いません。
+:::
+
+:::info
+このURLが虎威の設定に必要なURLです。
+:::
+
+## 9. Google Sheet を再読み込みする
+
+Apps Script をデプロイしたら、Google Sheet のタブへ戻ります。
+
+ブラウザの再読み込みボタンを押し、Google Sheet を再読み込みします。
+
+![ブラウザの再読み込み](/img/setup/g-sheet/step9_reload.jpg)
+
+再読み込み後、虎威用のメニューやシート構成が表示される場合は、表示内容を確認します。
+
+![虎威連携メニュー](/img/setup/g-sheet/step9_torai_menue.jpg)
+
+:::info
+再読み込みは、Apps Script の更新やメニュー反映のために行います。表示が変わらない場合でも、次の虎威連携へ進めます。
+:::
+
+## 10. 虎威で GAS URL を登録する
+
+虎威へサインインします。
+
+![虎威へサインイン](/img/setup/g-sheet/step10_torai_signin.jpg)
+
+初回サインインは、規約への同意が求められます。
+
+![規約へ同意](/img/setup/g-sheet/step10_agree.jpg)
+
+プロフィール内の API キー設定画面を開きます。
+
+> キャプチャー画像：虎威の A
+
+「GAS URL変更」ボタンをクリックします。
+
+> キャプチャー画像：GAS URL変更ボタンをクリックした状態
+
+コピーした Web アプリ URL を貼り付けます。
+
+> キャプチャー画像：GAS URL 入力欄に Web アプリ URL を貼り付けた状態
+
+## 11. Google Sheet で本人確認コードを確認する
+
+虎威から GAS URL を登録すると、Google Sheet に本人確認コードが作成されます。
+
+Google Sheet を開き、本人確認コードを確認します。
+
+> キャプチャー画像：Google Sheet に本人確認コードが表示された状態
+
+本人確認コードをコピーします。
+
+## 12. 虎威へ本人確認コードを貼り付ける
+
+虎威へ戻り、本人確認コード入力欄へコードを貼り付けます。
+
+> キャプチャー画像：虎威の本人確認コード入力欄にコードを貼り付けた状態
+
+「保存」または「確認」ボタンをクリックします。
+
+> キャプチャー画像：本人確認コードを保存するボタンをクリックする状態
+
+成功すると、GAS本人確認が完了します。
+
+> キャプチャー画像：虎威の APIキー画面で GAS本人確認が完了した状態
+
+## 13. Google Sheet 側を確認する
+
+連携完了後、Google Sheet に必要なシートや列が作成されているか確認します。
+
+> キャプチャー画像：虎威連携後の Google Sheet 全体
+
+確認するポイント:
+
+- 投稿予定を管理するシートがある
+- 投稿済みを管理するシートがある
+- エラーを確認するシートがある
+- 本人確認コードが不要になっている、または連携済み状態になっている
+
+:::info
+シート名や列名は、虎威のバージョンにより変わる場合があります。虎威の画面で投稿作成や自動投稿を行ったあと、Google Sheet にデータが反映されるか確認してください。
+:::
+
+## 14. テスト投稿前のチェック
+
+虎威連携が完了したら、テスト投稿前に次を確認します。
+
+- X API キー 4 種を虎威に登録している
+- X Developer Console の App permissions が Read and write 以上になっている
+- X API のクレジット残高や Usage に問題がない
+- GAS URL が `/exec` の Web アプリ URL である
+- Google Sheet を再読み込み済みである
+- GAS本人確認が完了している
+
+## Apps Script コードを更新する場合
+
+虎威から Apps Script コードの更新案内があった場合は、次の順番で作業します。
+
+1. Apps Script エディタを開く
+2. 古いコードを全削除する
+3. 新しいコードを全文貼り付ける
+4. 保存する
+5. 「デプロイを管理」から新しいバージョンをデプロイする
+6. Google Sheet を再読み込みする
+7. 虎威で動作確認する
+
+> キャプチャー画像：Apps Script の「デプロイを管理」画面
+
+:::caution
+コード更新後にデプロイしないと、Web アプリ側では古いコードが動き続ける場合があります。保存だけで終わらず、必要に応じて再デプロイしてください。
+:::
+
+## よくある失敗
+
+### 虎威に貼り付けた URL でエラーになる
+
+Apps Script の Web アプリ URL ではない可能性があります。`/exec` で終わる URL をコピーしてください。
+
+### 本人確認コードが Google Sheet に出ない
+
+次を確認してください。
+
+- Web アプリのアクセス権限が「全員」になっている
+- Apps Script を作成した Google Sheet を開いている
+- 虎威に貼り付けた GAS URL が正しい
+- Apps Script の権限許可が完了している
+
+### 「このGASは別の虎威アカウントに連携されています」と表示される
+
+その Apps Script はすでに別の虎威アカウントと連携済みです。別アカウントへ移転することはできません。
+
+別アカウントで使う場合は、必要なシートデータだけをコピーし、新しい Google Sheet と Apps Script を作成してください。
+
+### コードを貼り替えたのに動作が変わらない
+
+Apps Script の再デプロイが必要な可能性があります。「デプロイを管理」から新しいバージョンを作成し、Web アプリを更新してください。
+
+### Google Sheet を再読み込みしてもメニューが出ない
+
+虎威のバージョンによっては、専用メニューが表示されない場合があります。虎威画面で GAS本人確認と投稿作成ができるか確認してください。
+
+## 関連ページ
+
+- [Google シートと Apps Script の設定](./google-sheet)
+- [虎威へのサインインと基本設定](./torai-sign-in)
+- [X アプリ権限設定と API キー 4 種の取得](./x-api-keys)
+- [自動投稿](../usage/auto-posting)
