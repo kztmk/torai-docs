@@ -8,14 +8,50 @@ description: AI 投稿案作成に使う Gemini API Key を取得します。
 
 虎威の AI 投稿案作成機能を使う場合は、Google AI Studio で Gemini API Key を取得します。
 
-## このページに含める内容
+Googleが提供するGemimiは、制限がありながら、API（アプリから直接アクセス可能なインターフェイス）経由でAIが無料で使えます。
 
-- Google AI Studio へのアクセス
-- Google アカウントでのログイン
-- API キー作成
-- キーの保存
-- 虎威のプロフィールまたは設定画面への登録
+## Geminiの無料範囲
 
-## 注意点
+無料で使用可能ですが、以下の制限があります。
 
+虎威から使用するのは、Flash、Flash-liteです。
+
+| モデル名   | リクエスト数/分 | リクエスト数/日 | トークン数/分 |
+| :--------- | :-------------- | :-------------- | :------------ |
+| Gemini 2.5 | 15回            | 1,500回         | 100万トークン |
+| Gemini 3.1 | 30回            | 2,000回         | -             |
+
+1分間に30回、1日2,000回は十分だと思えます。
+
+:::caution
 Gemini API の料金や無料枠は変更される可能性があります。利用前に Google 側の最新情報を確認してください。
+:::
+
+## APIキー取得方法
+
+### 1. Google AI Studioへアクセス
+
+[Google AI Studio](https://aistudio.google.com)へアクセスします。「Get started」をクリックします。
+Googleへログインしていない場合には、ログインが必要です。
+
+![Google AI Studio](/img/getting-start/gemini_access.jpg)
+
+### 2. キーをクリック
+
+左下の「カギ」ボタンをクリックします。
+
+![Google AI Studio](/img/getting-start/gemini_try_key.jpg)
+
+### 3. キーが表示
+
+キーが表示されます。無料枠になっているのを確認してください。
+
+![Google AI Studio](/img/getting-start/gemini_get_key.jpg)
+
+### 4. キーをコピー
+
+キーをクリックするとキーの詳細が表示されます。
+
+![Google AI Studio](/img/getting-start/gemini_copy_key.jpg)
+
+以上でGemini APIキーの取得は完了です。

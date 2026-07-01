@@ -1,4 +1,4 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '利用前の準備',
-      link: {type: 'generated-index'},
+      link: { type: 'generated-index' },
       items: [
         'getting-started/overview',
         'getting-started/x-api-pay-per-use',
@@ -28,19 +28,20 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '初期設定',
-      link: {type: 'generated-index'},
+      link: { type: 'generated-index' },
       items: [
-        'setup/google-sheet',
+        'setup/torai-subscription',
         'setup/apps-script-deploy-link',
         'setup/x-api-keys',
         'setup/gemini-api-key',
+        'setup/discord',
         'setup/torai-sign-in',
       ],
     },
     {
       type: 'category',
       label: '虎威の使い方',
-      link: {type: 'generated-index'},
+      link: { type: 'generated-index' },
       items: [
         'usage/x-accounts',
         'usage/create-posts',
@@ -53,16 +54,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'サブスクリプション',
-      link: {type: 'generated-index'},
-      items: [
-        'subscription/manage',
-        'subscription/billing-and-api-costs',
-      ],
+      link: { type: 'generated-index' },
+      items: ['subscription/manage', 'subscription/billing-and-api-costs'],
     },
     {
       type: 'category',
       label: '困ったとき',
-      link: {type: 'generated-index'},
+      link: { type: 'generated-index' },
       items: [
         'troubleshooting/post-errors',
         'troubleshooting/subscription-errors',
@@ -72,7 +70,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'リファレンス',
-      link: {type: 'generated-index'},
+      link: { type: 'generated-index' },
       items: ['reference/limits', 'reference/glossary'],
     },
   ],
