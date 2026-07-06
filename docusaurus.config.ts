@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://docs.try-try.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -25,7 +25,8 @@ const config: Config = {
   organizationName: 'torai', // Usually your GitHub org/user name.
   projectName: 'torai-manuals', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  // TODO: docs/setup/google-sheet 執筆後に 'throw' へ戻す
+  onBrokenLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

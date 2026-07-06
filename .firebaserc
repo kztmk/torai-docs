@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "torai-e0d8e"
+  },
+  "targets": {
+    "torai-e0d8e": {
+      "hosting": {
+        "manuals": ["torai-docs"]
+      }
+    }
+  }
+}
