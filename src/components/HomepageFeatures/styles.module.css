@@ -1,11 +1,150 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
+  padding: 4rem 0 4.5rem;
   width: 100%;
+  background: #fff;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.sectionHeader {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.sectionHeader h2 {
+  margin-bottom: 0.75rem;
+  color: #172033;
+  font-size: 2rem;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: #526070;
+  line-height: 1.8;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  gap: 1rem;
+  align-items: start;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.viewport {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.track {
+  display: flex;
+  transition: transform 420ms ease;
+  will-change: transform;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.featureCard {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.featureImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  background: #f8fafc;
+}
+
+.featureBody {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.6rem 1.5rem 1.9rem;
+  text-align: center;
+}
+
+.featureBody h3 {
+  margin-bottom: 1rem;
+  color: #172033;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.35;
+}
+
+.featureText {
+  margin: 0;
+  color: #526070;
+  font-size: 1.03rem;
+  line-height: 1.85;
+}
+
+.navButton {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e2e8f0 !important;
+  background: #fff !important;
+  color: #172033 !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.navButton:hover {
+  background: #fff5f4 !important;
+  color: #b3261e !important;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.dot,
+.dotActive {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot {
+  background: #cbd5e1;
+}
+
+.dotActive {
+  background: #b3261e;
+}
+
+@media screen and (max-width: 996px) {
+  .features {
+    padding: 3rem 0;
+  }
+
+  .carousel {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .navButton {
+    display: none !important;
+  }
+
+  .featureCard {
+    min-height: auto;
+  }
+
+  .featureImage {
+    aspect-ratio: 2 / 1;
+  }
+
+  .featureBody {
+    padding: 1.25rem 1rem 1.45rem;
+  }
 }

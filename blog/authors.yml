@@ -23,3 +23,12 @@ slorber:
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+support:
+  page: true
+  name: 虎威サポート
+  title: 虎威運営チーム
+  image_url: https://github.com/tmkkz.png
+  email: support@imakita3gyo.com
+  socials:
+    x: bungo_ai_nosuke

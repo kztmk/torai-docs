@@ -17,3 +17,8 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+release:
+  label: リリース
+  permalink: /release
+  description: 虎威リリース情報

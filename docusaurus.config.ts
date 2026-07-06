@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: '虎威',
-  tagline: 'ユーザーマニュアルとブログ',
+  title: 'X自動投稿ツール「虎威」',
+  tagline: '公式サポートサイト',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -62,18 +62,17 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/torai_social_card.jpg',
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: '虎威',
+      title: '虎威サポート',
       logo: {
         alt: '虎威ロゴ',
-        src: 'img/logo.svg',
+        src: 'img/torai_icon512.png',
       },
       items: [
         {
@@ -93,34 +92,62 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'マニュアル',
+          title: 'ドキュメント',
           items: [
             {
-              label: 'はじめに',
+              label: 'マニュアル',
               to: '/docs/intro',
+            },
+            {
+              label: 'Google Apps Script の設定',
+              to: '/docs/setup/apps-script-deploy-link',
             },
           ],
         },
         {
-          title: 'コンテンツ',
+          title: '法務情報',
+          items: [
+            {
+              label: '利用規約',
+              href: 'https://doc-torai.try-try.com/terms-and-conditions-ja',
+            },
+            {
+              label: 'プライバシーポリシー',
+              href: 'https://doc-torai.try-try.com/privacy-policy-ja',
+            },
+            {
+              label: 'クッキーポリシー',
+              href: 'https://doc-torai.try-try.com/cookie-policy-ja',
+            },
+            {
+              label: '免責事項',
+              href: 'https://doc-torai.try-try.com/disclaimer-ja',
+            },
+            {
+              label: '使用許諾書',
+              href: 'https://doc-torai.try-try.com/license-agreement-ja',
+            },
+          ],
+        },
+        {
+          title: '関連サイト',
           items: [
             {
               label: 'ブログ',
               to: '/blog',
             },
-          ],
-        },
-        {
-          title: 'プロジェクト',
-          items: [
             {
               label: '虎威',
-              to: '/',
+              href: 'https://torai.try-try.com/',
+            },
+            {
+              label: '虎威購入',
+              href: 'https://sns-loong.imakita3gyo.com/ja/clp/torai-info',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} 虎威. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://doc-torai.try-try.com" style="font-weight: bold;" target="_blank" rel="noopener noreferrer">今北産業</a>`,
     },
     prism: {
       theme: prismThemes.github,
