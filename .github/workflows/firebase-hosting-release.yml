@@ -1,0 +1,64 @@
+name: Deploy Firebase Hosting
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - 'release-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: firebase-hosting-release
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build and deploy manuals
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify tag is on release branch
+        if: github.event_name == 'push'
+        run: |
+          git fetch origin release --depth=100
+          TAG_COMMIT="$(git rev-list -n 1 "$GITHUB_REF_NAME")"
+          if ! git merge-base --is-ancestor "$TAG_COMMIT" origin/release; then
+            echo "Tag $GITHUB_REF_NAME does not point to a commit on origin/release."
+            exit 1
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+        env:
+          DOCUSAURUS_EMAILJS_PUBLIC_KEY: ${{ secrets.DOCUSAURUS_EMAILJS_PUBLIC_KEY }}
+          DOCUSAURUS_EMAILJS_SERVICE_ID: ${{ secrets.DOCUSAURUS_EMAILJS_SERVICE_ID }}
+          DOCUSAURUS_EMAILJS_TEMPLATE_ID: ${{ secrets.DOCUSAURUS_EMAILJS_TEMPLATE_ID }}
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TORAI_E0D8E }}
+          projectId: torai-e0d8e
+          target: manuals
+          channelId: live

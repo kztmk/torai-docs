@@ -1,14 +1,14 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import Heading from '@theme/Heading';
+import Layout from '@theme/Layout';
+import clsx from 'clsx';
+import type { ReactNode } from 'react';
 
 import styles from './index.module.css';
 
@@ -53,7 +53,7 @@ const latestPosts = [
 ];
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className={styles.heroOverlay} />
@@ -72,15 +72,23 @@ function HomepageHeader() {
             Googleシート、Googleドライブ、Apps Script、AIを組み合わせて、
             Xアカウント運用の準備から投稿作成、予約投稿までを支える虎威のサポートサイトです。
           </p>
+          <p className={styles.heroLead}>
+            低価格な月額方式でいつでも始められ、いつでも止められます。
+          </p>
         </div>
-        <Stack className={styles.buttons} direction={{xs: 'column', sm: 'row'}} spacing={1.5}>
+        <Stack
+          className={styles.buttons}
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={1.5}
+        >
           <Button
             component={Link}
             to="/docs/intro"
             variant="contained"
             size="large"
             startIcon={<SettingsSuggestIcon />}
-            sx={{fontWeight: 700}}>
+            sx={{ fontWeight: 700 }}
+          >
             マニュアルを開く
           </Button>
           <Button
@@ -91,8 +99,9 @@ function HomepageHeader() {
             variant="outlined"
             size="large"
             endIcon={<OpenInNewIcon />}
-            sx={{fontWeight: 700}}>
-            虎威を購入する
+            sx={{ fontWeight: 700 }}
+          >
+            虎威を試す
           </Button>
         </Stack>
       </div>
@@ -106,14 +115,24 @@ function LatestNews(): ReactNode {
       <div className="container">
         <div className={styles.latestHeader}>
           <Heading as="h2">最新情報</Heading>
-          <Button component={Link} to="/blog" variant="text" sx={{fontWeight: 700}}>
+          <Button
+            component={Link}
+            to="/blog"
+            variant="text"
+            sx={{ fontWeight: 700 }}
+          >
             ブログ一覧へ
           </Button>
         </div>
         <div className={styles.newsGrid}>
           {latestPosts.map((post) => (
             <Link className={styles.newsCard} to={post.href} key={post.href}>
-              <img className={styles.newsImage} src={post.image} alt="" loading="lazy" />
+              <img
+                className={styles.newsImage}
+                src={post.image}
+                alt=""
+                loading="lazy"
+              />
               <div className={styles.newsContent}>
                 <Heading as="h3">{post.title}</Heading>
                 <p>{post.description}</p>
@@ -133,11 +152,12 @@ function LatestNews(): ReactNode {
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`${siteConfig.title} | ${siteConfig.tagline}`}
-      description="虎威のユーザーマニュアル、設定手順、運用ガイド、トラブルシューティング。">
+      description="虎威のユーザーマニュアル、設定手順、運用ガイド、トラブルシューティング。"
+    >
       <HomepageHeader />
       <main>
         <HomepageFeatures />

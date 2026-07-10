@@ -1,8 +1,27 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import {existsSync, readFileSync} from 'fs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+function loadLocalEnv(): Record<string, string> {
+  const result: Record<string, string> = {};
+  for (const file of ['.env.local', '.env']) {
+    if (!existsSync(file)) continue;
+    for (const line of readFileSync(file, 'utf8').split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const match = trimmed.match(/^([A-Z0-9_]+)=(.*)$/);
+      if (!match) continue;
+      result[match[1]] = match[2].replace(/^['"]|['"]$/g, '');
+    }
+  }
+  return result;
+}
+
+const localEnv = loadLocalEnv();
+const env = (key: string): string | undefined => process.env[key] ?? localEnv[key];
 
 const config: Config = {
   title: 'X自動投稿ツール「虎威」',
@@ -36,6 +55,12 @@ const config: Config = {
     locales: ['ja'],
   },
 
+  customFields: {
+    emailjsPublicKey: env('DOCUSAURUS_EMAILJS_PUBLIC_KEY'),
+    emailjsServiceId: env('DOCUSAURUS_EMAILJS_SERVICE_ID'),
+    emailjsTemplateId: env('DOCUSAURUS_EMAILJS_TEMPLATE_ID'),
+  },
+
   presets: [
     [
       'classic',
@@ -44,6 +69,8 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
         },
         blog: {
+          blogTitle: 'ブログ',
+          blogDescription: '虎威の不具合、アップデート情報、虎威の使い方などを紹介するブログです。',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -101,6 +128,10 @@ const config: Config = {
             {
               label: 'Google Apps Script の設定',
               to: '/docs/setup/apps-script-deploy-link',
+            },
+            {
+              label: '問合せ',
+              to: '/contact',
             },
           ],
         },
