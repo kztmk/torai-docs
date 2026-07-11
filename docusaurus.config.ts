@@ -26,7 +26,7 @@ const env = (key: string): string | undefined => process.env[key] ?? localEnv[ke
 const config: Config = {
   title: 'X自動投稿ツール「虎威」',
   tagline: '公式サポートサイト',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/torai_icon512.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
