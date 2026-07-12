@@ -16,7 +16,7 @@ const latestPosts = [
   {
     title: 'V2サービス開始しました。',
     date: '2026/7/11',
-    href: '/blog/blog-20260722',
+    href: '/blog/blog-20260711',
     image: '/img/blog_new_feature.jpg',
     author: '虎威サポート',
     authorImage: 'https://github.com/tmkkz.png',
