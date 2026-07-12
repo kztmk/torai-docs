@@ -14,41 +14,13 @@ import styles from './index.module.css';
 
 const latestPosts = [
   {
-    title: '設定代行サービス',
-    date: '2025/5/10',
-    href: '/blog/blog-20250510',
+    title: 'V2サービス開始しました。',
+    date: '2026/7/11',
+    href: '/blog/blog-20260722',
     image: '/img/blog_new_feature.jpg',
     author: '虎威サポート',
     authorImage: 'https://github.com/tmkkz.png',
-    description: 'X の自動投稿を開始する際に、',
-  },
-  {
-    title: 'リリース',
-    date: '2025/4/21',
-    href: '/blog/blog-20250421',
-    image: '/img/blog_important.jpg',
-    author: '虎威サポート',
-    authorImage: 'https://github.com/tmkkz.png',
-    description: 'X への自動投稿ツール「虎威」をリリースしました。',
-  },
-  {
-    title: 'Long Blog Post',
-    date: '2019/5/29',
-    href: '/blog/long-blog-post',
-    image: '/img/blog_important.jpg',
-    author: '虎威サポート',
-    authorImage: 'https://github.com/tmkkz.png',
-    description: 'This is the summary of a very long blog post,',
-  },
-  {
-    title: 'First Blog Post',
-    date: '2019/5/28',
-    href: '/blog/first-blog-post',
-    image: '/img/blog_bug_fixed.jpg',
-    author: '虎威サポート',
-    authorImage: 'https://github.com/tmkkz.png',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies.',
+    description: '虎威 V2とは？',
   },
 ];
 
