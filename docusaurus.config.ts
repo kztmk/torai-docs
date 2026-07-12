@@ -1,7 +1,7 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import {existsSync, readFileSync} from 'fs';
+import type { Config } from '@docusaurus/types';
+import { existsSync, readFileSync } from 'fs';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -21,7 +21,8 @@ function loadLocalEnv(): Record<string, string> {
 }
 
 const localEnv = loadLocalEnv();
-const env = (key: string): string | undefined => process.env[key] ?? localEnv[key];
+const env = (key: string): string | undefined =>
+  process.env[key] ?? localEnv[key];
 
 const config: Config = {
   title: 'X自動投稿ツール「虎威」',
@@ -70,7 +71,8 @@ const config: Config = {
         },
         blog: {
           blogTitle: 'ブログ',
-          blogDescription: '虎威の不具合、アップデート情報、虎威の使い方などを紹介するブログです。',
+          blogDescription:
+            '虎威の不具合、アップデート情報、虎威の使い方などを紹介するブログです。',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -108,7 +110,7 @@ const config: Config = {
           position: 'left',
           label: 'マニュアル',
         },
-        {to: '/blog', label: 'ブログ', position: 'left'},
+        { to: '/blog', label: 'ブログ', position: 'left' },
         {
           type: 'localeDropdown',
           position: 'right',
@@ -178,7 +180,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://doc-torai.try-try.com" style="font-weight: bold;" target="_blank" rel="noopener noreferrer">今北産業</a>`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://docs.try-try.com" style="font-weight: bold;" target="_blank" rel="noopener noreferrer">今北産業</a>`,
     },
     prism: {
       theme: prismThemes.github,
