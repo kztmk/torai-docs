@@ -55,7 +55,11 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'サブスクリプション',
       link: { type: 'generated-index' },
-      items: ['subscription/manage', 'subscription/billing-and-api-costs'],
+      items: [
+        'subscription/manage',
+        'subscription/referral-program',
+        'subscription/billing-and-api-costs',
+      ],
     },
     {
       type: 'category',
