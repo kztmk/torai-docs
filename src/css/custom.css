@@ -42,3 +42,8 @@ body,
 .theme-doc-markdown {
   color: #1f2933;
 }
+
+img {
+  border-radius: 0.5rem;
+  border: 2px solid #e5e7eb;
+}

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <title>虎威 セールスレター ファーストビュー</title>
+  <desc>背景画像以外の文字、線、パネルはIllustratorで個別編集できます。</desc>
+  <defs>
+    <linearGradient id="leftShade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#030B1C" stop-opacity=".98"/>
+      <stop offset=".52" stop-color="#06152F" stop-opacity=".92"/>
+      <stop offset=".78" stop-color="#06152F" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#06152F" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F2C84B"/>
+      <stop offset="1" stop-color="#FFF1A8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity=".38"/>
+    </filter>
+    <style>
+      .jp{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN',Meiryo,sans-serif}
+      .headline{font-size:76px;font-weight:900;letter-spacing:-3px}
+      .body{font-size:28px;font-weight:500}
+      .label{font-size:23px;font-weight:800}
+    </style>
+  </defs>
+
+  <!-- 背景画像レイヤー：リンク画像として差し替え可能 -->
+  <g id="background-raster">
+    <image x="0" y="0" width="1920" height="1080" preserveAspectRatio="xMidYMid slice" xlink:href="torai-hero-background.png"/>
+  </g>
+
+  <!-- 左側の可読性調整レイヤー -->
+  <g id="left-overlay">
+    <rect x="0" y="0" width="1190" height="1080" fill="url(#leftShade)"/>
+  </g>
+
+  <!-- ブランド -->
+  <g id="brand" transform="translate(92 66)">
+    <rect width="66" height="66" rx="12" fill="#fff"/>
+    <image x="7" y="7" width="52" height="52" xlink:href="torai-icon.png"/>
+    <text x="86" y="45" class="jp" fill="#fff" font-size="31" font-weight="900">虎威</text>
+    <text x="178" y="44" font-family="Arial,sans-serif" fill="#7FA6FF" font-size="18" font-weight="700" letter-spacing="3">X MARKETING TOOL</text>
+  </g>
+
+  <!-- 導入コピー -->
+  <g id="intro-copy" transform="translate(92 158)">
+    <rect x="0" y="2" width="11" height="30" fill="#F2C84B"/>
+    <text x="28" y="27" class="jp" fill="#F2C84B" font-size="25" font-weight="900">X運用は、投稿して終わりではない。</text>
+  </g>
+
+  <!-- メイン見出し（アウトライン化せず編集可能なテキスト） -->
+  <g id="headline" transform="translate(86 280)" filter="url(#shadow)">
+    <text x="0" y="0" class="jp headline" fill="#fff">
+      <tspan x="0" dy="0">質を落とさず、</tspan>
+      <tspan x="0" dy="102" fill="#F2C84B">投稿時間を減らす。</tspan>
+    </text>
+  </g>
+
+  <!-- 改善サイクル -->
+  <g id="improvement-cycle" transform="translate(92 520)">
+    <rect width="850" height="112" rx="20" fill="#102A5E" fill-opacity=".82" stroke="#4B75C9" stroke-width="2"/>
+    <g class="jp label" fill="#fff" transform="translate(27 28)">
+      <g id="cycle-post"><circle cx="32" cy="28" r="28" fill="#5149AD"/><text x="32" y="36" text-anchor="middle">投稿</text></g>
+      <path d="M75 28h52" stroke="url(#goldLine)" stroke-width="5"/><path d="m127 28-13-10v20z" fill="#F2C84B"/>
+      <g id="cycle-result" transform="translate(140 0)"><circle cx="50" cy="28" r="28" fill="#183F91"/><text x="50" y="36" text-anchor="middle">結果</text></g>
+      <path d="M250 28h52" stroke="url(#goldLine)" stroke-width="5"/><path d="m302 28-13-10v20z" fill="#F2C84B"/>
+      <g id="cycle-follow" transform="translate(316 0)"><rect x="0" y="0" width="188" height="56" rx="28" fill="#183F91"/><text x="94" y="36" text-anchor="middle">反応者フォロー</text></g>
+      <path d="M520 28h52" stroke="url(#goldLine)" stroke-width="5"/><path d="m572 28-13-10v20z" fill="#F2C84B"/>
+      <g id="cycle-data" transform="translate(586 0)"><rect x="0" y="0" width="206" height="56" rx="28" fill="#5149AD"/><text x="103" y="36" text-anchor="middle">分析・改善</text></g>
+    </g>
+  </g>
+
+  <!-- 説明文 -->
+  <g id="description" transform="translate(92 690)">
+    <text class="jp body" fill="#E7EFFF">
+      <tspan x="0" dy="0">AIで一括作成。編集後に日時を一括予約。</tspan>
+      <tspan x="0" dy="48">投稿完了はスマホへ通知、反応データは自動集計。</tspan>
+      <tspan x="0" dy="48" fill="#fff" font-weight="800">限られた時間でも、改善できるX運用へ。</tspan>
+    </text>
+  </g>
+
+  <!-- 機能ラベル：すべて図形とテキストを個別編集可能 -->
+  <g id="feature-chips" transform="translate(92 866)" class="jp">
+    <g id="feature-ai"><rect width="246" height="84" rx="18" fill="#FFFFFF" fill-opacity=".1" stroke="#7596DF"/><circle cx="42" cy="42" r="24" fill="#5149AD"/><text x="42" y="50" text-anchor="middle" fill="#fff" font-size="20" font-weight="900">AI</text><text x="80" y="35" fill="#fff" font-size="20" font-weight="900">投稿を一括作成</text><text x="80" y="60" fill="#B9CAEE" font-size="16">確認・編集して公開</text></g>
+    <g id="feature-schedule" transform="translate(264 0)"><rect width="250" height="84" rx="18" fill="#FFFFFF" fill-opacity=".1" stroke="#7596DF"/><circle cx="42" cy="42" r="24" fill="#183F91"/><path d="M30 34h24v20H30zm0 6h24M36 29v9m12-9v9" fill="none" stroke="#fff" stroke-width="3"/><text x="80" y="35" fill="#fff" font-size="20" font-weight="900">日時を一括予約</text><text x="80" y="60" fill="#B9CAEE" font-size="16">完了はスマホ通知</text></g>
+    <g id="feature-data" transform="translate(532 0)"><rect width="318" height="84" rx="18" fill="#FFFFFF" fill-opacity=".1" stroke="#7596DF"/><circle cx="42" cy="42" r="24" fill="#D1A62B"/><path d="M29 54h27M33 50V39m9 11V31m9 19V36" stroke="#fff" stroke-width="4"/><text x="80" y="35" fill="#fff" font-size="20" font-weight="900">反応データを自動集計</text><text x="80" y="60" fill="#D9E5FF" font-size="16">次の投稿改善へ</text></g>
+  </g>
+
+  <!-- CTAは意図的に含めていません -->
+  <g id="footer-note" transform="translate(94 1012)">
+    <line x1="0" y1="0" x2="840" y2="0" stroke="#6685C2" stroke-width="1"/>
+    <text x="0" y="31" class="jp" fill="#9FB4DD" font-size="17">投稿準備とデータ整理の負担を減らし、改善を続けられるX運用へ。</text>
+  </g>
+</svg>
