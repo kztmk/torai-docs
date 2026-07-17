@@ -46,7 +46,7 @@
 .brandLine { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; font-weight: 800; letter-spacing: 0.08em; }
 .brandLine img { width: 48px; height: 48px; object-fit: contain; }
 .heroKicker { margin: 0 0 0.8rem; color: #f6d567; font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 800; }
-.hero h1 { max-width: 760px; margin: 0; font-size: clamp(2.65rem, 4.4vw, 4.25rem); line-height: 1.16; letter-spacing: -0.045em; }
+.hero h1 { max-width: 760px; margin: 0; font-size: clamp(2.65rem, 4vw, 3.65rem); line-height: 1.16; letter-spacing: -0.045em; }
 .hero h1 span { display: inline-block; color: #fff; }
 .hero h1 strong { display: inline-block; color: #f6d567; font-weight: 900; }
 .heroLead { max-width: 690px; margin: 1.6rem 0 0; color: rgba(255, 255, 255, 0.86); font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.9; }
@@ -64,12 +64,21 @@
 .heroBadge strong { font-size: 1.55rem; line-height: 1.3; }
 .heroBadge small { max-width: 100px; font-size: 0.68rem; }
 
-.workflowSection, .productSection, .setupSection, .valueSection, .faqSection { padding: clamp(4.5rem, 8vw, 7.5rem) 0; }
+.workflowSection, .opportunitySection, .productSection, .analyticsSection, .setupSection, .valueSection, .faqSection { padding: clamp(4.5rem, 8vw, 7.5rem) 0; }
 .eyebrow { margin: 0 0 0.65rem; color: #b3262e; font-size: 0.82rem; font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; }
 .sectionTitle { max-width: 780px; margin: 0; color: #14213d; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.28; letter-spacing: -0.035em; }
 .sectionLead { max-width: 700px; margin: 1rem 0 0; color: #5f6b7a; font-size: 1.05rem; line-height: 1.85; }
 .centerHeading { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .centerHeading .sectionLead { text-align: center; }
+
+.opportunitySection { background: #fff; }
+.opportunityGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+.opportunityGrid article { position: relative; overflow: hidden; min-height: 260px; padding: 2rem; border: 1px solid #dfe5ee; border-top: 5px solid #f2c94c; border-radius: 10px; background: #071a39; color: #fff; box-shadow: 0 16px 36px rgba(7, 26, 57, 0.12); }
+.opportunityGrid article::after { position: absolute; right: -2.5rem; bottom: -4rem; width: 11rem; height: 11rem; border: 1px solid rgba(242, 201, 76, 0.2); border-radius: 50%; content: ''; }
+.opportunityGrid span { color: #f2c94c; font-size: 0.7rem; font-weight: 900; letter-spacing: 0.15em; }
+.opportunityGrid h3 { margin: 0.8rem 0; color: #fff; font-size: 1.45rem; }
+.opportunityGrid p { position: relative; z-index: 1; margin: 0; color: rgba(255, 255, 255, 0.74); line-height: 1.8; }
+.opportunityNote { margin: 1.25rem 0 0; color: #6a7482; font-size: 0.78rem; text-align: center; }
 
 .workflowGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 3rem; }
 .workflowCard { position: relative; min-height: 300px; padding: 1.7rem; border: 1px solid #e1e6ee; border-radius: 12px; background: #fff; box-shadow: 0 14px 35px rgba(20, 33, 61, 0.07); }
@@ -101,6 +110,22 @@
 .featureStrip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin: 2.5rem 0 0; padding: 0; list-style: none; }
 .featureStrip li { display: flex; align-items: center; gap: 0.55rem; color: #31425c; font-size: 0.9rem; font-weight: 700; }
 .featureStrip svg { flex: 0 0 auto; color: #079447; }
+
+.analyticsSection { overflow: hidden; background: #071a39; color: #fff; }
+.analyticsInner { display: grid; grid-template-columns: minmax(360px, 0.82fr) minmax(0, 1.18fr); align-items: center; gap: clamp(2.5rem, 6vw, 6rem); }
+.analyticsSection .eyebrow { color: #f2c94c; }
+.analyticsSection .sectionTitle { color: #fff; }
+.analyticsSection .sectionLead { color: rgba(255, 255, 255, 0.76); }
+.analyticsPoints { display: grid; gap: 1rem; margin-top: 2rem; }
+.analyticsPoints > div { display: flex; align-items: flex-start; gap: 0.8rem; color: rgba(255, 255, 255, 0.78); line-height: 1.7; }
+.analyticsPoints svg { flex: 0 0 auto; margin-top: 0.1rem; color: #f2c94c; font-size: 1.8rem; }
+.analyticsPoints strong { display: block; color: #fff; font-size: 1.02rem; }
+.policyBox { margin-top: 2rem; padding: 1.1rem 1.25rem; border: 1px solid rgba(126, 163, 255, 0.5); border-radius: 8px; background: rgba(42, 75, 166, 0.22); }
+.policyBox > strong { color: #f2c94c; }
+.policyBox p { margin: 0.35rem 0 0; color: rgba(255, 255, 255, 0.76); font-size: 0.88rem; line-height: 1.7; }
+.analyticsVisual { overflow: hidden; margin: 0; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 14px; background: #fff; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35); transform: rotate(0.8deg); }
+.analyticsVisual img { display: block; width: 100%; aspect-ratio: 1.41; object-fit: cover; object-position: top; }
+.analyticsVisual figcaption { padding: 0.7rem 1rem; background: #f7f8fb; color: #687386; font-size: 0.72rem; text-align: center; }
 
 .offerSection { padding: 3.5rem 0; background: #c82d30; color: #fff; }
 .offerInner { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2.5rem; }
@@ -164,7 +189,8 @@
   .heroVisual { max-width: 720px; margin-right: 1.5rem; }
   .workflowGrid, .featureStrip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .workflowCard:not(:last-child)::after { display: none; }
-  .problemGrid, .faqInner { grid-template-columns: 1fr; }
+  .problemGrid, .analyticsInner, .faqInner { grid-template-columns: 1fr; }
+  .analyticsVisual { transform: none; }
   .offerInner { grid-template-columns: 1fr; }
   .offerAction { min-width: 0; max-width: 480px; }
   .valueGrid { grid-template-columns: 1fr; }
@@ -178,7 +204,7 @@
   .heroActions a { width: 100%; }
   .heroBadge { right: -0.5rem; bottom: -2.5rem; width: 124px; height: 124px; border-width: 4px; }
   .heroBadge strong { font-size: 1.25rem; }
-  .workflowGrid, .productGrid, .featureStrip, .setupGrid, .referralCard { grid-template-columns: 1fr; }
+  .opportunityGrid, .workflowGrid, .productGrid, .featureStrip, .setupGrid, .referralCard { grid-template-columns: 1fr; }
   .workflowCard { min-height: 0; }
   .productShot div { align-items: flex-start; flex-direction: column; }
   .featureStrip { gap: 0.8rem; }

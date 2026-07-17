@@ -48,6 +48,7 @@ const sidebars: SidebarsConfig = {
         'usage/schedule',
         'usage/auto-posting',
         'usage/thread-posts',
+        'usage/x-marketing',
         'usage/maintenance',
       ],
     },
