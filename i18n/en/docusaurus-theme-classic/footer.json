@@ -1,0 +1,62 @@
+{
+  "link.title.ドキュメント": {
+    "message": "Documentation",
+    "description": "The title of the footer links column with title=ドキュメント in the footer"
+  },
+  "link.title.法務情報": {
+    "message": "Legal",
+    "description": "The title of the footer links column with title=法務情報 in the footer"
+  },
+  "link.title.関連サイト": {
+    "message": "Related Sites",
+    "description": "The title of the footer links column with title=関連サイト in the footer"
+  },
+  "link.item.label.マニュアル": {
+    "message": "Manual",
+    "description": "The label of footer link with label=マニュアル linking to /docs/intro"
+  },
+  "link.item.label.Google Apps Script の設定": {
+    "message": "Google Apps Script Setup",
+    "description": "The label of footer link with label=Google Apps Script の設定 linking to /docs/setup/apps-script-deploy-link"
+  },
+  "link.item.label.問合せ": {
+    "message": "Contact",
+    "description": "The label of footer link with label=問合せ linking to /contact"
+  },
+  "link.item.label.利用規約": {
+    "message": "Terms of Use",
+    "description": "The label of footer link with label=利用規約 linking to https://doc-torai.try-try.com/terms-and-conditions-ja"
+  },
+  "link.item.label.プライバシーポリシー": {
+    "message": "Privacy Policy",
+    "description": "The label of footer link with label=プライバシーポリシー linking to https://doc-torai.try-try.com/privacy-policy-ja"
+  },
+  "link.item.label.クッキーポリシー": {
+    "message": "Cookie Policy",
+    "description": "The label of footer link with label=クッキーポリシー linking to https://doc-torai.try-try.com/cookie-policy-ja"
+  },
+  "link.item.label.免責事項": {
+    "message": "Disclaimer",
+    "description": "The label of footer link with label=免責事項 linking to https://doc-torai.try-try.com/disclaimer-ja"
+  },
+  "link.item.label.使用許諾書": {
+    "message": "Licence Agreement",
+    "description": "The label of footer link with label=使用許諾書 linking to https://doc-torai.try-try.com/license-agreement-ja"
+  },
+  "link.item.label.ブログ": {
+    "message": "Blog",
+    "description": "The label of footer link with label=ブログ linking to /blog"
+  },
+  "link.item.label.虎威": {
+    "message": "Torai",
+    "description": "The label of footer link with label=虎威 linking to https://torai.try-try.com/"
+  },
+  "link.item.label.虎威購入": {
+    "message": "Purchase Torai",
+    "description": "The label of footer link with label=虎威購入 linking to https://sns-loong.imakita3gyo.com/ja/clp/torai-info"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 <a href=\"https://docs.try-try.com\" style=\"font-weight: bold;\" target=\"_blank\" rel=\"noopener noreferrer\">Imakita Industries</a>",
+    "description": "The footer copyright"
+  }
+}

@@ -1,0 +1,179 @@
+---
+sidebar_position: 2
+title: Create Posts for X
+description: Create standard posts, posts with images or videos, and AI-generated post drafts.
+---
+
+# Create Posts for X
+
+Create the posts that Torai will publish to X.
+
+Torai provides controls similar to X's posting screen for text, images, videos, and scheduled times. If you registered an AI API key, you can also generate post drafts from keywords.
+
+## 1. Open the destination X account
+
+Select the account under **X Accounts** in the left menu.
+
+![Select the destination X account](/img/torai/x-accounts/x-posts0.jpg)
+
+The account details or post list opens.
+
+![X post list](/img/torai/x-accounts/x-posts1.jpg)
+
+## 2. Create a post
+
+Click **Create New** or the post creation button.
+
+![Create an X post](/img/torai/x-accounts/x-posts2.jpg)
+
+1. Enter the post text.
+2. Select an image or video from your computer.
+3. Select an image or video from Google Drive.
+4. Choose emoji.
+5. Review the percentage of the 140-character Japanese limit used.
+6. Choose a post type.
+7. Set a publication date and time.
+
+:::caution
+Paid X Premium plans may support longer posts, but Torai currently limits input to 140 Japanese characters.
+:::
+
+### Post content
+
+Enter the text.
+
+You can choose images and videos from your computer or Google Drive. Files selected from your computer are also saved to Google Drive, and Apps Script publishes the Google Drive copy.
+
+![Select media for an X post](/img/torai/x-accounts/x-posts9.jpg)
+
+Selected images are previewed. Videos appear as an icon rather than a thumbnail.
+
+![Post with an image](/img/torai/x-accounts/x-posts12.jpg)
+
+Choose from:
+
+- Standard post
+- Reply
+- Quote repost
+
+The following restrictions apply.
+
+![X post type](/img/torai/x-accounts/x-posts3.jpg)
+
+:::info
+A reply is possible only when the other person mentioned you or quoted one of your posts. Other replies produce an error.
+:::
+
+:::info
+A quote repost is treated as a post containing a link and adds $0.20.
+:::
+
+The publication time must be at least one hour in the future.
+
+![Set X publication time](/img/torai/x-accounts/x-posts4.jpg)
+
+When complete, click **Save**.
+
+![Save the X post](/img/torai/x-accounts/x-posts13.jpg)
+
+If Google Drive has not yet been connected, Google asks you to authorize access. Select every required checkbox and click **Continue**.
+
+![Connect a Google Account](/img/torai/x-accounts/x-posts10.jpg)
+
+The saved scheduled post appears in the list.
+
+![X post list](/img/torai/x-accounts/x-posts14.jpg)
+
+You can see all post data under **Activity > Data Management > Scheduled Posts**.
+
+![Scheduled post data](/img/torai/x-accounts/x-posts15.jpg)
+
+The data is also synchronized with Google Sheets.
+
+![Post sheet](/img/torai/x-accounts/x-posts16.jpg)
+
+## 3. Add an image or video
+
+Use the media buttons for your computer or Google Drive to select a file.
+
+![Select media](/img/torai/x-accounts/x-posts9.jpg)
+
+Torai uses files stored in Google Drive for publishing. Follow the on-screen instructions if a file must be uploaded or selected.
+
+When you click the Google Drive button, images and videos in Drive appear as shown below.
+
+![Select from Google Drive](/img/torai/x-accounts/x-posts17.jpg)
+
+:::caution
+Video files can be large and may affect Apps Script execution-time limits. Test first before publishing a large video.
+
+X's file-size limit is 512 MB.
+:::
+
+## 4. Set a publication time
+
+Set the date and time for publication.
+
+![Set X publication time](/img/torai/x-accounts/x-posts4.jpg)
+
+The earliest available time is one hour from now.
+
+### Set times in bulk
+
+You can set times for multiple posts at once.
+
+Specify:
+
+- Start and end dates
+- Start and end times
+- Posting interval
+
+This assigns publication times to all selected posts.
+
+1. Select the posts to schedule.
+   ![Select posts for bulk scheduling](/img/torai/x-accounts/x-posts_sche1.jpg)
+2. Click the bulk publication-time button.
+   ![Open bulk scheduling](/img/torai/x-accounts/x-posts_sche2.jpg)
+3. Enter the start date, end date, start time, end time, and interval, then click **Create**.
+   ![Bulk schedule settings](/img/torai/x-accounts/x-posts_sche3.jpg)
+4. The publication times are assigned.
+   ![Publication times assigned](/img/torai/x-accounts/x-posts_sche4.jpg)
+
+## 5. Create post drafts with AI
+
+If a Gemini API key is registered, you can create post drafts from keywords.
+
+1. Click **AI** on the destination account's post list.
+
+   ![Create posts with AI](/img/torai/x-accounts/x-posts_ai1.jpg)
+
+2. Enter keywords and click **Create post drafts**.
+
+   ![Enter AI keywords](/img/torai/x-accounts/x-posts_ai2.jpg)
+
+3. Every generated draft can be edited. Select the posts you want, then click **Import selected posts**.
+
+   ![Select AI-generated posts](/img/torai/x-accounts/x-posts_ai3.jpg)
+
+4. The imported drafts appear in the post list.
+
+   ![Imported AI posts](/img/torai/x-accounts/x-posts_ai4.jpg)
+
+:::caution
+Always review AI-generated text. It may contain inaccurate information, excessive claims, or wording you did not intend.
+:::
+
+## Pre-publication checklist
+
+- Is the destination account correct?
+- Is the text free of errors and unnecessary URLs?
+- Are the image or video correct?
+- Is the scheduled time correct?
+- Should this post be part of a thread?
+- Are API usage and charges acceptable?
+
+## Related pages
+
+- [Schedule Posts](./schedule)
+- [Thread Posts](./thread-posts)
+- [Automated Posting](./auto-posting)

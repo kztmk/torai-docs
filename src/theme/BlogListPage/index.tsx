@@ -27,11 +27,19 @@ function BlogListPageMetadata({metadata}: Props): ReactNode {
 }
 
 function BlogHeader({metadata}: Props): ReactNode {
+  const {
+    i18n: {currentLocale},
+  } = useDocusaurusContext();
+
   return (
     <header className={styles.blogHeader}>
       <div className={styles.banner}>
         <img className={styles.bannerImage} src="/img/blog_background.jpg" alt="" />
-        <img className={styles.avatar} src="/img/torai_icon_transparent.png" alt="虎威" />
+        <img
+          className={styles.avatar}
+          src="/img/torai_icon_transparent.png"
+          alt={currentLocale === 'en' ? 'Torai' : '虎威'}
+        />
       </div>
       <div className={styles.headerText}>
         <Heading as="h1">{metadata.blogTitle}</Heading>

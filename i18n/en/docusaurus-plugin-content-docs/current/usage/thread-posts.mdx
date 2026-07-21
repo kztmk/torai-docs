@@ -1,0 +1,108 @@
+---
+sidebar_position: 5
+title: Thread Posts
+description: Schedule a thread made of multiple connected posts.
+---
+
+# Thread Posts
+
+Torai can schedule a thread in which multiple posts are connected by replies.
+
+The second and later posts are published as replies to the first post. The third post replies to the second, and so on. This lets you tell a story as a series, and the connected display can make the thread more noticeable.
+
+Because several posts are published in sequence, a thread uses more API activity than a single post.
+
+## Differences between post types
+
+| Type | Description |
+| --- | --- |
+| Standard post | Published as one post |
+| Thread | Connects several posts with replies |
+| Quote post | Publishes a post quoting an existing post |
+
+### Thread
+
+![Thread post](/img/torai/post/threads8.jpg)
+
+### Quote post
+
+A quote post treats the quoted destination as a link, which can result in a higher API charge than a standard post.
+
+![Quote post](/img/torai/post/threads10.jpg)
+
+### Benefits of threads
+
+Threads can contribute to engagement because they:
+
+- Appear as a connected thread in the timeline, even when partly collapsed
+- Make it easier to tell a story that holds attention
+- Include replies, even if they are your own, which can increase engagement signals
+
+## 1. Create the posts for the thread
+
+First, create each item as a standard post.
+
+![Create standard posts for a thread](/img/torai/post/threads1.jpg)
+
+The first becomes the parent post and the later items become replies, so the order matters.
+
+## 2. Open thread creation
+
+Select the posts from the post list and click the thread creation button.
+
+![Select posts for the thread](/img/torai/post/threads2.jpg)
+
+## 3. Select the posts in the thread
+
+Use the trash icon to remove any post that should not be included.
+
+![Choose thread members](/img/torai/post/threads3.jpg)
+
+When the contents are correct, click **Create**.
+
+The parent and child posts are displayed.
+
+![Thread structure](/img/torai/post/threads4.jpg)
+
+## 4. Set the publication time
+
+Torai publishes the first post, then publishes each later post as a reply.
+
+Set the thread start time. You can set times individually or in bulk.
+
+Selecting the parent post selects every post in the thread.
+
+![Select a thread](/img/torai/post/threads5.jpg)
+
+Click **Set publication times in bulk** at the top.
+
+## 5. Save the schedule
+
+Set:
+
+- Start and end dates
+- Start and end times
+- Posting interval
+
+Then click **Create**.
+
+![Bulk publication times](/img/torai/post/threads6.jpg)
+
+## 6. Check the published thread
+
+After automated posting, check X to confirm that the thread is connected in the correct order.
+
+![Published thread](/img/torai/post/threads7.jpg)
+
+## Important notes
+
+- Each post in a thread uses an API posting operation.
+- If a post fails, the thread may stop partway through.
+- Threads containing images or videos may take longer to publish.
+- Check X Developer Console Usage before scheduling many threads at once.
+
+## Related pages
+
+- [Create Posts for X](./create-posts)
+- [Schedule Posts](./schedule)
+- [Automated Posting](./auto-posting)

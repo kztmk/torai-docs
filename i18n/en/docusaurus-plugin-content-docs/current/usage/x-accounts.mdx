@@ -1,0 +1,118 @@
+---
+sidebar_position: 1
+title: Manage X Accounts
+description: Add, edit, and remove destination X accounts in Torai.
+---
+
+# Manage X Accounts
+
+Torai can register and manage multiple X accounts.
+
+Register the four API credentials obtained from the X Developer Console for each account. To make pay-per-use activity easier to manage, label each set so you know which X account it belongs to.
+
+## 1. Open X account management
+
+Open **X** or **X Accounts** from Torai's left menu.
+
+![X account management](/img/torai/x-accounts/x-accounts1.jpg)
+
+Registered X accounts appear in the list.
+
+![Registered X accounts](/img/torai/x-accounts/x-accounts5.jpg)
+
+## 2. Add an X account
+
+Click **Add New Account**.
+
+![Add an X account](/img/torai/x-accounts/x-accounts2.jpg)
+
+Enter an account name or display name. Including the X username or intended use makes the account easier to recognize later.
+
+Examples:
+
+- `@example_main`
+- `Product promotion account`
+- `Campaign announcements`
+
+## 3. Enter the four API credentials
+
+Enter the following values from the X Developer Console:
+
+- API Key
+- API Key Secret
+- Access Token
+- Access Token Secret
+
+![Enter the four X API credentials](/img/torai/x-accounts/x-accounts3.jpg)
+
+:::caution
+Do not show your API Key or Access Token to anyone. Always hide the credential fields before sharing a screenshot.
+:::
+
+## 4. Save the account
+
+Review the information and click **Save**.
+
+![Save the X API credentials](/img/torai/x-accounts/x-accounts4.jpg)
+
+After saving, return to the account list and confirm that the new account appears.
+
+![Registered X account](/img/torai/x-accounts/x-accounts5.jpg)
+
+## 5. Create a test post
+
+For a newly registered account, create a short test post and confirm that it publishes correctly.
+
+If it does not publish, check that:
+
+- App permissions are **Read and write** or higher
+- You regenerated the Access Token and Access Token Secret after changing permissions
+- All four credentials were copied correctly
+- There are no issues with credit or Usage in the X Developer Console
+
+## 6. Edit a registered account
+
+If you regenerated API credentials or want to change the account name, open the account from the list.
+
+![Edit a registered X account](/img/torai/x-accounts/x-accounts6.jpg)
+
+Only the memo can normally be edited.
+
+The four API credentials are encrypted and stored by Apps Script in your Google Sheet. Only the Apps Script code can read them, so they do not appear on the edit page.
+
+![Edit an X account](/img/torai/x-accounts/x-accounts7.jpg)
+
+If the four credentials must be changed, they can only be overwritten. Create new credentials on the X developer site, then click **Reset credentials** to enter them.
+
+![Overwrite four X API credentials](/img/torai/x-accounts/x-accounts8.jpg)
+
+:::caution
+Regenerating an API Key or Access Token in the X Developer Console invalidates the old credential. Always register the new credential in Torai as well.
+:::
+
+## 7. Remove an account
+
+You can remove an X account you no longer use from its detail page.
+
+![Remove an X account](/img/torai/x-accounts/x-accounts9.jpg)
+
+A confirmation dialog appears.
+
+![Confirm account removal](/img/torai/x-accounts/x-accounts10.jpg)
+
+Removing an account may affect its scheduled and historical post data. Review and back up any data you need before removing it.
+
+## Managing multiple accounts
+
+- Obtain a separate set of API credentials for each X account.
+- Do not reuse the same credentials across accounts.
+- Check X Developer Console Usage regularly.
+- A thread uses multiple posting operations and increases API usage.
+- Before publishing in large volumes, review the post count and expected charges.
+
+## Related pages
+
+- [X Marketing](./x-marketing)
+- [Configure X App Permissions and Get Four API Credentials](../setup/x-api-keys)
+- [Check X API Pay-per-use Pricing](../getting-started/x-api-pay-per-use)
+- [Create Posts for X](./create-posts)
