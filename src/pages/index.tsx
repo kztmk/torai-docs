@@ -9,6 +9,7 @@ import NotificationsActiveRoundedIcon from '@mui/icons-material/NotificationsAct
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
 import ScheduleSendRoundedIcon from '@mui/icons-material/ScheduleSendRounded';
 import Button from '@mui/material/Button';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Heading from '@theme/Heading';
 import Layout from '@theme/Layout';
 import type { ReactNode } from 'react';
@@ -409,7 +410,276 @@ function LatestNews() {
   );
 }
 
+const englishWorkflow = [
+  {
+    number: '01',
+    title: 'Generate drafts with AI',
+    description: 'Choose a theme and prepare several post ideas at once instead of starting each post from a blank page.',
+    icon: <AutoAwesomeIcon />,
+  },
+  {
+    number: '02',
+    title: 'Edit them in your own voice',
+    description: 'Use the AI drafts as a starting point, then refine the language while keeping the message you want to deliver.',
+    icon: <EditNoteRoundedIcon />,
+  },
+  {
+    number: '03',
+    title: 'Schedule posts in bulk',
+    description: 'Set publication times together and stop opening X manually for every post.',
+    icon: <ScheduleSendRoundedIcon />,
+  },
+  {
+    number: '04',
+    title: 'Confirm completion by notification',
+    description: 'Torai publishes at the scheduled time and can notify you when the operation completes.',
+    icon: <NotificationsActiveRoundedIcon />,
+  },
+];
+
+const englishPainPoints = [
+  'Coming up with a new topic every day is exhausting',
+  'Busy days interrupt your publishing routine',
+  'You collect numbers after posting but do not use them to improve the next post',
+];
+
+const englishFeatures = [
+  'AI-assisted post drafting',
+  'Bulk scheduling for multiple posts',
+  'Automated posting with completion notifications',
+  'Collection, organization, and visualization of post data',
+];
+
+const englishSetupSteps = [
+  {number: '1', title: 'Create a free account', text: 'Sign in to Torai with your Google Account.'},
+  {number: '2', title: 'Complete setup', text: 'Configure the X API and Google services by following this manual.'},
+  {number: '3', title: 'Start publishing', text: 'Create your drafts and schedule them for the dates and times you choose.'},
+];
+
+const englishFaqs = [
+  {
+    question: 'Does creating an account cost anything?',
+    answer: 'Creating an account with Google is free. Charges begin when you start a subscription.',
+  },
+  {
+    question: 'Are there costs in addition to the Torai subscription?',
+    answer: 'External services such as the X API and Gemini API may charge separately based on your usage.',
+  },
+  {
+    question: 'What if the setup is difficult?',
+    answer: 'This official manual provides illustrated steps from account registration through configuration and publishing.',
+  },
+  {
+    question: 'Can anyone use the referral program?',
+    answer: 'After signing in, open Profile and select Referral Program to find your personal referral link.',
+  },
+];
+
+function EnglishHome(): ReactNode {
+  return (
+    <Layout
+      title="Torai | X Publishing Automation and Marketing Analytics"
+      description="Create drafts with AI, schedule and publish automatically, and organize post data for continuous improvement on X.">
+      <header className={styles.hero}>
+        <div className={styles.heroGlow} />
+        <div className={`container ${styles.heroInner}`}>
+          <div className={styles.heroCopy}>
+            <div className={styles.brandLine}>
+              <img src="/img/torai_icon_transparent.png" alt="" />
+              <span>Torai: an X marketing tool</span>
+            </div>
+            <p className={styles.heroKicker}>Move beyond publishing and start improving.</p>
+            <Heading as="h1">
+              Spend less time posting.
+              <strong>Use data to find what works.</strong>
+            </Heading>
+            <p className={styles.heroLead}>
+              Generate drafts with AI, edit them in your own voice, schedule them in bulk, and publish automatically.
+              Torai also collects and organizes post data so you can improve what you publish next.
+            </p>
+            <div className={styles.heroActions}>
+              <PrimaryCta label="Create a free account with Google" />
+              <Button component={Link} to="/docs/intro" className={styles.secondaryCta} variant="outlined" size="large">
+                Read the manual
+              </Button>
+            </div>
+            <p className={styles.ctaNote}>Account creation is free. Review your offer after your first sign-in.</p>
+          </div>
+          <div className={styles.heroVisual}>
+            <div className={styles.heroVisualFrame}>
+              <img src="/img/torai/x-accounts/x-posts_ai1.jpg" alt="AI post-draft creation in Torai" />
+            </div>
+            <div className={styles.heroBadge}>
+              <span>Monthly</span>
+              <strong>¥1,280</strong>
+              <small>External API charges are separate</small>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section className={styles.opportunitySection}>
+          <div className="container">
+            <div className={styles.centerHeading}>
+              <Eyebrow>WHY TORAI?</Eyebrow>
+              <Heading as="h2" className={styles.sectionTitle}>Keep the human voice. Automate the repetitive work.</Heading>
+              <p className={styles.sectionLead}>Torai connects the tools in your own Google environment to make consistent X publishing easier.</p>
+            </div>
+            <div className={styles.opportunityGrid}>
+              <article><span>YOUR DATA</span><Heading as="h3">Stored in your Google environment</Heading><p>Post data remains in your Google Sheet, while images and videos are kept in your Google Drive.</p></article>
+              <article><span>LOW CAPITAL</span><Heading as="h3">Start at the scale you need</Heading><p>X API pay-per-use pricing lets you begin with a small workflow and monitor usage as you grow.</p></article>
+              <article><span>BETTER DECISIONS</span><Heading as="h3">Learn from post data</Heading><p>Review reactions and trends instead of ending the process as soon as a post is published.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.workflowSection}>
+          <div className="container">
+            <Eyebrow>HOW IT WORKS</Eyebrow>
+            <Heading as="h2" className={styles.sectionTitle}>Four simple steps to reduce publishing work</Heading>
+            <p className={styles.sectionLead}>Use the time you save on repetitive work for analysis and improvement.</p>
+            <div className={styles.workflowGrid}>
+              {englishWorkflow.map((item) => (
+                <article className={styles.workflowCard} key={item.number}>
+                  <div className={styles.workflowIcon}>{item.icon}</div>
+                  <span className={styles.workflowNumber}>STEP {item.number}</span>
+                  <Heading as="h3">{item.title}</Heading>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.problemSection}>
+          <div className={`container ${styles.problemGrid}`}>
+            <div>
+              <Eyebrow>DOES THIS SOUND FAMILIAR?</Eyebrow>
+              <Heading as="h2" className={styles.sectionTitle}>Publishing alone is not marketing.</Heading>
+              <p className={styles.sectionLead}>When production consumes all your time, you lose the chance to learn from the response.</p>
+              <ul className={styles.painList}>
+                {englishPainPoints.map((point) => <li key={point}><CheckCircleRoundedIcon />{point}</li>)}
+              </ul>
+            </div>
+            <div className={styles.solutionCard}>
+              <span>TORAI SOLUTION</span>
+              <Heading as="h3">Automate the work. Make decisions from data.</Heading>
+              <p>Torai connects drafting and scheduling in one workflow, then organizes post data so you can decide what to try next.</p>
+              <Button component={Link} to="/docs/intro" variant="text">Explore what Torai can do →</Button>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.productSection}>
+          <div className="container">
+            <div className={styles.centerHeading}>
+              <Eyebrow>REAL SCREENS</Eyebrow>
+              <Heading as="h2" className={styles.sectionTitle}>Reduce publishing work and make time for analysis</Heading>
+              <p className={styles.sectionLead}>Review multiple drafts and scheduled times together, then use the results to improve your next posts.</p>
+            </div>
+            <div className={styles.productGrid}>
+              <div className={styles.productShot}>
+                <img src="/img/torai/x-accounts/x-posts_ai4.jpg" alt="AI-generated post drafts" loading="lazy" />
+                <div><span>AI DRAFTING</span><strong>Prepare several ideas at once</strong></div>
+              </div>
+              <div className={styles.productShot}>
+                <img src="/img/torai/x-accounts/x-posts_sche4.jpg" alt="Bulk post scheduling" loading="lazy" />
+                <div><span>BULK SCHEDULING</span><strong>Set the dates and times you want</strong></div>
+              </div>
+            </div>
+            <ul className={styles.featureStrip}>
+              {englishFeatures.map((feature) => <li key={feature}><CheckCircleRoundedIcon />{feature}</li>)}
+            </ul>
+          </div>
+        </section>
+
+        <section className={styles.analyticsSection}>
+          <div className={`container ${styles.analyticsInner}`}>
+            <div className={styles.analyticsCopy}>
+              <Eyebrow>X MARKETING</Eyebrow>
+              <Heading as="h2" className={styles.sectionTitle}>Turn post data into the next improvement.</Heading>
+              <p className={styles.sectionLead}>Organize X API data automatically, identify response trends, and manage people who engaged with your posts.</p>
+              <div className={styles.analyticsPoints}>
+                <div><DataUsageRoundedIcon /><span><strong>Collect and organize</strong>Display reaction data in a form that is easy to review</span></div>
+                <div><InsightsRoundedIcon /><span><strong>Visualize for improvement</strong>Find strong posts and high-priority responders</span></div>
+              </div>
+              <div className={styles.policyBox}>
+                <strong>Torai never automates reactions</strong>
+                <p>Torai does not automatically like or repost. You decide who to respond to and take the action yourself.</p>
+              </div>
+              <Button component={Link} to="/docs/usage/x-marketing" variant="text">Read the X Marketing guide →</Button>
+            </div>
+            <figure className={styles.analyticsVisual}>
+              <img src="/img/home/torai-marketing-dashboard-concept.png" alt="Concept image of X Marketing analytics in Torai" loading="lazy" />
+              <figcaption>Development concept. Actual specifications and content may differ.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section className={styles.setupSection}>
+          <div className="container">
+            <div className={styles.centerHeading}>
+              <Eyebrow>GET STARTED</Eyebrow>
+              <Heading as="h2" className={styles.sectionTitle}>Three stages from registration to publishing</Heading>
+              <p className={styles.sectionLead}>The illustrated official manual is available whenever you need a detailed step.</p>
+            </div>
+            <div className={styles.setupGrid}>
+              {englishSetupSteps.map((step) => (
+                <article key={step.number}><span>{step.number}</span><Heading as="h3">{step.title}</Heading><p>{step.text}</p></article>
+              ))}
+            </div>
+            <div className={styles.setupLink}>
+              <Button component={Link} to="/docs/getting-started/overview" variant="outlined" size="large">View the setup process</Button>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.faqSection}>
+          <div className={`container ${styles.faqInner}`}>
+            <div>
+              <Eyebrow>FAQ</Eyebrow>
+              <Heading as="h2" className={styles.sectionTitle}>Answers before you begin</Heading>
+              <p className={styles.sectionLead}>See the official manual for complete setup and operating instructions.</p>
+              <Button component={Link} to="/docs/intro" variant="outlined">Open the manual</Button>
+            </div>
+            <div className={styles.faqList}>
+              {englishFaqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.finalCta}>
+          <div className="container">
+            <img src="/img/torai_icon_transparent.png" alt="" />
+            <Eyebrow>SPEND LESS TIME WORKING. LEARN MORE FROM DATA.</Eyebrow>
+            <Heading as="h2">Move from one-off publishing to marketing that keeps learning.</Heading>
+            <p>Account creation is free. Get started with your Google Account.</p>
+            <PrimaryCta label="Create a free account with Google" />
+          </div>
+        </section>
+
+        <section className={styles.latestNews}>
+          <div className={`container ${styles.latestInner}`}>
+            <div><Eyebrow>NEWS</Eyebrow><Heading as="h2">Latest news</Heading></div>
+            <Link className={styles.newsCard} to="/blog/blog-20260711">
+              <time>2026.07.11</time><strong>Torai V2 is now available.</strong><span>Read more →</span>
+            </Link>
+          </div>
+        </section>
+      </main>
+    </Layout>
+  );
+}
+
 export default function Home(): ReactNode {
+  const {
+    i18n: {currentLocale},
+  } = useDocusaurusContext();
+
+  if (currentLocale === 'en') {
+    return <EnglishHome />;
+  }
+
   return (
     <Layout
       title="Xマーケティングツール「虎威」｜投稿自動化とデータ分析"

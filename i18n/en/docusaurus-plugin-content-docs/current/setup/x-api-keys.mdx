@@ -1,0 +1,188 @@
+---
+sidebar_position: 2
+title: Configure X App Permissions and Get API Credentials
+description: Configure app permissions in the X Developer Console and obtain an API Key, API Key Secret, Access Token, and Access Token Secret.
+---
+
+# Configure X App Permissions and Get Four API Credentials
+
+To publish automatically to X with Torai, create an App for posting in the X Developer Console and obtain four OAuth 1.0a credentials:
+
+- API Key
+- API Key Secret
+- Access Token
+- Access Token Secret
+
+:::caution
+Some credentials are displayed only once. When they appear, store them in a secure location such as a password manager. Do not save them in screenshots, chats, Git repositories, or public folders.
+:::
+
+## Before you start
+
+Prepare the following:
+
+- The X account you will use for posting
+- Access to the X Developer Console
+- Billing settings or credits required to use the X API
+- Your Apps Script web app URL
+- The Torai website URL
+
+Enter the Apps Script web app URL as the X Callback URL / Redirect URL. If you do not have this URL yet, set up Google Sheets and Apps Script first.
+
+## 1. Open the X Developer Console
+
+Open the [X Developer Console](https://console.x.com) and sign in with the X account you will use for posting.
+
+![X Developer Console sign-in](/img/setup/x-api-keys/x-devconsole-signin0-j.png)
+
+On your first visit, you may need to accept the Developer Agreement and enter profile information. Follow the on-screen instructions.
+
+## 2. Check billing and credits
+
+Using the X API may require X billing or credits. On the Developer Console dashboard, check your payment settings, credits, and usage.
+
+![Developer Console dashboard](/img/setup/x-api-keys/step2_x-devconsole-dashboard.png)
+
+To purchase credits, follow the on-screen instructions to register payment information.
+
+![Start purchasing credits](/img/setup/x-api-keys/step3_x-devconsole-payment0.png)
+
+![Enter payment information](/img/setup/x-api-keys/step3_x-devconsole-payment1.png)
+
+![Review purchase](/img/setup/x-api-keys/step3_x-devconsole-payment2.png)
+
+![Credit purchase complete](/img/setup/x-api-keys/step3_x-devconsole-payment3.png)
+
+Review your credit balance and automatic top-up settings to reduce the chance of failed posts caused by insufficient credit.
+
+![Check credit balance](/img/setup/x-api-keys/step3_x-devconsole-paymentCap0.png)
+
+![Check automatic top-up](/img/setup/x-api-keys/step3_x-devconsole-paymentCap1.png)
+
+## 3. Create a Project and App
+
+Create a Project / App from **Apps** or the dashboard in the Developer Console.
+
+![Start creating an App](/img/setup/x-api-keys/step2-x-devconsole-addApp0.png)
+
+Enter the Project name, App name, description, intended use, and other requested information. Use names that will make the purpose clear later.
+
+![Create Project and App 1](/img/setup/x-api-keys/step2_x-devconsole-addApp0.png)
+
+![Create Project and App 2](/img/setup/x-api-keys/step2_x-devconsole-addApp1.png)
+
+![Create Project and App 3](/img/setup/x-api-keys/step2_x-devconsole-addApp2.png)
+
+![Create Project and App 4](/img/setup/x-api-keys/step2_x-devconsole-addApp3.png)
+
+![Create Project and App 5](/img/setup/x-api-keys/step2_x-devconsole-addApp4.png)
+
+The API Key and API Key Secret may be displayed when you create the App. If so, save them immediately.
+
+## 4. Open User Authentication Settings
+
+Open the settings for the App you created and edit **User Authentication Settings** or **Authentication Settings**.
+
+![Open User Authentication Settings](/img/setup/x-api-keys/step3_x-devconsole-changeSettings0.png)
+
+This is where you configure the permissions and application type required to post from Torai.
+
+## 5. Configure app permissions
+
+Enable OAuth 1.0a and select **App permissions**.
+
+For posting only, normally select **Read and write**.
+
+Select **Read, write, and DMs** only if you will also send and receive direct messages.
+
+:::info
+**Read only** is not sufficient to publish to X from Torai. It causes a permission error when posting.
+:::
+
+For **Type of App**, select **Web App, Automated App, or Bot**.
+
+Enter your Apps Script web app URL as the **Callback URL / Redirect URL**. Enter the Torai website, `https://torai.try-try.com`, as the **Website URL**.
+
+![Configure app permissions and type](/img/setup/x-api-keys/step3_x-devconsole-changeSettings2.png)
+
+Click **Save** when you are done.
+
+:::caution
+If you change app permissions, always regenerate the Access Token and Access Token Secret. Existing tokens do not receive the new permissions.
+:::
+
+## 6. Open Keys and Tokens
+
+Open **Keys and tokens** for the App.
+
+![Keys and tokens](/img/setup/x-api-keys/step5-x-devcondole-4keys.png)
+
+On this page, you can review or regenerate the API Key and API Key Secret, and generate the Access Token and Access Token Secret.
+
+## 7. Save the API Key and API Key Secret
+
+In the Consumer Keys section, display or regenerate the API Key and API Key Secret.
+
+![Regenerate API Key and API Key Secret](/img/setup/x-api-keys/step5-x-devcondole-4keys0.png)
+
+A confirmation page appears when you regenerate them. If an existing integration uses the current keys, it will stop working after regeneration.
+
+![Confirm key regeneration](/img/setup/x-api-keys/step5-x-devcondole-4keys1.png)
+
+Save the displayed API Key and API Key Secret.
+
+![Displayed API Key and API Key Secret](/img/setup/x-api-keys/step5-x-devcondole-4keys2.png)
+
+## 8. Generate the Access Token and Access Token Secret
+
+In the Access Token section, click **Generate** or **Regenerate**.
+
+![Generate Access Token and Access Token Secret](/img/setup/x-api-keys/step5-x-devcondole-4keys3.png)
+
+Save the displayed Access Token and Access Token Secret.
+
+![Displayed Access Token and Access Token Secret](/img/setup/x-api-keys/step5-x-devcondole-4keys4.png)
+
+You now have all four credentials required by Torai.
+
+## 9. Register the credentials in Torai
+
+On Torai's X account management page, register all four credentials for the corresponding X account:
+
+- API Key
+- API Key Secret
+- Access Token
+- Access Token Secret
+
+After registering them, create a test post or a normal post to confirm that publishing works.
+
+## Common problems
+
+### Posts fail
+
+App permissions may still be set to **Read only**. Change them to **Read and write** or higher, then regenerate the Access Token and Access Token Secret.
+
+### Permission changes do not take effect
+
+You may be using the old Access Token and Access Token Secret. Regenerate them under **Keys and tokens**, then register the new values in Torai.
+
+### You forgot to save a credential
+
+Regenerate any credential that cannot be displayed again. Regeneration invalidates the old credential, so also update it in Torai.
+
+### Posts fail because there is not enough credit
+
+Check your credit balance, billing settings, and Usage on the Developer Console dashboard.
+
+## Security notes
+
+- Never share the four credentials with anyone.
+- Do not paste them into GitHub, chats, email, or public folders.
+- If you suspect unauthorized use, regenerate them immediately.
+- Delete or regenerate Apps and credentials you no longer use.
+
+## References
+
+- [X Developer Console](https://console.x.com)
+- [X Developer Platform: Apps](https://docs.x.com/fundamentals/developer-apps)
+- [X Developer Platform: Authentication](https://docs.x.com/fundamentals/authentication/overview)

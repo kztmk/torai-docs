@@ -1,0 +1,195 @@
+---
+sidebar_position: 4
+title: Set Up Discord
+description: Configure Discord to receive the results of Torai automated posts.
+---
+
+# Set Up Discord Notifications
+
+This guide explains how to create a Discord account and receive the results of Torai automated X posts in Discord.
+
+For the most reliable setup, use a desktop browser or the Discord desktop app. You can check notifications on a phone, but we recommend creating the Webhook URL on a computer.
+
+## What you need
+
+- An email address
+- A smartphone
+- A desktop browser or the Discord desktop app
+- An account that can sign in to Torai
+- Completed GAS identity verification under **Profile > API Keys** in Torai
+
+## Process overview
+
+1. Create a Discord account
+2. Create a Discord server for notifications
+3. Create a notification channel
+4. Copy a Webhook URL from Discord
+5. Register the Webhook URL in Torai
+6. Confirm receipt with a test message
+7. Check smartphone notifications
+
+## 1. Create a Discord account
+
+1. Open [Discord](https://discord.com/) in a browser and click **Log In**.
+   ![Open Discord in a browser](/img/getting-start/discord/discord1.jpg)
+2. Sign in if you have an account. Otherwise, choose to create an account.
+   ![Sign in or create an account](/img/getting-start/discord/discord2.jpg)
+3. Enter your email address, display name, username, password, and date of birth.
+   ![Enter account information](/img/getting-start/discord/discord3.jpg)
+4. Open the confirmation email from Discord and verify your email address.
+   ![Verify email address](/img/getting-start/discord/discord5.jpg)
+5. Confirm that you can sign in to Discord.
+   ![Signed in to Discord](/img/getting-start/discord/discord4.jpg)
+
+## 2. Create a server for notifications
+
+1. Click **Create My Own** or the `+` button on the left side of Discord.
+   ![Add a server](/img/getting-start/discord/discord_1.jpg)
+2. Select **Create My Own**.
+   ![Select Create My Own](/img/getting-start/discord/discord_2.jpg)
+3. If Discord asks how you will use the server, either option is acceptable.
+   ![Choose server use](/img/getting-start/discord/discord_3.jpg)
+4. Enter a server name and click **Create**.
+
+   Example: `Torai Notifications`
+
+   ![Name and create the server](/img/getting-start/discord/discord_4.jpg)
+
+If you already have a private notification server, you may use it instead of creating a new one.
+
+## 3. Create a notification channel
+
+1. Open the server you created.
+   ![Open the server](/img/getting-start/discord/discord_5.jpg)
+2. Click the `+` next to the text-channel list.
+   ![Add a text channel](/img/getting-start/discord/discord_10.jpg)
+3. Choose **Text**, enter a channel name, and click **Create Channel**.
+
+   Example: `torai-notifications`
+
+   ![Create a text channel](/img/getting-start/discord/discord_11.jpg)
+4. The notification channel is added.
+   ![Notification channel created](/img/getting-start/discord/discord_12.jpg)
+
+You may use an existing text channel such as `general`. A dedicated channel is recommended if you want Torai notifications to be easy to identify.
+
+## 4. Copy a Webhook URL from Discord
+
+1. Open the server that will receive notifications.
+   ![Open the server](/img/getting-start/discord/discord_5.jpg)
+2. Open the menu next to the server name and select **Server Settings**.
+   ![Open Server Settings](/img/getting-start/discord/discord_6.jpg)
+3. Open **Integrations** in the left menu.
+   ![Open Integrations](/img/getting-start/discord/discord_8.jpg)
+4. Select **Create Webhook** or open **Webhooks**.
+   ![Open Webhooks](/img/getting-start/discord/discord_9.jpg)
+5. Enter a name for the Webhook and choose the notification channel from step 3. Click **Copy Webhook URL**, then **Save Changes**.
+
+![Configure the Webhook](/img/getting-start/discord/discord_13.jpg)
+
+The copied URL looks like this:
+
+```text
+https://discord.com/api/webhooks/123456789012345678/xxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+## 5. Register the Webhook URL in Torai
+
+1. Sign in to Torai.
+2. Open **Profile > API Keys**.
+3. Confirm that **GAS identity verification is complete** is displayed.
+4. Turn on **Send post results to Discord**.
+5. Paste the URL from step 4 into **Discord Webhook URL**.
+6. Click **Send test**.
+
+![Configure Discord notifications on Torai's API Keys page](/img/getting-start/06-torai-discord-setting.svg)
+
+After the test succeeds, check the notification channel in Discord. If the message arrived, click **Save** in Torai.
+
+The Webhook URL is not displayed again after it is saved. To change it, copy the URL again in Discord and enter the new value in Torai.
+
+## 6. Confirm the test message in Discord
+
+1. Open the notification channel in Discord.
+2. Confirm that Torai's test message is displayed.
+3. If it appears, the Webhook URL is working correctly.
+
+![Test message in a Discord channel](/img/getting-start/discord/discord_14.jpg)
+
+If the message appears in Discord but your phone does not show a push notification, the Webhook itself is configured correctly. Check notification settings on your phone and in Discord.
+
+## 7. Receive Discord notifications on a smartphone
+
+### 7.1 Install the Discord app
+
+1. Open the App Store on iPhone or Google Play on Android.
+2. Search for and install **Discord**.
+3. Sign in with the Discord account you created in step 1.
+
+### 7.2 Allow notifications on the phone
+
+On iPhone:
+
+1. Open **Settings**.
+2. Open **Notifications**.
+3. Select **Discord**.
+4. Turn on **Allow Notifications**.
+5. Enable Lock Screen, Notification Centre, and Banners as needed.
+
+On Android:
+
+1. Open **Settings**.
+2. Open **Notifications** or **Apps**.
+3. Select **Discord**.
+4. Turn notifications on.
+5. Confirm that battery optimization or power-saving settings are not blocking Discord notifications.
+
+![Example smartphone notification settings](/img/getting-start/08-mobile-notifications.svg)
+
+### 7.3 Check notification settings in Discord
+
+1. Open Discord on your phone.
+2. Open the notification server.
+3. Open the notification channel.
+4. Open notification settings for the server or channel.
+5. Confirm that notifications are not muted.
+6. To receive Webhook notifications, select **All Messages**.
+
+Torai notifications arrive as ordinary channel posts. If Discord is configured for mentions only, your phone may not notify you.
+
+## 8. Test checklist
+
+- **Send post results to Discord** is on under **Profile > API Keys** in Torai
+- A Discord Webhook URL has been pasted into the field
+- **Send test** completes without an error
+- The test message appears in the Discord notification channel
+- A push notification arrives on your phone
+
+If the message appears in the channel but not as a push notification, Torai successfully sent it to Discord. Check the phone, Discord app, server, and channel notification settings in that order.
+
+## 9. If notifications do not arrive
+
+- Check whether Torai's test send displays an error
+- Check whether the test message appears in the Discord channel
+- Check whether the Webhook URL was deleted or regenerated
+- Check whether the Discord server or channel is muted
+- Check whether notifications are set to **All Messages**
+- Check whether Discord notifications are allowed on your phone
+- Check Focus, Do Not Disturb, and power-saving modes
+- Confirm that the Discord app is signed in to the same account
+
+## 10. Keep the Webhook URL secure
+
+Anyone who knows the Webhook URL can send messages to that Discord channel.
+
+- Do not post the URL on social media or public pages.
+- Do not share it with other people.
+- When sharing screenshots, make sure the URL is not visible.
+- If it may have leaked, delete the Webhook in Discord and create a new one.
+- Delete unused Webhooks under **Server Settings > Integrations > Webhooks**.
+
+## References
+
+- [Discord Beginner's Guide](https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord)
+- [Discord Intro to Webhooks](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
+- [Discord Notifications Settings 101](https://support.discord.com/hc/en-us/articles/215253258-Notifications-Settings-101)

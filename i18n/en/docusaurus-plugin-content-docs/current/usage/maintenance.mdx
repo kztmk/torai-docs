@@ -1,0 +1,136 @@
+---
+sidebar_position: 7
+title: Maintenance
+description: Perform regular maintenance on Google Sheets and Apps Script.
+---
+
+# Maintenance
+
+As published-post and error data grows, processing can become slower. Perform regular maintenance.
+
+Torai combines Google Sheets, Google Drive, Google Apps Script, and the X API. Check each component regularly for stable operation.
+
+## 1. Organize published-post data
+
+When published-post data grows, Google Sheets display and Apps Script processing may slow down.
+
+Review the published list regularly and archive data you no longer need. Archiving creates an archive spreadsheet in Google Drive.
+
+![Review the published list or Posted sheet](/img/torai/post/maintenance2.jpg)
+
+:::caution
+Back up any post history you need before deleting it. If you use the history for operational records or analytics, save it to another sheet or a CSV file first.
+:::
+
+## 2. Review error data
+
+When an error occurs, review the error list or **Errors** sheet.
+
+Archiving saves errors as a separate sheet in the same archive file as published posts.
+
+![Review the Errors sheet](/img/torai/post/maintenance3.jpg)
+
+If the same error repeats, resolve the cause before trying to publish again.
+
+Common errors:
+
+- Incorrect API credentials
+- Insufficient X API permissions
+- Insufficient X API credit
+- Expired Apps Script authorization
+- Media file exceeds a size limit
+- Google Drive file reference error
+
+## 3. Update the Apps Script code
+
+When Torai's Apps Script code is updated, paste the latest code into Apps Script.
+
+We announce Apps Script updates in the newsletter and through messages in Torai.
+
+From the top menu, click **Extensions > Apps Script**.
+
+![Select Apps Script from the menu](/img/setup/g-sheet/step1_apps_script.jpg)
+
+The Apps Script editor opens in another tab.
+
+![Paste the code](/img/setup/g-sheet/step2_paste_code.jpg)
+
+Save after replacing the code.
+
+## 4. Redeploy the web app
+
+After updating Apps Script, redeploy the web app if required.
+
+Open **Deploy > Manage deployments** and deploy a new version.
+
+Click **Deploy** in the upper-right corner, then choose **New deployment**.
+
+![Start deployment](/img/setup/g-sheet/step6_deploy1.jpg)
+
+In the deployment dialog, use these settings:
+
+- Description: include a version number
+- Web app executes as: yourself
+- Who has access: anyone (security is provided by the verification code)
+
+![Deployment page](/img/torai/post/mainte_deploy1.jpg)
+
+If the web app URL changes, update the GAS URL on Torai's API Keys page and repeat identity verification.
+
+First, copy the web app URL.
+
+![Copy web app URL](/img/torai/post/mainte_deploy2.jpg)
+
+Return to Torai and click **Change** next to **Google Sheets URL** under **Profile > API Keys**.
+
+![Change the URL in Torai](/img/torai/post/mainte_deploy3.jpg)
+
+Paste the new URL.
+
+Return to Google Sheets and select **Torai connection > Generate verification code** from the menu.
+
+![Torai connection menu](/img/setup/g-sheet/step9_torai_menue.jpg)
+
+![Generated verification code](/img/torai/post/mainte_deploy4.jpg)
+
+Paste the sheet URL and verification code, then click **Save**.
+
+![Save the new URL](/img/torai/post/mainte_deploy5.jpg)
+
+:::info
+Updating an existing deployment may keep the same URL. Check the web app URL displayed on the page.
+:::
+
+## 5. Check X Developer Console Usage
+
+Because the X API uses pay-per-use pricing, check Usage and your credit balance regularly.
+
+![Check X credits](/img/torai/post/schedule8.jpg)
+
+After publishing many posts or threads, confirm that usage matches your expectations.
+
+## 7. Check Google Drive storage
+
+Using many images and videos increases Google Drive storage.
+
+Remove media you no longer need, but take care not to delete files currently used by Torai.
+
+Torai collects images and videos for posts in the `X_Post_MediaFiles` folder in Google Drive.
+
+![Google Drive](/img/torai/post/gdrive1.jpg)
+
+## Suggested maintenance schedule
+
+| Item | Suggested frequency |
+| --- | --- |
+| Organize published data | Monthly or after publishing in large volumes |
+| Review errors | When a post fails or weekly |
+| Update Apps Script | When Torai announces an update |
+| Check X API Usage | Before and after large-volume publishing, or weekly |
+| Check Google Drive storage | Monthly |
+
+## Related pages
+
+- [Set Up Google Sheets and Apps Script](../setup/apps-script-deploy-link)
+- [Sign In to Torai and Complete Basic Setup](../setup/torai-sign-in)
+- [Troubleshooting: Posts Are Not Being Published](../troubleshooting/post-errors)

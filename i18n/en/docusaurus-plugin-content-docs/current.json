@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.利用前の準備": {
+    "message": "Before You Start",
+    "description": "The label for category '利用前の準備' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.初期設定": {
+    "message": "Initial Setup",
+    "description": "The label for category '初期設定' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.虎威の使い方": {
+    "message": "Using Torai",
+    "description": "The label for category '虎威の使い方' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.サブスクリプション": {
+    "message": "Subscription",
+    "description": "The label for category 'サブスクリプション' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.困ったとき": {
+    "message": "Troubleshooting",
+    "description": "The label for category '困ったとき' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.リファレンス": {
+    "message": "Reference",
+    "description": "The label for category 'リファレンス' in sidebar 'tutorialSidebar'"
+  }
+}

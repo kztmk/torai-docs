@@ -1,0 +1,148 @@
+---
+sidebar_position: 3
+title: Sign In to Torai and Complete Basic Setup
+description: Sign in to Torai and complete the initial configuration.
+---
+
+# Sign In to Torai and Complete Basic Setup
+
+To start using Torai, sign in and register the web app URL for your Google Apps Script deployment.
+
+This page explains how to connect Torai to Google Apps Script and complete identity verification.
+
+## 1. Sign in to Torai
+
+Open the Torai sign-in page and sign in with your Google Account.
+
+![Torai sign-in](/img/setup/g-sheet/step10_torai_signin.jpg)
+
+After signing in, open **Profile > API Keys** from the left menu or Profile menu. If you have not subscribed yet, see [Torai Subscription](./torai-subscription).
+
+![Profile > API Keys](/img/getting-start/torai/step10_gas_url.jpg)
+
+## 2. Open the API Keys page
+
+Open the API key settings under Profile.
+
+You can register the following information on this page:
+
+- Google Apps Script web app URL
+- Gemini API key (if you create posts with AI)
+- Discord Webhook URL (if you want Discord notifications for automated posts)
+
+To start automated posting, the first item you need is the Google Apps Script web app URL.
+
+![API Keys page](/img/getting-start/torai/apiKey_tab.jpg)
+
+## 3. Start changing the Google Sheet URL
+
+On the API Keys page, enter the web app URL in the **Google Sheet URL** field. If a URL is already registered, click **Change**.
+
+![Enter the web app URL](/img/getting-start/torai/step10_gas_url.jpg)
+
+Paste the web app URL copied from the Apps Script deployment completion page.
+
+![Web app URL](/img/getting-start/torai/gas_url.jpg)
+
+:::caution
+Use the Apps Script web app URL that ends in `/exec`. Do not use the Apps Script editor URL or the Google Sheet URL.
+:::
+
+For the complete process of copying the web app URL, reloading Google Sheets, and finding the verification code, see [Paste, Deploy, and Connect Apps Script](./apps-script-deploy-link).
+
+## 4. Generate a verification code
+
+After you enter the Google Sheet URL, Torai asks Apps Script to generate a verification code.
+
+From the spreadsheet menu, click **Torai connection - Generate verification code**.
+
+![Generate verification code in the spreadsheet](/img/getting-start/torai/step11_get_personal_code.jpg)
+
+Copy the displayed verification code. It is valid for ten minutes.
+
+![Displayed verification code](/img/getting-start/torai/step11_show_personal_code.jpg)
+
+## 5. Paste the verification code into Torai
+
+Return to the API Keys page in Torai and paste the code into the verification-code field.
+
+![Paste verification code](/img/getting-start/torai/step12_save_code.jpg)
+
+Click **Save** or **Verify**.
+
+When verification succeeds, your Torai account and Apps Script are linked.
+
+![Verification complete](/img/getting-start/torai/step12_confirm_code.jpg)
+
+:::caution
+To prevent account takeover, this connection cannot be transferred to another Torai account. To use a different account, create a new Google Sheet and Apps Script project.
+:::
+
+## 6. Register a Gemini API key
+
+To create post drafts with AI, register a Gemini API key.
+
+[How to get a Gemini API key](./gemini-api-key)
+
+Paste the key into the Gemini API Key field and save it.
+
+![Enter Gemini API key](/img/getting-start/torai/gemini_key_1.jpg)
+
+ChatGPT and Anthropic are not currently available because their APIs use pay-per-use pricing.
+
+:::info
+AI API charges follow each provider's pricing. Check usage and billing settings before generating content in large volumes.
+:::
+
+## 7. Optional: enable Discord notifications
+
+To receive a Discord notification when automated posting to X completes, register a Discord Webhook URL.
+
+[How to get a Discord Webhook URL](./discord)
+
+Turn notifications on, enter the Webhook URL, and save. The URL is not displayed again after it has been saved.
+
+![Enable Discord notifications and enter a Webhook URL](/img/getting-start/discord/discord21.jpg)
+
+If a **Send test** button is available, send a test before or after saving and confirm that the message arrives in Discord.
+
+![Test message in Discord](/img/getting-start/discord/discord22.jpg)
+
+## 8. Check the connection
+
+After setup is complete, confirm that:
+
+- The GAS URL is saved
+- GAS identity verification is complete
+- The AI API key you intend to use is saved
+- A Discord test succeeds if you enabled notifications
+- You have obtained all four X API credentials
+
+Next, register the destination X account in [Manage X Accounts](../usage/x-accounts).
+
+## Common problems
+
+### “This GAS deployment is linked to another Torai account”
+
+The Apps Script deployment is already linked to another Torai account. For security reasons, it cannot be transferred.
+
+To use a new Torai account, copy only the sheet data you need, then create a new Google Sheet and Apps Script project.
+
+### The verification code cannot be found
+
+Confirm that the Google Sheet you opened is the same one from which you created the Apps Script project.
+
+### The connection does not work after saving
+
+Confirm that you used the Apps Script web app URL ending in `/exec`.
+
+### The Discord test does not arrive
+
+Confirm that the Webhook URL is correct and that the channel or Webhook has not been deleted in Discord.
+
+## Related pages
+
+- [Set Up Google Sheets and Apps Script](./apps-script-deploy-link)
+- [Configure X App Permissions and Get Four API Credentials](./x-api-keys)
+- [Manage X Accounts](../usage/x-accounts)
+- [Manage Your Subscription](../subscription/manage)

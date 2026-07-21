@@ -5,21 +5,40 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 ## Installation
 
 ```bash
-yarn
+npm ci
 ```
 
 ## Local Development
 
+Japanese:
+
 ```bash
-yarn start
+npm run start
+# or: npm run start:ja
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+English:
+
+```bash
+npm run start:en
+```
+
+Docusaurus development mode serves one locale at a time. The locale switcher
+can therefore show a not-found page when using `start`, `start:ja`, or
+`start:en`. To verify the header locale switcher with both locales available,
+use the production preview instead:
+
+```bash
+npm run preview
+```
+
+The development commands support live reload. The production preview builds
+both Japanese and English before serving the generated site.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
