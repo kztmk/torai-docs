@@ -1,0 +1,326 @@
+---
+sidebar_position: 1
+title: Set Up Google Sheets
+description: Paste the Torai Apps Script code, deploy it as a web app, and connect Google Sheets to Torai.
+---
+
+# Paste, Deploy, and Connect Apps Script
+
+This page explains how to copy and paste the Apps Script code for Torai, deploy it as a web app, and connect Torai to Google Sheets.
+
+## Process overview
+
+1. Open Apps Script from Google Sheets
+2. Copy the Torai code
+3. Paste it into Apps Script
+4. Save the project
+5. Deploy it as a web app
+6. Copy the web app URL
+7. Reload Google Sheets
+8. Register the GAS URL in Torai
+9. Paste the Google Sheets verification code into Torai
+10. Confirm that the connection is complete
+
+:::caution
+To prevent account takeover, the connection between Apps Script and a Torai account cannot be transferred to another account. To use another Torai account, create a new Google Sheet and Apps Script project.
+:::
+
+## Before you start
+
+Download the Torai program code. The code is updated when issues are fixed, so always download the latest version.
+
+We announce new releases through:
+
+- Member email
+- Notifications in Torai
+
+[Google Apps Script code](https://github.com/kztmk/x_Autopost/releases 'Download here')
+
+Download the release marked <span style={{ color: 'green', fontWeight: 'bold' }}>Latest</span>.
+
+[![Latest x_Autopost release](/img/setup/g-sheet/release_x_autopost.jpg)](https://github.com/kztmk/x_Autopost/releases)
+
+## 1. Open Apps Script from Google Sheets
+
+Open the Google Sheet you will use with Torai.
+
+![Open Google Sheets](/img/setup/g-sheet/step1_opengsheet.jpg)
+
+Select a blank spreadsheet.
+
+![Select a blank spreadsheet](/img/setup/g-sheet/step1_select_emptysheet.jpg)
+
+Give the sheet a name that makes it easy to distinguish from your other spreadsheets.
+
+![Name the spreadsheet](/img/setup/g-sheet/step1_saveas.jpg)
+
+From the top menu, click **Extensions > Apps Script**.
+
+![Select Apps Script from the menu](/img/setup/g-sheet/step1_apps_script.jpg)
+
+The Apps Script editor opens in another tab.
+
+![Apps Script editor](/img/setup/g-sheet/step1_open_codeEditor.jpg)
+
+## 2. Delete the existing code
+
+In the Files pane, select **Code** or **code**. If the file contains starter code or an older version, delete all code from the editor.
+
+![Delete all code](/img/setup/g-sheet/step2_deleteAll.jpg)
+
+![Empty code editor](/img/setup/g-sheet/step2_deleteAll2.jpg)
+
+:::caution
+If part of the old code remains, unexpected errors may occur after deployment. When updating, replace the entire file without leaving any old code.
+:::
+
+## 3. Copy the Torai Apps Script code
+
+Extract the downloaded ZIP file and open `code.js` in a text editor. Select and copy the entire file.
+
+![Open the code](/img/setup/g-sheet/step2_open_code.jpg)
+
+:::info
+The script will not work correctly if you copy only part of it. Copy everything from the first line to the last.
+:::
+
+## 4. Paste the code into Apps Script
+
+Return to the Apps Script editor and paste the copied code.
+
+![Paste the code](/img/setup/g-sheet/step2_paste_code.jpg)
+
+Check that the beginning and end of the code are both present.
+
+Checklist:
+
+- The code starts at the first line
+- The entire end of the code is present
+- No explanatory text or headings were pasted
+- No separate block of old code remains in the file
+
+## 5. Save the project
+
+Click the save icon at the top of the Apps Script editor.
+
+![Save the code](/img/setup/g-sheet/step5_save_code.jpg)
+
+After saving, check the displayed error information.
+
+![Displayed error](/img/setup/g-sheet/step5_save_error.jpg)
+
+After pasting the code, give the script project a name.
+
+The initial name is **Untitled project**. Click the title.
+
+![Untitled project](/img/setup/g-sheet/step5_rename.jpg)
+
+Enter a name for the script.
+
+![Enter a script name](/img/setup/g-sheet/step5_enter_name.jpg)
+
+## 6. Deploy as a web app
+
+Click **Deploy** in the upper-right corner, then choose **New deployment**.
+
+![Start deployment](/img/setup/g-sheet/step6_deploy1.jpg)
+
+In the New deployment panel, click the settings icon.
+
+![Select settings](/img/setup/g-sheet/step6_settings.jpg)
+
+For the deployment type, select **Web app**.
+
+![Select Web app](/img/setup/g-sheet/step6_webapp.jpg)
+
+Use these settings:
+
+| Field | Setting |
+| --- | --- |
+| Description | A recognizable name such as `Torai automated posting` |
+| Execute as | Me |
+| Who has access | Anyone |
+
+![Deployment details](/img/setup/g-sheet/step6_deploy_details.jpg)
+
+Click **Deploy**.
+
+## 7. Grant Google permissions
+
+The first time you deploy, Google asks you to grant permissions.
+
+Click **Authorize access**.
+
+![Authorize access](/img/setup/g-sheet/step7_confirm_access.jpg)
+
+Choose the Google Account that created the Google Sheet and Apps Script project.
+
+If **Google hasn't verified this app** appears, open **Advanced** and continue using the project-name link.
+
+![Unverified app warning](/img/setup/g-sheet/step7_advanced.jpg)
+
+When the page says to continue only if you understand the risks and trust the developer, click the link containing your script name.
+
+![Continue to the script](/img/setup/g-sheet/step7_back_to_script.jpg)
+
+Review the permissions and click **Allow**.
+
+![Allow all requested access](/img/setup/g-sheet/step7_apply_all.jpg)
+
+## 8. Copy the web app URL
+
+When deployment completes, the web app URL is displayed.
+
+Click **Copy**.
+
+![Copy web app URL](/img/setup/g-sheet/step8_copy_url.jpg)
+
+:::caution
+Register the web app URL ending in `/exec` in Torai. Do not use the Apps Script editor URL, Google Sheet URL, or a URL ending in `/dev`.
+:::
+
+:::info
+This is the URL required in Torai's settings.
+:::
+
+## 9. Reload Google Sheets
+
+Return to the Google Sheets tab after deploying Apps Script.
+
+Click the browser's reload button.
+
+![Reload the browser](/img/setup/g-sheet/step9_reload.jpg)
+
+If a Torai menu or additional sheets appear after reloading, check them.
+
+![Torai connection menu](/img/setup/g-sheet/step9_torai_menue.jpg)
+
+:::info
+Reloading applies Apps Script changes and updates the custom menu. Even if the display does not change, you can continue to the next step.
+:::
+
+## 10. Register the GAS URL in Torai
+
+Sign in to Torai.
+
+![Sign in to Torai](/img/setup/g-sheet/step10_torai_signin.jpg)
+
+The first time you sign in, you are asked to accept the terms.
+
+![Accept the terms](/img/setup/g-sheet/step10_agree.jpg)
+
+Open the API key settings under Profile.
+
+![Google Sheet URL field](/img/getting-start/torai/step10_gas_url.jpg)
+
+Paste the web app URL you copied.
+
+![Verification-code field](/img/getting-start/torai/step10_personal_code.jpg)
+
+## 11. Find the verification code in Google Sheets
+
+When you register the Google Sheets URL in Torai, a verification code is created in Google Sheets.
+
+Open the spreadsheet and click **Torai connection - Generate verification code** from its menu.
+
+![Generate verification code](/img/getting-start/torai/step11_get_personal_code.jpg)
+
+Copy the displayed code. It is valid for ten minutes.
+
+![Displayed verification code](/img/getting-start/torai/step11_show_personal_code.jpg)
+
+## 12. Paste the verification code into Torai
+
+Return to Torai and paste the code into the verification-code field.
+
+![Verification-code field](/img/getting-start/torai/step10_personal_code.jpg)
+
+Click **Save** or **Verify**.
+
+![Save verification code](/img/getting-start/torai/step12_save_code.jpg)
+
+When verification succeeds, GAS identity verification is complete.
+
+![Verification complete](/img/getting-start/torai/step12_confirm_code.jpg)
+
+The Google Sheet is now linked to this Torai account and cannot be used with another Torai account.
+
+## 13. Check Google Sheets
+
+After the connection is complete, confirm that the required sheets and columns exist.
+
+![Google Sheets](/img/getting-start/torai/g-sheet_1.jpg)
+
+Check that:
+
+- A sheet exists for scheduled posts
+- A sheet exists for published posts
+- A sheet exists for errors
+- The verification code is no longer required or the connection is shown as complete
+
+:::info
+Sheet and column names may change between Torai versions. After creating a post or enabling automated posting in Torai, confirm that data appears in Google Sheets.
+:::
+
+## 14. Checklist before a test post
+
+- All four X API credentials are registered in Torai
+- App permissions in the X Developer Console are **Read and write** or higher
+- X API credit and Usage have no issues
+- The GAS URL is the web app URL ending in `/exec`
+- Google Sheets has been reloaded
+- GAS identity verification is complete
+
+## Updating the Apps Script code
+
+When Torai announces an Apps Script code update:
+
+1. Open the Apps Script editor
+2. Delete all old code
+3. Paste the complete new code
+4. Save
+5. Deploy a new version from **Manage deployments**
+6. Reload Google Sheets
+7. Test the operation in Torai
+
+![New deployment](/img/getting-start/torai/new_deploy_1.jpg)
+
+:::caution
+If you do not deploy after updating the code, the web app may continue running the old version. Do not stop after saving; redeploy when required.
+:::
+
+## Common problems
+
+### The URL produces an error in Torai
+
+You may not have copied the Apps Script web app URL. Use the URL ending in `/exec`.
+
+### No verification code appears in Google Sheets
+
+Check that:
+
+- Web app access is set to **Anyone**
+- You opened the Google Sheet used to create the Apps Script project
+- The GAS URL pasted into Torai is correct
+- You granted the required Apps Script permissions
+
+### “This GAS deployment is linked to another Torai account”
+
+The Apps Script deployment is already linked to another Torai account and cannot be transferred.
+
+To use another account, copy only the sheet data you need, then create a new Google Sheet and Apps Script project.
+
+### Nothing changes after replacing the code
+
+Apps Script may need to be redeployed. In **Manage deployments**, create a new version and update the web app deployment.
+
+### The menu does not appear after reloading Google Sheets
+
+Some Torai versions may not display a custom menu. Check whether GAS identity verification and post creation work in Torai.
+
+## Related pages
+
+- [Set Up Google Sheets](./apps-script-deploy-link)
+- [Sign In to Torai and Complete Basic Setup](./torai-sign-in)
+- [Configure X App Permissions and Get Four API Credentials](./x-api-keys)
+- [Automated Posting](../usage/auto-posting)

@@ -1,12 +1,13 @@
 import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TagsListInline from '@theme/TagsListInline';
 import type {Props} from '@theme/BlogPostItems';
 import styles from './styles.module.css';
 
-function formatDate(date: string): string {
-  return new Intl.DateTimeFormat('ja-JP', {
+function formatDate(date: string, locale: string): string {
+  return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'numeric',
     day: 'numeric',
@@ -15,6 +16,10 @@ function formatDate(date: string): string {
 
 export default function BlogPostItems({items}: Props): ReactNode {
   const baseUrl = useBaseUrl('/');
+  const {
+    i18n: {currentLocale},
+  } = useDocusaurusContext();
+  const dateLocale = currentLocale === 'en' ? 'en' : 'ja-JP';
   const resolveUrl = (url?: string): string => {
     if (!url) return `${baseUrl}img/blog_information.jpg`;
     if (/^https?:\/\//.test(url)) return url;
@@ -57,11 +62,15 @@ export default function BlogPostItems({items}: Props): ReactNode {
                   ))}
                 </div>
                 <span aria-hidden="true">•</span>
-                <time>{formatDate(metadata.date)}</time>
+                <time>{formatDate(metadata.date, dateLocale)}</time>
                 {metadata.readingTime && (
                   <>
                     <span aria-hidden="true">•</span>
-                    <span>{Math.ceil(metadata.readingTime)} min reads</span>
+                    <span>
+                      {currentLocale === 'en'
+                        ? `${Math.ceil(metadata.readingTime)} min read`
+                        : `${Math.ceil(metadata.readingTime)}分で読めます`}
+                    </span>
                   </>
                 )}
               </div>

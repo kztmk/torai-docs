@@ -23,10 +23,12 @@ function loadLocalEnv(): Record<string, string> {
 const localEnv = loadLocalEnv();
 const env = (key: string): string | undefined =>
   process.env[key] ?? localEnv[key];
+const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'ja';
+const isEnglish = currentLocale === 'en';
 
 const config: Config = {
-  title: 'X自動投稿ツール「虎威」',
-  tagline: '公式サポートサイト',
+  title: isEnglish ? 'Torai' : 'X自動投稿ツール「虎威」',
+  tagline: isEnglish ? 'Official Support Site' : '公式サポートサイト',
   favicon: 'img/torai_icon512.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -53,7 +55,17 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'ja',
-    locales: ['ja'],
+    locales: ['ja', 'en'],
+    localeConfigs: {
+      ja: {
+        label: '日本語',
+        htmlLang: 'ja-JP',
+      },
+      en: {
+        label: 'English',
+        htmlLang: 'en',
+      },
+    },
   },
 
   customFields: {
@@ -142,23 +154,23 @@ const config: Config = {
           items: [
             {
               label: '利用規約',
-              href: 'https://doc-torai.try-try.com/terms-and-conditions-ja',
+              to: '/terms-and-conditions',
             },
             {
               label: 'プライバシーポリシー',
-              href: 'https://doc-torai.try-try.com/privacy-policy-ja',
+              to: '/privacy-policy',
             },
             {
               label: 'クッキーポリシー',
-              href: 'https://doc-torai.try-try.com/cookie-policy-ja',
+              to: '/cookie-policy',
             },
             {
               label: '免責事項',
-              href: 'https://doc-torai.try-try.com/disclaimer-ja',
+              to: '/disclaimer',
             },
             {
               label: '使用許諾書',
-              href: 'https://doc-torai.try-try.com/license-agreement-ja',
+              to: '/license-agreement',
             },
           ],
         },
@@ -175,7 +187,9 @@ const config: Config = {
             },
             {
               label: '虎威購入',
-              href: 'https://sns-loong.imakita3gyo.com/ja/clp/torai-info',
+              href: isEnglish
+                ? 'https://torai.try-try.com/auth/signin'
+                : 'https://sns-loong.imakita3gyo.com/ja/clp/torai-info',
             },
           ],
         },

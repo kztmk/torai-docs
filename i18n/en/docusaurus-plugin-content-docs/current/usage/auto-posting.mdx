@@ -1,0 +1,99 @@
+---
+sidebar_position: 4
+title: Automated Posting
+description: Start a trigger and automatically publish scheduled posts.
+---
+
+# Automated Posting
+
+After creating posts and setting their publication times, start the trigger from the Activity page.
+
+Automated posting uses a time-driven Google Apps Script trigger. Even when your computer is off, Apps Script starts on Google's servers and publishes posts whose scheduled times have passed.
+
+## 1. Before you start
+
+Confirm that:
+
+- Google Apps Script identity verification is complete
+- All four API credentials are registered for the X account
+- Scheduled publication times are correct
+- The number of posts is what you intended
+- X Developer Console Usage and credit balance have no issues
+
+## 2. Open Trigger Management
+
+From Torai's menu, open **Activity > Trigger Management**.
+
+![Trigger page](/img/torai/post/schedule9.jpg)
+
+Use this page to start, stop, and check Google Apps Script triggers.
+
+## 3. Choose a trigger interval
+
+Select a trigger interval, such as:
+
+- 1 minute
+- 5 minutes
+- 10 minutes
+- 15 minutes
+- 30 minutes
+
+![Select a trigger interval](/img/torai/post/schedule1.jpg)
+
+Shorter intervals make posts more likely to appear close to their scheduled times, but Apps Script also runs more often.
+
+## 4. Start automated posting
+
+Turn on the **Start** switch.
+
+![Trigger on](/img/torai/post/schedule2.jpg)
+
+Confirm that the status changes to **Running**.
+
+## 5. Check the result
+
+After the scheduled time has passed, check Torai's post list, published-post list, or X.
+
+![Published data](/img/torai/post/schedule10.jpg)
+
+If you configured Discord notifications, you receive a success or error message.
+
+![Automated post result in Discord](/img/torai/post/schedule_check4.jpg)
+
+## 6. Check errors
+
+If publishing fails, check the error list or logs.
+
+![Torai post errors](/img/torai/post/schedule_check3.jpg)
+
+Common causes include:
+
+- Incorrect X API credentials
+- X Developer Console permissions still set to **Read only**
+- Access Token not regenerated after a permission change
+- Insufficient X API credit
+- Google Apps Script execution limits
+- Image or video file too large
+
+## 7. Stop automated posting
+
+To stop, click the **Running** switch on the Trigger Management page.
+
+![Running trigger](/img/torai/post/schedule_check5.jpg)
+
+Confirm that the page shows **Automated posting: Stopped**.
+
+![Stopped trigger](/img/torai/post/schedule_check6.jpg)
+
+## Important notes
+
+- Adding many posts while automated posting is running can cause API usage to rise sharply.
+- A thread performs one posting operation for each post in the thread.
+- Pay-per-use X API charges are billed separately by X.
+- Apps Script execution limits may prevent a large number of posts from being processed at once.
+
+## Related pages
+
+- [Schedule Posts](./schedule)
+- [Troubleshooting: Posts Are Not Being Published](../troubleshooting/post-errors)
+- [Check X API Pay-per-use Pricing](../getting-started/x-api-pay-per-use)

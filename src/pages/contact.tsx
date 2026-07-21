@@ -44,8 +44,45 @@ const initialForm: FormData = {
 export default function ContactForm(): ReactNode {
   const {
     siteConfig: {customFields},
+    i18n: {currentLocale},
   } = useDocusaurusContext();
   const history = useHistory();
+  const isEnglish = currentLocale === 'en';
+  const copy = isEnglish
+    ? {
+        pageTitle: 'Contact',
+        pageDescription: 'Contact Torai Support',
+        heading: 'Contact',
+        introduction: 'If you have a question or need help, please send us a message.',
+        name: 'Name',
+        nameError: 'Enter your name.',
+        email: 'Email address',
+        emailError: 'Enter a valid email address.',
+        subject: 'Subject',
+        subjectError: 'Enter a subject.',
+        message: 'Message',
+        messageError: 'Enter your message.',
+        sending: 'Sending...',
+        send: 'Send',
+        sendError: 'An error occurred while sending your message. Reload the page and try again.',
+      }
+    : {
+        pageTitle: '問合せ',
+        pageDescription: '虎威サポートへのお問い合わせ',
+        heading: '問合せ',
+        introduction: 'ご不明な点、ご質問がございましたら、お気軽にお問い合わせください。',
+        name: 'お名前',
+        nameError: 'お名前を入力してください。',
+        email: 'メールアドレス',
+        emailError: '有効なメールアドレスを入力してください。',
+        subject: '件名',
+        subjectError: '件名を入力してください。',
+        message: '問合せ内容',
+        messageError: '問合せ内容をお書きください。',
+        sending: '送信中...',
+        send: '送信',
+        sendError: 'メール送信中にエラーが発生しました。ページをリロード後に再度お試しください。',
+      };
   const emailConfig = customFields as CustomFields;
   const [formData, setFormData] = useState<FormData>(initialForm);
   const [formErrors, setFormErrors] = useState<FormErrors>({
@@ -90,7 +127,7 @@ export default function ContactForm(): ReactNode {
     setIsSubmitting(true);
     try {
       await send(emailjsServiceId, emailjsTemplateId, formData, emailjsPublicKey);
-      history.push('/thank-you');
+      history.push(isEnglish ? '/en/thank-you' : '/thank-you');
     } catch {
       setShowError(true);
     } finally {
@@ -99,14 +136,14 @@ export default function ContactForm(): ReactNode {
   };
 
   return (
-    <Layout title="問合せ" description="虎威サポートへのお問い合わせ">
+    <Layout title={copy.pageTitle} description={copy.pageDescription}>
       <Container maxWidth="md" sx={{pt: 5, pb: 8}}>
         <Box sx={{mb: 4, textAlign: 'center'}}>
           <Typography variant="h3" component="h1" gutterBottom>
-            問合せ
+            {copy.heading}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            ご不明な点、ご質問がございましたら、お気軽にお問い合わせください。
+            {copy.introduction}
           </Typography>
         </Box>
 
@@ -116,36 +153,36 @@ export default function ContactForm(): ReactNode {
               <Stack direction={{xs: 'column', sm: 'row'}} spacing={3}>
                 <FormControl fullWidth error={formErrors.name}>
                   <InputLabel htmlFor="name" required>
-                    お名前
+                    {copy.name}
                   </InputLabel>
                   <OutlinedInput
                     id="name"
                     name="name"
-                    label="お名前"
+                    label={copy.name}
                     value={formData.name}
                     onChange={handleChange}
                     required
                   />
                   {formErrors.name && (
-                    <FormHelperText>お名前を入力してください。</FormHelperText>
+                    <FormHelperText>{copy.nameError}</FormHelperText>
                   )}
                 </FormControl>
 
                 <FormControl fullWidth error={formErrors.email}>
                   <InputLabel htmlFor="email" required>
-                    メールアドレス
+                    {copy.email}
                   </InputLabel>
                   <OutlinedInput
                     id="email"
                     name="email"
-                    label="メールアドレス"
+                    label={copy.email}
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
                   />
                   {formErrors.email && (
-                    <FormHelperText>有効なメールアドレスを入力してください。</FormHelperText>
+                    <FormHelperText>{copy.emailError}</FormHelperText>
                   )}
                 </FormControl>
               </Stack>
@@ -154,10 +191,10 @@ export default function ContactForm(): ReactNode {
                 fullWidth
                 required
                 error={formErrors.title}
-                helperText={formErrors.title ? '件名を入力してください。' : ''}
+                helperText={formErrors.title ? copy.subjectError : ''}
                 id="title"
                 name="title"
-                label="件名"
+                label={copy.subject}
                 value={formData.title}
                 onChange={handleChange}
               />
@@ -166,10 +203,10 @@ export default function ContactForm(): ReactNode {
                 fullWidth
                 required
                 error={formErrors.message}
-                helperText={formErrors.message ? '問合せ内容をお書きください。' : ''}
+                helperText={formErrors.message ? copy.messageError : ''}
                 id="message"
                 name="message"
-                label="問合せ内容"
+                label={copy.message}
                 multiline
                 rows={6}
                 value={formData.message}
@@ -185,7 +222,7 @@ export default function ContactForm(): ReactNode {
                 fullWidth
                 endIcon={<SendIcon />}
                 sx={{py: 1.5}}>
-                {isSubmitting ? '送信中...' : '送信'}
+                {isSubmitting ? copy.sending : copy.send}
               </Button>
             </Stack>
           </Box>
@@ -201,7 +238,7 @@ export default function ContactForm(): ReactNode {
             severity="error"
             variant="filled"
             sx={{width: '100%'}}>
-            メール送信中にエラーが発生しました。ページをリロード後に再度お試しください。
+            {copy.sendError}
           </Alert>
         </Snackbar>
       </Container>

@@ -1,0 +1,150 @@
+---
+sidebar_position: 1
+title: Introduction
+description: An overview of Torai, what to check before use, and how to work through this manual.
+---
+
+# Introduction
+
+Thank you for purchasing Torai, an automated posting tool for X. We hope it helps you work faster and grow your business.
+
+Please contact us by email if you have:
+
+- Questions
+- Problems with how the application works
+- Feature requests
+
+We normally reply to support emails within 24 hours. If you have not received a reply after 24 hours, your message may not have reached us. Please contact us again.
+
+## What is Torai?
+
+Torai is a web application that connects Apps Script, Google Sheets, and Google Drive in your own Google Account to help you create and automatically publish posts to X.
+
+You do not need to make detailed edits to spreadsheet rows and columns. You can create posts as naturally as you would on X, then set their publication times and automated posting options.
+
+![Services used by Torai](/img/intro-google-x-flow.svg)
+
+The following information is stored securely in your own Google Sheet and Google Drive:
+
+- X account information
+- Post content and publication times
+- Images
+
+## What you can do with Torai
+
+Torai lets you perform the work required to publish to X from one interface.
+
+- Get help creating posts
+- Publish at a specified date and time
+- Configure automated posting
+- Manage post data through Google Drive and Google Sheets
+- Receive automated posting status on your phone through Discord notifications
+
+The controls are similar to creating a normal post, so you can get started even if you are not comfortable editing spreadsheets directly.
+
+## Key features
+
+Torai manages X posts using Google's services.
+
+- **<u>⭕ Use Google services as the back end</u>**
+  - Store post data in Google Sheets
+  - Manage images and videos in Google Drive
+  - Run automated posting with Google Apps Script even when your computer is off
+- **<u>⭕️ Create posts in a graphical interface</u>**
+  - Enter content in the app instead of editing spreadsheet cells
+  - Select images with a click
+  - Set individual or bulk publication times with clicks
+- **<u>⭕️ Schedule threads</u>**
+  - Schedule a thread with just a few clicks
+- **<u>⭕️ Generate multiple posts from keywords with AI</u>**
+  - Create several post drafts from keywords
+  - Finish by reviewing, editing, and selecting the drafts you want
+- **<u>⭕ Use it from your phone because it is a web app</u>**
+  - Make use of spare moments by working from your phone
+- **<u>⭕ Manage multiple accounts</u>**
+
+## How Torai differs from other tools
+
+With many automated posting tools, both the data and the posting process are kept inside the service.
+
+Torai stores post content and images in your Google Sheet and Google Drive. Your Apps Script performs the posting, which means you manage both the data location and posting flow in your own Google environment.
+
+You can also create posts, choose images, and set publication times in Torai without making detailed edits directly in the spreadsheet.
+
+The comparison below is based on pricing pages published as of June 30, 2026. Items that have not been confirmed for Torai are left blank.
+
+| Item | Torai | Hootsuite | SocialDog |
+| --- | --- | --- | --- |
+| Official pricing page |  | [Hootsuite Plans](https://www.hootsuite.com/plans) | [SocialDog Pricing](https://social-dog.net/ja/pricing/#allPlan) |
+| Main published plans | Monthly subscription | Standard / Professional / Advanced / Enterprise | Free / Personal / Professional / Business / Enterprise |
+| Published price | ¥1,280/month | Standard: from $99 / Professional: from $199 / Advanced: from $399 / Enterprise: contact sales | Free: free / Personal: ¥1,980 monthly or equivalent to ¥1,480/month billed annually / Professional: ¥9,800 monthly or equivalent to ¥4,980/month billed annually / Business: ¥29,800 monthly or equivalent to ¥19,800/month billed annually / Enterprise: contact sales |
+| Free trial | None | 14 days | 7 days |
+| Main use cases | Assistance creating X posts and automated posting | Multi-network publishing, inbox, analytics, social listening, and team operations | Primarily X-focused publishing, follower management, analytics, campaigns, and team operations |
+| Supported networks | X | Instagram, X, Facebook, LinkedIn, and others | X, Instagram, Threads, Facebook, YouTube, TikTok, LINE, and others |
+| Social accounts | No limit | Standard: 10 / Professional and above: unlimited | Free and Personal: 2 social accounts (1 X account) / Professional: 3 (1 X account) / Business: 5 / Enterprise: 10 |
+| Scheduled posts | Limited by Google Sheets | Unlimited scheduling | Free: 10 / Personal: 30 / Professional and above: unlimited |
+| Thread posts | Supported |  | Supported |
+| Post data storage | Your Google Sheet and Google Drive | Hootsuite | SocialDog |
+| Posting mechanism | Your Google Apps Script | Hootsuite | SocialDog |
+| AI writing assistance | Generate multiple posts with AI | AI for posts, image generation, and more | AI writing assistant |
+| External API costs | X API, Gemini API, and Google charges may apply separately |  |  |
+| Best suited for | Users who want to keep post data in their own Google environment and run low-cost automated X posting | Organizations that manage multiple social networks and need centralized analytics, approvals, and inboxes | Users who mainly manage X and want publishing, follower management, analytics, and campaigns in one service |
+
+:::info
+Competitors' prices, features, and limits may change. Always check each service's official pricing page before subscribing.
+:::
+
+## Limits
+
+Torai connects Google Sheets, Google Drive, Google Apps Script, and X, so the limits of each service apply.
+
+### Google limits
+
+Google limits Apps Script execution time, external requests, Google Drive storage, file sizes, and other resources. If you publish in large volumes or use large images or videos, also check your Google usage.
+
+- Total program runtime for communication with Torai and publishing to X: 90 minutes per day
+- Runtime for one execution: up to 6 minutes
+- External requests: 20,000 per day
+- Data sent or received: 50 MB per request
+- Triggers: 20
+
+### X limits
+
+On February 6, 2026, X ended its $200/month and $5,000/month services and moved to pay-per-use pricing. Charges are paid using credits purchased in advance or automatic top-ups. You can also set a monthly spending cap.
+
+You can estimate your usage charges on the [X pricing page](https://developer.x.com/#pricing).
+
+## An affordable monthly service
+
+Torai is available as a monthly subscription.
+
+You can start and stop at any time. Unless you delete your account, you can restart whenever you need it again.
+
+:::info
+When you stop your subscription, Torai's paid features become unavailable. Restarting the subscription restores access on the same account.
+:::
+
+## What you need to get started
+
+Prepare these two accounts before starting:
+
+- A Google Account
+- An X account
+
+The Google Account is used for Apps Script, Google Sheets, and Google Drive. The X account is the account that will publish the posts.
+
+## Helpful but optional
+
+A Discord account lets you receive automated posting results and notifications on your phone.
+
+Discord is free and is not required, but it is useful if you want to check posting status while away from your computer.
+
+## How to use this manual
+
+If this is your first time using Torai, read the sections in this order:
+
+1. Before You Start
+2. Initial Setup
+3. Using Torai
+4. Subscription and usage status
+5. Troubleshooting
