@@ -1,22 +1,23 @@
 <svg width="1100" height="470" viewBox="0 0 1100 470" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">虎威フロントとGoogle側バックエンドの流れ</title>
-  <desc id="desc">虎威はフロント画面で、投稿データをユーザーのGoogle環境へ渡す。Google側バックエンドがGoogleシートとGoogleドライブへ保存し、ユーザーのApps ScriptがXへ投稿する流れを示す図。</desc>
+  <title id="title">虎威とGoogle側バックエンドによる投稿・分析データの流れ</title>
+  <desc id="desc">虎威は投稿と分析の画面を提供する。ユーザーのApps ScriptがXへ投稿し、投稿情報とエンゲージメントを取得してGoogleシートへ保存する双方向の流れを示す図。</desc>
   <rect width="1100" height="470" rx="28" fill="#F7F9FC"/>
   <rect x="32" y="32" width="1036" height="390" rx="24" fill="#FFFFFF" stroke="#D8E0EA" stroke-width="2"/>
 
-  <text x="550" y="78" text-anchor="middle" fill="#162033" font-family="Arial, sans-serif" font-size="27" font-weight="700">虎威はフロント、保存と投稿実行はあなたの Google 環境側です</text>
-  <text x="550" y="111" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="16">虎威で作成した投稿データを Google 側へ渡し、Apps Script が X へ投稿します</text>
+  <text x="550" y="78" text-anchor="middle" fill="#162033" font-family="Arial, sans-serif" font-size="27" font-weight="700">虎威は画面、保存・投稿・データ取得はあなたの Google 環境側です</text>
+  <text x="550" y="111" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="16">Apps Script が X へ投稿し、投稿情報とエンゲージメントを取得・保存します</text>
 
   <rect x="86" y="178" width="176" height="128" rx="18" fill="#EEF7F4" stroke="#6CBFA7" stroke-width="2"/>
   <text x="174" y="216" text-anchor="middle" fill="#153A34" font-family="Arial, sans-serif" font-size="23" font-weight="700">虎威</text>
   <rect x="112" y="238" width="124" height="46" rx="12" fill="#FFFFFF" stroke="#83CDB9" stroke-width="2"/>
   <text x="174" y="258" text-anchor="middle" fill="#163B3C" font-family="Arial, sans-serif" font-size="17" font-weight="700">フロント</text>
-  <text x="174" y="276" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="11">投稿作成・設定画面</text>
+  <text x="174" y="276" text-anchor="middle" fill="#526174" font-family="Arial, sans-serif" font-size="11">投稿・分析・CRM画面</text>
 
   <path d="M280 238H338" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round"/>
   <path d="M326 223L341 238L326 253" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="310" y="216" text-anchor="middle" fill="#344255" font-family="Arial, sans-serif" font-size="14" font-weight="700">投稿データ</text>
-  <text x="310" y="276" text-anchor="middle" fill="#344255" font-family="Arial, sans-serif" font-size="14" font-weight="700">画像・動画</text>
+  <path d="M292 223L277 238L292 253" stroke="#5E6B7B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="310" y="216" text-anchor="middle" fill="#344255" font-family="Arial, sans-serif" font-size="13" font-weight="700">投稿・分析データ</text>
+  <text x="310" y="276" text-anchor="middle" fill="#344255" font-family="Arial, sans-serif" font-size="13" font-weight="700">画像・反応者</text>
 
   <rect x="356" y="150" width="336" height="188" rx="24" fill="#F4F8FF" stroke="#B9D0F5" stroke-width="2"/>
   <text x="524" y="188" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="23" font-weight="700">あなたの Google 環境</text>
@@ -50,9 +51,10 @@
 
   <path d="M928 238H970" stroke="#222222" stroke-width="4" stroke-linecap="round"/>
   <path d="M958 223L973 238L958 253" stroke="#222222" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="952" y="216" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="14" font-weight="700">Xへ投稿</text>
+  <path d="M940 223L925 238L940 253" stroke="#222222" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="952" y="211" text-anchor="middle" fill="#172033" font-family="Arial, sans-serif" font-size="12" font-weight="700">投稿 / 取得</text>
   <text x="1014" y="264" text-anchor="middle" fill="#111827" font-family="Arial, sans-serif" font-size="70" font-weight="700">X</text>
 
   <rect x="218" y="366" width="664" height="34" rx="17" fill="#F2F5F8"/>
-  <text x="550" y="388" text-anchor="middle" fill="#3A4656" font-family="Arial, sans-serif" font-size="14" font-weight="700">虎威ではなく、Google側バックエンドとあなたの Apps Script が保存・投稿処理を行います</text>
+  <text x="550" y="388" text-anchor="middle" fill="#3A4656" font-family="Arial, sans-serif" font-size="14" font-weight="700">Google側バックエンドとあなたの Apps Script が保存・投稿・分析データ取得を行います</text>
 </svg>

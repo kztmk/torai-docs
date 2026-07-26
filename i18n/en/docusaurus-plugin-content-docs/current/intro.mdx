@@ -6,7 +6,7 @@ description: An overview of Torai, what to check before use, and how to work thr
 
 # Introduction
 
-Thank you for purchasing Torai, an automated posting tool for X. We hope it helps you work faster and grow your business.
+Thank you for using Torai, an X marketing tool. Torai helps you streamline publishing, analyze what happens after each post, and organize follow-up with people who engage.
 
 Please contact us by email if you have:
 
@@ -18,27 +18,33 @@ We normally reply to support emails within 24 hours. If you have not received a 
 
 ## What is Torai?
 
-Torai is a web application that connects Apps Script, Google Sheets, and Google Drive in your own Google Account to help you create and automatically publish posts to X.
+Torai is a web application that connects Apps Script, Google Sheets, and Google Drive in your own Google Account. It supports post creation, scheduling, automated publishing, post analytics, and responder management for X.
 
-You do not need to make detailed edits to spreadsheet rows and columns. You can create posts as naturally as you would on X, then set their publication times and automated posting options.
+You do not need to make detailed edits to spreadsheet rows and columns. Create and schedule posts in Torai, then review the Response Inbox, Responder CRM, and Post Analytics after publishing.
 
-![Services used by Torai](/img/intro-google-x-flow.svg)
+![Publishing and analytics data flow in Torai](/img/english-manual/torai-google-backend-flow-en.svg)
 
 The following information is stored securely in your own Google Sheet and Google Drive:
 
 - X account information
 - Post content and publication times
 - Images
+- Post information and engagement metrics captured from X
+- Responders, CRM stages, tags, and notes
 
 ## What you can do with Torai
 
-Torai lets you perform the work required to publish to X from one interface.
+Torai brings publishing, analysis, and follow-up into one interface.
 
 - Get help creating posts
 - Publish at a specified date and time
 - Configure automated posting
 - Manage post data through Google Drive and Google Sheets
 - Receive automated posting status on your phone through Discord notifications
+- Review impressions, engagement, and daily trends for your own posts
+- Use the Response Inbox to review reactions to your posts
+- Manage responder stages, tags, and notes in the CRM
+- Generate a Gemini reply draft, review it, and respond manually on X
 
 The controls are similar to creating a normal post, so you can get started even if you are not comfortable editing spreadsheets directly.
 
@@ -62,14 +68,20 @@ Torai manages X posts using Google's services.
 - **<u>⭕ Use it from your phone because it is a web app</u>**
   - Make use of spare moments by working from your phone
 - **<u>⭕ Manage multiple accounts</u>**
+- **<u>⭕ Analyze post information and engagement</u>**
+  - Review impressions, likes, replies, reposts, quotes, and other metrics returned by the X API
+  - Compare daily trends and the latest metrics for each post
+- **<u>⭕ Organize communication with responders</u>**
+  - Use the Response Inbox to prioritize reactions
+  - Save CRM stages, custom tags, and notes for each responder
 
 ## How Torai differs from other tools
 
-With many automated posting tools, both the data and the posting process are kept inside the service.
+With many social media tools, publishing and analytics data are kept inside the service.
 
-Torai stores post content and images in your Google Sheet and Google Drive. Your Apps Script performs the posting, which means you manage both the data location and posting flow in your own Google environment.
+Torai stores post content, images, captured post metrics, and responder records in your Google Sheet and Google Drive. Your Apps Script performs publishing and data collection, so you manage the data location and processing flow in your own Google environment.
 
-You can also create posts, choose images, and set publication times in Torai without making detailed edits directly in the spreadsheet.
+You can create posts, choose images, set publication times, analyze results, and manage responders in Torai without editing the spreadsheet directly.
 
 The comparison below is based on pricing pages published as of June 30, 2026. Items that have not been confirmed for Torai are left blank.
 
@@ -77,9 +89,9 @@ The comparison below is based on pricing pages published as of June 30, 2026. It
 | --- | --- | --- | --- |
 | Official pricing page |  | [Hootsuite Plans](https://www.hootsuite.com/plans) | [SocialDog Pricing](https://social-dog.net/ja/pricing/#allPlan) |
 | Main published plans | Monthly subscription | Standard / Professional / Advanced / Enterprise | Free / Personal / Professional / Business / Enterprise |
-| Published price | ¥1,280/month | Standard: from $99 / Professional: from $199 / Advanced: from $399 / Enterprise: contact sales | Free: free / Personal: ¥1,980 monthly or equivalent to ¥1,480/month billed annually / Professional: ¥9,800 monthly or equivalent to ¥4,980/month billed annually / Business: ¥29,800 monthly or equivalent to ¥19,800/month billed annually / Enterprise: contact sales |
+| Published price | See the current USD price in Torai | Standard: from $99 / Professional: from $199 / Advanced: from $399 / Enterprise: contact sales | Free: free / Personal: ¥1,980 monthly or equivalent to ¥1,480/month billed annually / Professional: ¥9,800 monthly or equivalent to ¥4,980/month billed annually / Business: ¥29,800 monthly or equivalent to ¥19,800/month billed annually / Enterprise: contact sales |
 | Free trial | None | 14 days | 7 days |
-| Main use cases | Assistance creating X posts and automated posting | Multi-network publishing, inbox, analytics, social listening, and team operations | Primarily X-focused publishing, follower management, analytics, campaigns, and team operations |
+| Main use cases | X post creation and automated publishing, responder management, and post analytics | Multi-network publishing, inbox, analytics, social listening, and team operations | Primarily X-focused publishing, follower management, analytics, campaigns, and team operations |
 | Supported networks | X | Instagram, X, Facebook, LinkedIn, and others | X, Instagram, Threads, Facebook, YouTube, TikTok, LINE, and others |
 | Social accounts | No limit | Standard: 10 / Professional and above: unlimited | Free and Personal: 2 social accounts (1 X account) / Professional: 3 (1 X account) / Business: 5 / Enterprise: 10 |
 | Scheduled posts | Limited by Google Sheets | Unlimited scheduling | Free: 10 / Personal: 30 / Professional and above: unlimited |
@@ -87,8 +99,10 @@ The comparison below is based on pricing pages published as of June 30, 2026. It
 | Post data storage | Your Google Sheet and Google Drive | Hootsuite | SocialDog |
 | Posting mechanism | Your Google Apps Script | Hootsuite | SocialDog |
 | AI writing assistance | Generate multiple posts with AI | AI for posts, image generation, and more | AI writing assistant |
+| Responder management | Response Inbox, Responder CRM, and Gemini reply drafts | Inbox, replies, and workflows | Inbox, @posts, keyword monitoring, and more |
+| Post analytics | Impressions, engagement, daily trends, and latest metrics by post | Performance reports, analytics, and listening | Core metrics, post and follower analytics, PowerPoint reports, and more |
 | External API costs | X API, Gemini API, and Google charges may apply separately |  |  |
-| Best suited for | Users who want to keep post data in their own Google environment and run low-cost automated X posting | Organizations that manage multiple social networks and need centralized analytics, approvals, and inboxes | Users who mainly manage X and want publishing, follower management, analytics, and campaigns in one service |
+| Best suited for | Users who want to keep publishing and analytics data in their own Google environment and improve X operations from post to follow-up | Organizations that manage multiple social networks and need centralized analytics, approvals, and inboxes | Users who mainly manage X and want publishing, follower management, analytics, and campaigns in one service |
 
 :::info
 Competitors' prices, features, and limits may change. Always check each service's official pricing page before subscribing.
@@ -100,7 +114,7 @@ Torai connects Google Sheets, Google Drive, Google Apps Script, and X, so the li
 
 ### Google limits
 
-Google limits Apps Script execution time, external requests, Google Drive storage, file sizes, and other resources. If you publish in large volumes or use large images or videos, also check your Google usage.
+Google limits Apps Script execution time, external requests, Google Drive storage, file sizes, and other resources. Check your Google usage when publishing at high volume, using large media files, or collecting data for many posts and responders.
 
 - Total program runtime for communication with Torai and publishing to X: 90 minutes per day
 - Runtime for one execution: up to 6 minutes
@@ -112,7 +126,7 @@ Google limits Apps Script execution time, external requests, Google Drive storag
 
 On February 6, 2026, X ended its $200/month and $5,000/month services and moved to pay-per-use pricing. Charges are paid using credits purchased in advance or automatic top-ups. You can also set a monthly spending cap.
 
-You can estimate your usage charges on the [X pricing page](https://developer.x.com/#pricing).
+You can estimate your usage charges on the [X pricing page](https://developer.x.com/#pricing). Reads for post information, engagement metrics, and responders contribute to usage in addition to publishing actions.
 
 ## An affordable monthly service
 
@@ -131,7 +145,7 @@ Prepare these two accounts before starting:
 - A Google Account
 - An X account
 
-The Google Account is used for Apps Script, Google Sheets, and Google Drive. The X account is the account that will publish the posts.
+The Google Account is used for Apps Script, Google Sheets, and Google Drive. The X account is used to publish posts and retrieve information about your own posts and responders.
 
 ## Helpful but optional
 
@@ -145,6 +159,7 @@ If this is your first time using Torai, read the sections in this order:
 
 1. Before You Start
 2. Initial Setup
-3. Using Torai
-4. Subscription and usage status
-5. Troubleshooting
+3. Creating, scheduling, and automatically publishing posts
+4. X Marketing: Response Inbox, Responder CRM, and Post Analytics
+5. Subscription and usage status
+6. Troubleshooting

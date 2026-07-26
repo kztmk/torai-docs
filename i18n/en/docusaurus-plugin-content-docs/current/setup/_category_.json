@@ -1,0 +1,8 @@
+{
+  "label": "Initial Setup",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Configure Google Sheets, Apps Script, X API credentials, Gemini, and Torai for publishing and analytics data."
+  }
+}

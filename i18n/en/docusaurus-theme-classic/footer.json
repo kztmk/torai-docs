@@ -19,6 +19,10 @@
     "message": "Google Apps Script Setup",
     "description": "The label of footer link with label=Google Apps Script の設定 linking to /docs/setup/apps-script-deploy-link"
   },
+  "link.item.label.Xマーケティング": {
+    "message": "X Marketing",
+    "description": "The label of footer link with label=Xマーケティング linking to /docs/usage/x-marketing"
+  },
   "link.item.label.問合せ": {
     "message": "Contact",
     "description": "The label of footer link with label=問合せ linking to /contact"

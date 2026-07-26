@@ -68,6 +68,7 @@ const sidebars: SidebarsConfig = {
       link: { type: 'generated-index' },
       items: [
         'troubleshooting/post-errors',
+        'troubleshooting/x-marketing-data',
         'troubleshooting/subscription-errors',
         'troubleshooting/api-costs',
       ],

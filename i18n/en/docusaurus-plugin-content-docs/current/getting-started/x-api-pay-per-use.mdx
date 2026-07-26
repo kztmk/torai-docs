@@ -8,7 +8,17 @@ description: Check X API billing, usage, and setup for each account.
 
 The current version assumes that you are billed according to your X API usage.
 
-When you post, reply, create threads, or send DMs through the API, check your usage and billing status in the X Developer Console.
+Check usage and billing in the X Developer Console for both write operations such as publishing and read operations used by X Marketing to retrieve your posts, engagement metrics, and responders.
+
+## Where Torai uses the X API
+
+| Torai feature | Main API usage |
+| --- | --- |
+| Standard, scheduled, and thread posts | Write data to X |
+| Response Inbox and Responder CRM | Read your posts, liking users, mentions, and replies |
+| Post Analytics | Read your post information, public metrics, and any engagement metrics available to the account |
+
+Responder Collection and Post Analytics can be turned on or off independently. When either feature is on, X Marketing normally collects data once per day.
 
 ## What to check
 
@@ -16,7 +26,12 @@ When you post, reply, create threads, or send DMs through the API, check your us
 - You have a Project / App for each X account that will post
 - Your credits or billing settings are configured
 - You can view usage on the Usage page
-- You have checked the cost per post and your usage limits
+- You have checked prices and limits for both publishing and data reads
+- You have reviewed the tracking period, number of posts, responder limit, and monthly budget setting in X Marketing
+
+:::caution
+The amount displayed in Torai's X Marketing screen is an estimate based on resources read for analytics. It does not include write charges for posts, replies, or threads. Treat the X Developer Console as the source of truth for actual usage and billing.
+:::
 
 ## Using multiple accounts
 
@@ -34,3 +49,5 @@ Torai cannot display these credentials again after they have been saved.
 
 - [Get the four X API credentials](../setup/x-api-keys)
 - [Manage X accounts](../usage/x-accounts)
+- [Configure X Marketing collection and review estimated costs](../usage/x-marketing)
+- [If you are concerned about API usage or charges](../troubleshooting/api-costs)

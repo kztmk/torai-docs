@@ -27,8 +27,10 @@ const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? 'ja';
 const isEnglish = currentLocale === 'en';
 
 const config: Config = {
-  title: isEnglish ? 'Torai' : 'X自動投稿ツール「虎威」',
-  tagline: isEnglish ? 'Official Support Site' : '公式サポートサイト',
+  title: isEnglish ? 'Torai X Marketing' : 'Xマーケティングツール「虎威」',
+  tagline: isEnglish
+    ? 'Publishing and Analytics Support'
+    : '投稿管理・分析 公式サポートサイト',
   favicon: 'img/torai_icon512.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -84,7 +86,7 @@ const config: Config = {
         blog: {
           blogTitle: 'ブログ',
           blogDescription:
-            '虎威の不具合、アップデート情報、虎威の使い方などを紹介するブログです。',
+            '虎威の投稿管理、Xマーケティング、アップデート、不具合情報などを紹介するブログです。',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -142,6 +144,10 @@ const config: Config = {
             {
               label: 'Google Apps Script の設定',
               to: '/docs/setup/apps-script-deploy-link',
+            },
+            {
+              label: 'Xマーケティング',
+              to: '/docs/usage/x-marketing',
             },
             {
               label: '問合せ',

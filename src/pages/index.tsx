@@ -242,9 +242,9 @@ function MarketingAnalytics() {
     <section className={styles.analyticsSection}>
       <div className={`container ${styles.analyticsInner}`}>
         <div className={styles.analyticsCopy}>
-          <Eyebrow>NEXT TORAI</Eyebrow>
+          <Eyebrow>X MARKETING</Eyebrow>
           <Heading as="h2" className={styles.sectionTitle}>データ分析こそ、マーケティング勝者への道。</Heading>
-          <p className={styles.sectionLead}>投稿後の反応を感覚で終わらせず、X APIから取得したデータを自動で整理。反応の傾向を見つけ、次の投稿へ活かせるマーケティングツールへ進化します。</p>
+          <p className={styles.sectionLead}>投稿後の反応を感覚で終わらせず、X APIから取得したデータを自動で整理。表示回数やエンゲージメントの日別推移、投稿別の結果、反応者を確認し、次の投稿や対応へ活かせます。</p>
           <div className={styles.analyticsPoints}>
             <div><DataUsageRoundedIcon /><span><strong>自動取得・整理</strong>投稿の反応データを集め、確認しやすい形で表示</span></div>
             <div><InsightsRoundedIcon /><span><strong>改善につながる可視化</strong>伸びた投稿や反応者を把握し、次の仮説へ</span></div>
@@ -253,10 +253,11 @@ function MarketingAnalytics() {
             <strong>自動で反応を操作しません</strong>
             <p>虎威は自動「いいね」や自動リポストを行いません。データを参考に、誰へどう対応するかはユーザー自身が判断・操作します。</p>
           </div>
+          <Button component={Link} to="/docs/usage/x-marketing" variant="text">Xマーケティングの使い方を見る →</Button>
         </div>
         <figure className={styles.analyticsVisual}>
-          <img src="/img/home/torai-marketing-dashboard-concept.png" alt="虎威のXマーケティング分析画面の開発イメージ" loading="lazy" />
-          <figcaption>開発中の画面イメージです。実際の仕様・表示内容は変更される場合があります。</figcaption>
+          <img src="/img/torai/x-marketing/x-marketing_analysis03.jpg" alt="虎威の投稿分析と日別推移チャート" loading="lazy" />
+          <figcaption>X APIで取得できる指標は、アカウント権限やX側の仕様により異なります。</figcaption>
         </figure>
       </div>
     </section>
@@ -511,7 +512,7 @@ function EnglishHome(): ReactNode {
             </div>
             <div className={styles.heroBadge}>
               <span>Monthly</span>
-              <strong>¥1,280</strong>
+              <strong>Monthly plan</strong>
               <small>External API charges are separate</small>
             </div>
           </div>
@@ -610,8 +611,8 @@ function EnglishHome(): ReactNode {
               <Button component={Link} to="/docs/usage/x-marketing" variant="text">Read the X Marketing guide →</Button>
             </div>
             <figure className={styles.analyticsVisual}>
-              <img src="/img/home/torai-marketing-dashboard-concept.png" alt="Concept image of X Marketing analytics in Torai" loading="lazy" />
-              <figcaption>Development concept. Actual specifications and content may differ.</figcaption>
+              <img src="/img/torai/x-marketing/x-marketing_analysis03.jpg" alt="Post analytics and daily trend chart in Torai" loading="lazy" />
+              <figcaption>Available metrics depend on your account permissions and the data returned by X.</figcaption>
             </figure>
           </div>
         </section>
@@ -620,7 +621,7 @@ function EnglishHome(): ReactNode {
           <div className="container">
             <div className={styles.centerHeading}>
               <Eyebrow>GET STARTED</Eyebrow>
-              <Heading as="h2" className={styles.sectionTitle}>Three stages from registration to publishing</Heading>
+              <Heading as="h2" className={styles.sectionTitle}>Three stages from registration to publishing and analysis</Heading>
               <p className={styles.sectionLead}>The illustrated official manual is available whenever you need a detailed step.</p>
             </div>
             <div className={styles.setupGrid}>

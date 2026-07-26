@@ -30,7 +30,8 @@ const FeatureList: FeatureItem[] = [
     imgAlt: 'Googleシート、Googleドライブ、Apps Scriptの連携図',
     description: (
       <>
-        Googleシートが投稿データ、Googleドライブが画像、Apps Scriptが自動投稿を担当。
+        Googleシートが投稿・反応・分析データ、Googleドライブが画像、Apps
+        Scriptが自動投稿とデータ取得を担当します。
         普段使っているGoogle環境を土台にアカウント運用を支えます。
       </>
     ),
@@ -54,6 +55,17 @@ const FeatureList: FeatureItem[] = [
       <>
         単発投稿だけでなく、スレッド形式の投稿も予約できます。
         過去投稿の再利用や、連続した説明投稿の計画にも向いています。
+      </>
+    ),
+  },
+  {
+    title: '投稿とエンゲージメントを分析',
+    imgSrc: '/img/torai/x-marketing/x-marketing_analysis03.jpg',
+    imgAlt: '虎威の投稿分析と日別推移チャート',
+    description: (
+      <>
+        X APIから取得した表示回数やエンゲージメントを日別・投稿別に確認できます。
+        反応者インボックスとCRMで、返信や次の対応も整理できます。
       </>
     ),
   },
@@ -96,7 +108,7 @@ export default function HomepageFeatures(): ReactNode {
         <div className={styles.sectionHeader}>
           <Heading as="h2">虎威でできること</Heading>
           <p>
-            投稿作成、画像管理、予約投稿、AIによる下書き作成まで、
+            投稿作成、画像管理、予約投稿、反応者管理、投稿分析まで、
             虎威の主要機能をひとつずつ確認できます。
           </p>
         </div>

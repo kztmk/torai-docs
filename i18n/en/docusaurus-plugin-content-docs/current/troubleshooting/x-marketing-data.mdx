@@ -1,0 +1,72 @@
+---
+sidebar_position: 4
+title: X Marketing Data Does Not Appear
+description: What to check when the Response Inbox, Responder CRM, or Post Analytics has no data.
+---
+
+# X Marketing Data Does Not Appear
+
+X Marketing calls the X API from your connected Apps Script, saves results in Google Sheets, and displays those results in Torai. If no data appears, check the following in order.
+
+## 1. Check the collection switches
+
+Open **X Marketing > Collection Settings**.
+
+- To use the Response Inbox and Responder CRM, turn on **Enable responder collection**.
+- To review post information and engagement, turn on **Enable post analytics**.
+
+Saving settings may not display historical data immediately. Click **Refresh Now** and wait for the completion notification.
+
+## 2. Check the account and tracking period
+
+- The correct X account is selected at the top of the screen.
+- Your account has posts within the tracking period.
+- For responder collection, a tracked post has likes, or the account has mentions or replies.
+- **Posts per account** is large enough to include the post you expect.
+
+## 3. Check X API access and the budget
+
+- The X Developer Console has available credit.
+- App permissions are set to **Read and write**.
+- You regenerated the Access Token and Access Token Secret after changing permissions.
+- Torai has not reached the monthly X Marketing budget setting.
+
+Metrics that the X API does not return, such as some impression or click values, appear as **—**. Torai does not estimate them from public reaction counts.
+
+## 4. Check Apps Script
+
+- You use the latest distributed Google Sheet or the version announced by Torai.
+- After saving an Apps Script update, you redeployed a new web app version.
+- If redeployment changed the URL, **Profile > API Keys** contains the new `/exec` URL.
+- GAS identity verification is complete.
+
+After the first collection, Google Sheets should contain:
+
+- `XMarketingInteractions`
+- `XMarketingPosts`
+- `XMarketingPostDaily`
+- `XMarketingRuns`
+
+Review status and message in `XMarketingRuns` to identify account-specific errors or a budget stop. Do not edit column names or values directly.
+
+## 5. Only some metrics are unavailable
+
+Post Analytics displays only values returned by the X API. Impressions, profile clicks, URL clicks, and other metrics may be unavailable because of account permissions, post type, collection window, or X platform behavior.
+
+If public metrics such as likes, replies, reposts, and quotes appear while unavailable metrics show **—**, the page is not necessarily malfunctioning.
+
+## If the problem continues
+
+Include the following when contacting support. Never send API keys or tokens.
+
+- Date and time of the issue
+- X account name
+- Screen affected: Response Inbox, Responder CRM, or Post Analytics
+- Notification shown after **Refresh Now**
+- status and message from `XMarketingRuns`
+
+## Related pages
+
+- [X Marketing](../usage/x-marketing)
+- [Configure X App Permissions and Get API Credentials](../setup/x-api-keys)
+- [If You Are Concerned About API Usage or Charges](./api-costs)

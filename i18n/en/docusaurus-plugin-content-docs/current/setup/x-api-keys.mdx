@@ -6,7 +6,7 @@ description: Configure app permissions in the X Developer Console and obtain an 
 
 # Configure X App Permissions and Get Four API Credentials
 
-To publish automatically to X with Torai, create an App for posting in the X Developer Console and obtain four OAuth 1.0a credentials:
+To publish to X and collect X Marketing data with Torai, create an App in the X Developer Console and obtain four OAuth 1.0a credentials. You do not need a separate set of credentials for analytics:
 
 - API Key
 - API Key Secret
@@ -85,13 +85,13 @@ Open the settings for the App you created and edit **User Authentication Setting
 
 ![Open User Authentication Settings](/img/setup/x-api-keys/step3_x-devconsole-changeSettings0.png)
 
-This is where you configure the permissions and application type required to post from Torai.
+This is where you configure the permissions and application type required to publish from Torai and retrieve your own post information, engagement metrics, and responders.
 
 ## 5. Configure app permissions
 
 Enable OAuth 1.0a and select **App permissions**.
 
-For posting only, normally select **Read and write**.
+For Torai, normally select **Read and write**. Write permission is used for publishing, while read permission is used to verify posts and collect X Marketing data.
 
 Select **Read, write, and DMs** only if you will also send and receive direct messages.
 
@@ -154,7 +154,7 @@ On Torai's X account management page, register all four credentials for the corr
 - Access Token
 - Access Token Secret
 
-After registering them, create a test post or a normal post to confirm that publishing works.
+After registering them, create a test post or a normal post to confirm that publishing works. If you use X Marketing, save its collection settings, click **Refresh Now**, and confirm that data appears in Post Analytics or the Response Inbox.
 
 ## Common problems
 
@@ -186,3 +186,9 @@ Check your credit balance, billing settings, and Usage on the Developer Console 
 - [X Developer Console](https://console.x.com)
 - [X Developer Platform: Apps](https://docs.x.com/fundamentals/developer-apps)
 - [X Developer Platform: Authentication](https://docs.x.com/fundamentals/authentication/overview)
+
+## Related pages
+
+- [Manage X accounts](../usage/x-accounts)
+- [X Marketing](../usage/x-marketing)
+- [Check X API pay-per-use pricing](../getting-started/x-api-pay-per-use)

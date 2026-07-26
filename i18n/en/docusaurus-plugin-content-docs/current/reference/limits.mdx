@@ -15,12 +15,17 @@ Torai uses multiple external services. Check the limits that apply to each servi
 - Number of triggers
 - Google Drive storage
 
+Automated publishing and X Marketing use separate triggers. X Marketing creates one daily trigger when Responder Collection or Post Analytics is on and removes it when both are off.
+
 ## X
 
 - API usage
-- Limits for posts, replies, and threads
+- Write limits for posts, replies, and threads
+- Read limits for your own post information, engagement, and responders
 - Media upload limits
 - Pay-per-use charges and Usage
+
+Available metrics depend on X account permissions, post type, collection window, and X platform behavior. Torai shows **—** instead of estimating unavailable values.
 
 ## Gemini
 
@@ -28,8 +33,21 @@ Torai uses multiple external services. Check the limits that apply to each servi
 - Billing settings
 - Review of generated output
 
+Torai uses Gemini for AI post drafts and AI reply drafts in the Response Inbox. Each regeneration adds API usage.
+
 ## Torai
 
 - Subscription status
 - Number of accounts you can register
 - Available features
+- Up to 2,000 recent responder records in Google Sheets
+- Up to 2,000 latest post-metric records
+- Up to 1,000 responder records and 1,000 analytics records returned to the interface
+- Up to 20,000 daily snapshots covering approximately 32 days
+
+Older X Marketing data beyond the retention or storage limit is pruned during a later collection and save.
+
+## Related pages
+
+- [X Marketing](../usage/x-marketing)
+- [X Marketing Data Does Not Appear](../troubleshooting/x-marketing-data)
