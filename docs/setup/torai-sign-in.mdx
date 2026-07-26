@@ -28,10 +28,12 @@ description: 虎威へサインインし、初回に必要な基本設定を行�
 この画面では、次の情報を登録します。
 
 - Google Apps Script の Web アプリ URL
-- Gemini API Key (AIでポストを作成する場合)
+- Gemini API Key（AIでポストや返信案を作成する場合）
 - Discord Webhook URL（虎威の自動投稿をDiscordへ通知する場合）
 
-自動投稿だけを始める場合、まず必要なのは Google Apps Script の Web アプリ URL です。
+投稿管理とXマーケティングは、どちらもGoogle Apps ScriptのWebアプリURLを使用します。GAS URLと本人確認が未完了の場合は、この画面に「虎威用Googleシートをコピー」ボタンが表示されます。
+
+ボタンをクリックすると、Apps Scriptを含む配布用スプレッドシートのコピー画面が別タブで開きます。初めて設定する場合は、空白シートへコードを手作業で貼り付けるのではなく、このテンプレートをコピーしてください。
 
 ![APIキー画面](/img/getting-start/torai/apiKey_tab.jpg)
 
@@ -83,7 +85,7 @@ GoogleシートのURL を入力すると、虎威から Apps Script へ本人確
 
 ## 6. Gemini API Key を登録する
 
-AI による投稿案作成を使う場合は、Gemini API Key を登録します。
+AIによる投稿案作成、または対応インボックスでAI返信案を作成する場合は、Gemini API Keyを登録します。
 
 [Gemini API Keyの取得方法](./gemini-api-key)
 
@@ -120,6 +122,7 @@ X への自動投稿が完了したときに Discord へ通知したい場合は
 - 使用する AI API Key が保存されている
 - Discord通知を使う場合はテスト送信が成功している
 - X API キー 4 種を取得済みである
+- Xマーケティングを使う場合は、取得設定を保存して「今すぐ更新」が完了する
 
 次に、[X アカウント管理](../usage/x-accounts) で投稿先の X アカウントを登録します。
 
@@ -148,4 +151,5 @@ Webhook URL が正しいか、Discord側でチャンネルやWebhookが削除さ
 - [Google シートと Apps Script の設定](./apps-script-deploy-link)
 - [X アプリ権限設定と API キー 4 種の取得](./x-api-keys)
 - [X アカウント管理](../usage/x-accounts)
+- [Xマーケティング](../usage/x-marketing)
 - [サブスクリプション管理](../subscription/manage)

@@ -6,7 +6,7 @@ description: X Developer Console でアプリ権限を設定し、API Key、API 
 
 # X アプリ権限設定と API キー 4 種の取得
 
-虎威で X へ自動投稿するには、X Developer Console で投稿用の App を作成し、OAuth 1.0a 用のキー 4 種を取得します。
+虎威でXへの投稿とXマーケティングのデータ取得を行うには、X Developer ConsoleでAppを作成し、OAuth 1.0a用のキー4種を取得します。投稿と分析で別のキーを作る必要はありません。
 
 取得するキーは次の 4 つです。
 
@@ -87,13 +87,13 @@ App 作成時に API Key / API Key Secret が表示される場合がありま�
 
 ![User Authentication Settings を開く](/img/setup/x-api-keys/step3_x-devconsole-changeSettings0.png)
 
-この画面では、虎威から投稿するための権限とアプリ種別を設定します。
+この画面では、虎威から投稿し、自分の投稿情報・エンゲージメント・反応者を取得するための権限とアプリ種別を設定します。
 
 ## 5. アプリ権限を設定する
 
 OAuth 1.0a を有効にし、App permissions を選択します。
 
-投稿だけを行う場合は、通常は「Read and write」または画面上の「読み取りと書き込み」を選択します。
+虎威を利用する場合は、通常は「Read and write」または画面上の「読み取りと書き込み」を選択します。書き込み権限は投稿に、読み取り権限は投稿確認とXマーケティングのデータ取得に使用します。
 
 DM 送受信も使う場合だけ、「Read, write, and DMs」または画面上の「読み書きおよびダイレクトメッセージ」を選択します。
 
@@ -156,7 +156,7 @@ App の「Keys and tokens」または「キーとトークン」画面を開き�
 - Access Token
 - Access Token Secret
 
-登録後、テスト投稿または通常の投稿作成画面で、正しく投稿できるか確認してください。
+登録後、テスト投稿または通常の投稿作成画面で正しく投稿できるか確認します。Xマーケティングを利用する場合は、取得設定を保存して「今すぐ更新」を実行し、投稿分析または対応インボックスにデータが表示されるか確認してください。
 
 ## よくある失敗
 
@@ -188,3 +188,9 @@ Developer Console のダッシュボードでクレジット残高、支払い�
 - [X Developer Console](https://console.x.com)
 - [X Developer Platform: Apps](https://docs.x.com/fundamentals/developer-apps)
 - [X Developer Platform: Authentication](https://docs.x.com/fundamentals/authentication/overview)
+
+## 関連ページ
+
+- [X アカウント管理](../usage/x-accounts)
+- [Xマーケティング](../usage/x-marketing)
+- [X API 従量課金の確認](../getting-started/x-api-pay-per-use)

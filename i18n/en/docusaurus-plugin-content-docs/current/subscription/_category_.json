@@ -1,0 +1,8 @@
+{
+  "label": "Subscription",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Manage your Torai subscription and understand the external API costs for publishing and analytics."
+  }
+}

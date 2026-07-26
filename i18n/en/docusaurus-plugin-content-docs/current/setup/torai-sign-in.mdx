@@ -27,10 +27,12 @@ Open the API key settings under Profile.
 You can register the following information on this page:
 
 - Google Apps Script web app URL
-- Gemini API key (if you create posts with AI)
+- Gemini API key (if you create post or reply drafts with AI)
 - Discord Webhook URL (if you want Discord notifications for automated posts)
 
-To start automated posting, the first item you need is the Google Apps Script web app URL.
+Publishing and X Marketing both use the Google Apps Script web app URL. If the GAS URL and identity verification are incomplete, this page displays **Copy the Torai Google Sheet**.
+
+The button opens the copy page for the distributed spreadsheet, which already includes the Apps Script project. For a new setup, copy this template instead of pasting code into a blank sheet manually.
 
 ![API Keys page](/img/getting-start/torai/apiKey_tab.jpg)
 
@@ -80,7 +82,7 @@ To prevent account takeover, this connection cannot be transferred to another To
 
 ## 6. Register a Gemini API key
 
-To create post drafts with AI, register a Gemini API key.
+To create post drafts or AI reply drafts in the Response Inbox, register a Gemini API key.
 
 [How to get a Gemini API key](./gemini-api-key)
 
@@ -117,6 +119,7 @@ After setup is complete, confirm that:
 - The AI API key you intend to use is saved
 - A Discord test succeeds if you enabled notifications
 - You have obtained all four X API credentials
+- If you use X Marketing, saving collection settings and clicking **Refresh Now** completes successfully
 
 Next, register the destination X account in [Manage X Accounts](../usage/x-accounts).
 
@@ -145,4 +148,5 @@ Confirm that the Webhook URL is correct and that the channel or Webhook has not 
 - [Set Up Google Sheets and Apps Script](./apps-script-deploy-link)
 - [Configure X App Permissions and Get Four API Credentials](./x-api-keys)
 - [Manage X Accounts](../usage/x-accounts)
+- [X Marketing](../usage/x-marketing)
 - [Manage Your Subscription](../subscription/manage)

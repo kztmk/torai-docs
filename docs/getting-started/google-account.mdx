@@ -1,14 +1,14 @@
 ---
 sidebar_position: 3
 title: Google アカウントの準備
-description: Google シート、Apps Script、Google ドライブを使うための準備。
+description: 投稿・分析データを保存するGoogle Sheet、Apps Script、Googleドライブの準備。
 ---
 
 # Google アカウントの準備
 
-虎威は Google シート、Google Apps Script、Google ドライブを使って投稿データや画像・動画を管理します。
+虎威は Google シート、Google Apps Script、Google ドライブを使って、投稿データ、画像・動画、Xマーケティングの取得データを管理します。
 
-![虎威自動投稿フロー](/img/getting-start/torai_flow.jpg)
+![虎威とGoogleサービスの連携フロー](/img/getting-start/torai_flow.jpg)
 
 ## 準備するもの
 
@@ -19,6 +19,15 @@ description: Google シート、Apps Script、Google ドライブを使うため
 
 ## 注意点
 
-Google シートと Apps Script は、投稿処理を実行する中心になります。
+Google Sheetには、投稿予定・投稿結果に加えて、反応者、投稿別の最新指標、日別スナップショット、Xマーケティングの実行履歴が保存されます。Apps Scriptは、自動投稿と1日1回のXマーケティング取得をGoogleのサーバー上で実行します。
 
 投稿用の Google アカウントを分けたい場合は、X API キー、Google シート、虎威の設定がどのアカウントに紐づくかを記録してください。
+
+:::caution
+反応者のユーザー名、反応内容、対応メモ、投稿本文、投稿指標もGoogle Sheetへ保存されます。スプレッドシートを共有する場合は共有範囲を確認してください。
+:::
+
+## 関連ページ
+
+- [Google スプレッドシートの設定](../setup/apps-script-deploy-link)
+- [Xマーケティング](../usage/x-marketing)
