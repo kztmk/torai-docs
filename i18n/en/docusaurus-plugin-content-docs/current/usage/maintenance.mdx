@@ -16,7 +16,7 @@ When published-post data grows, Google Sheets display and Apps Script processing
 
 Review the published list regularly and archive data you no longer need. Archiving creates an archive spreadsheet in Google Drive.
 
-![Review the published list or Posted sheet](/img/torai/post/maintenance2.jpg)
+![Review the published list or Posted sheet](/img/english-manual/maintenance/maintenance2.jpeg)
 
 :::caution
 Back up any post history you need before deleting it. If you use the history for operational records or analytics, save it to another sheet or a CSV file first.
@@ -28,7 +28,7 @@ When an error occurs, review the error list or **Errors** sheet.
 
 Archiving saves errors as a separate sheet in the same archive file as published posts.
 
-![Review the Errors sheet](/img/torai/post/maintenance3.jpg)
+![Review the Errors sheet](/img/english-manual/maintenance/maintenance3.jpeg)
 
 If the same error repeats, resolve the cause before trying to publish again.
 
@@ -49,11 +49,11 @@ We announce Apps Script updates in the newsletter and through messages in Torai.
 
 From the top menu, click **Extensions > Apps Script**.
 
-![Select Apps Script from the menu](/img/setup/g-sheet/step1_apps_script.jpg)
+![Select Apps Script from the menu](/img/english-manual/torai-subscription/gas-setup04.jpeg)
 
 The Apps Script editor opens in another tab.
 
-![Paste the code](/img/setup/g-sheet/step2_paste_code.jpg)
+![Start deployment](/img/english-manual/torai-subscription/gas-setup05.jpeg)
 
 Save after replacing the code.
 
@@ -65,7 +65,7 @@ Open **Deploy > Manage deployments** and deploy a new version.
 
 Click **Deploy** in the upper-right corner, then choose **New deployment**.
 
-![Start deployment](/img/setup/g-sheet/step6_deploy1.jpg)
+![Start deployment](/img/english-manual/torai-subscription/gas-setup05.jpeg)
 
 In the deployment dialog, use these settings:
 
@@ -73,29 +73,29 @@ In the deployment dialog, use these settings:
 - Web app executes as: yourself
 - Who has access: anyone (security is provided by the verification code)
 
-![Deployment page](/img/torai/post/mainte_deploy1.jpg)
+![Deployment details](/img/english-manual/torai-subscription/gas-setup07.jpeg)
 
 If the web app URL changes, update the GAS URL on Torai's API Keys page and repeat identity verification.
 
 First, copy the web app URL.
 
-![Copy web app URL](/img/torai/post/mainte_deploy2.jpg)
+![Copy web app URL](/img/english-manual/torai-subscription/gas-setup09.jpeg)
 
 Return to Torai and click **Change** next to **Google Sheets URL** under **Profile > API Keys**.
 
-![Change the URL in Torai](/img/torai/post/mainte_deploy3.jpg)
+![Change the URL in Torai](/img/english-manual/maintenance/edit-gas-url.jpeg)
 
 Paste the new URL.
 
 Return to Google Sheets and select **Torai connection > Generate verification code** from the menu.
 
-![Torai connection menu](/img/setup/g-sheet/step9_torai_menue.jpg)
+![Torai connection menu](/img/english-manual/torai-subscription/gas-setup11.jpeg)
 
-![Generated verification code](/img/torai/post/mainte_deploy4.jpg)
+![Torai connection menu](/img/english-manual/torai-subscription/gas-setup12.jpeg)
 
 Paste the sheet URL and verification code, then click **Save**.
 
-![Save the new URL](/img/torai/post/mainte_deploy5.jpg)
+![Google Sheets](/img/english-manual/torai-subscription/register_torai.png)
 
 :::info
 Updating an existing deployment may keep the same URL. Check the web app URL displayed on the page.
@@ -105,7 +105,7 @@ Updating an existing deployment may keep the same URL. Check the web app URL dis
 
 Because the X API uses pay-per-use pricing, check Usage and your credit balance regularly.
 
-![Check X credits](/img/torai/post/schedule8.jpg)
+![X Developer Console credits](/img/english-manual/schedule/x-credit.png)
 
 After publishing many posts or threads, and while Responder Collection or Post Analytics is enabled, confirm that usage matches your expectations.
 
@@ -123,14 +123,14 @@ Torai collects images and videos for posts in the `X_Post_MediaFiles` folder in 
 
 ## Suggested maintenance schedule
 
-| Item | Suggested frequency |
-| --- | --- |
-| Organize published data | Monthly or after publishing in large volumes |
-| Review errors | When a post fails or weekly |
-| Update Apps Script | When Torai announces an update |
-| Check X API Usage | Before and after large-volume publishing, or weekly |
-| Review X Marketing run history | When collection fails, or weekly |
-| Check Google Drive storage | Monthly |
+| Item                           | Suggested frequency                                 |
+| ------------------------------ | --------------------------------------------------- |
+| Organize published data        | Monthly or after publishing in large volumes        |
+| Review errors                  | When a post fails or weekly                         |
+| Update Apps Script             | When Torai announces an update                      |
+| Check X API Usage              | Before and after large-volume publishing, or weekly |
+| Review X Marketing run history | When collection fails, or weekly                    |
+| Check Google Drive storage     | Monthly                                             |
 
 ## Related pages
 

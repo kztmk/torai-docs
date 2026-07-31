@@ -33,57 +33,63 @@ Enter the Apps Script web app URL as the X Callback URL / Redirect URL. If you d
 
 Open the [X Developer Console](https://console.x.com) and sign in with the X account you will use for posting.
 
-![X Developer Console sign-in](/img/setup/x-api-keys/x-devconsole-signin0-j.png)
+![X Developer Platform home page with the Go to Console button](/img/english-manual/x-api-keys/console-home-en.png)
 
 On your first visit, you may need to accept the Developer Agreement and enter profile information. Follow the on-screen instructions.
+
+![X Developer Agreement and Policy form](/img/english-manual/x-api-keys/developer-agreement-en.png)
 
 ## 2. Check billing and credits
 
 Using the X API may require X billing or credits. On the Developer Console dashboard, check your payment settings, credits, and usage.
 
-![Developer Console dashboard](/img/setup/x-api-keys/step2_x-devconsole-dashboard.png)
+![Developer Console dashboard showing usage and credit balance](/img/english-manual/x-api-keys/dashboard-en.png)
+
+Click the menu button in the upper-left corner, then select **Credits** from the menu that appears.
+
+![Credits page with the Purchase credits button](/img/english-manual/x-api-keys/x-select-credits.png)
 
 To purchase credits, follow the on-screen instructions to register payment information.
 
-![Start purchasing credits](/img/setup/x-api-keys/step3_x-devconsole-payment0.png)
+![Credits page with the Purchase credits button](/img/english-manual/x-api-keys/credits-en.png)
 
-![Enter payment information](/img/setup/x-api-keys/step3_x-devconsole-payment1.png)
-
-![Review purchase](/img/setup/x-api-keys/step3_x-devconsole-payment2.png)
-
-![Credit purchase complete](/img/setup/x-api-keys/step3_x-devconsole-payment3.png)
+![Credit purchase form](/img/english-manual/x-api-keys/purchase-credits-en.png)
 
 Review your credit balance and automatic top-up settings to reduce the chance of failed posts caused by insufficient credit.
 
-![Check credit balance](/img/setup/x-api-keys/step3_x-devconsole-paymentCap0.png)
-
-![Check automatic top-up](/img/setup/x-api-keys/step3_x-devconsole-paymentCap1.png)
-
 ## 3. Create a Project and App
 
-Create a Project / App from **Apps** or the dashboard in the Developer Console.
+Create a new app, or select the default app if it is not currently in use.
 
-![Start creating an App](/img/setup/x-api-keys/step2-x-devconsole-addApp0.png)
+![Select apps from menu](/img/english-manual/x-api-keys/x-select-apps.png)
+
+### Select the default app
+
+Click apps in Development. This is a default app when you first signin to X developer.
+
+![Select default app](/img/english-manual/x-api-keys/x-select-default-app.png)
+
+### Create a new app
+
+![Developer Console Apps list](/img/english-manual/x-api-keys/apps-list-en.png)
 
 Enter the Project name, App name, description, intended use, and other requested information. Use names that will make the purpose clear later.
 
-![Create Project and App 1](/img/setup/x-api-keys/step2_x-devconsole-addApp0.png)
+![Create new X app](/img/english-manual/x-api-keys/x-create-new-app.png)
 
-![Create Project and App 2](/img/setup/x-api-keys/step2_x-devconsole-addApp1.png)
+The API Key and API Key Secret may be displayed when you create the App. But you do not need to save them. You will need to regenerate the keys after changing the app permissions later.
 
-![Create Project and App 3](/img/setup/x-api-keys/step2_x-devconsole-addApp2.png)
+Select app you created.
 
-![Create Project and App 4](/img/setup/x-api-keys/step2_x-devconsole-addApp3.png)
-
-![Create Project and App 5](/img/setup/x-api-keys/step2_x-devconsole-addApp4.png)
-
-The API Key and API Key Secret may be displayed when you create the App. If so, save them immediately.
+![Select app you created](/img/english-manual/x-api-keys/x-select-apps.png)
 
 ## 4. Open User Authentication Settings
 
 Open the settings for the App you created and edit **User Authentication Settings** or **Authentication Settings**.
 
-![Open User Authentication Settings](/img/setup/x-api-keys/step3_x-devconsole-changeSettings0.png)
+Open the App, then click **Set up** under **User authentication settings**.
+
+![Keys and Tokens page with the User authentication settings section](/img/english-manual/x-api-keys/keys-and-tokens-en.png)
 
 This is where you configure the permissions and application type required to publish from Torai and retrieve your own post information, engagement metrics, and responders.
 
@@ -101,9 +107,11 @@ Select **Read, write, and DMs** only if you will also send and receive direct me
 
 For **Type of App**, select **Web App, Automated App, or Bot**.
 
+![Select permissions](/img/english-manual/x-api-keys/x-select-permissions.png)
+
 Enter your Apps Script web app URL as the **Callback URL / Redirect URL**. Enter the Torai website, `https://torai.try-try.com`, as the **Website URL**.
 
-![Configure app permissions and type](/img/setup/x-api-keys/step3_x-devconsole-changeSettings2.png)
+![User Authentication Settings with app type and app URLs](/img/english-manual/x-api-keys/x-enter-gas-url.png)
 
 Click **Save** when you are done.
 
@@ -115,7 +123,7 @@ If you change app permissions, always regenerate the Access Token and Access Tok
 
 Open **Keys and tokens** for the App.
 
-![Keys and tokens](/img/setup/x-api-keys/step5-x-devcondole-4keys.png)
+![Keys and Tokens page](/img/english-manual/x-api-keys/x-get-4keys.png)
 
 On this page, you can review or regenerate the API Key and API Key Secret, and generate the Access Token and Access Token Secret.
 
@@ -123,25 +131,23 @@ On this page, you can review or regenerate the API Key and API Key Secret, and g
 
 In the Consumer Keys section, display or regenerate the API Key and API Key Secret.
 
-![Regenerate API Key and API Key Secret](/img/setup/x-api-keys/step5-x-devcondole-4keys0.png)
-
 A confirmation page appears when you regenerate them. If an existing integration uses the current keys, it will stop working after regeneration.
 
-![Confirm key regeneration](/img/setup/x-api-keys/step5-x-devcondole-4keys1.png)
+![Confirmation dialog for regenerating the API Key and API Key Secret](/img/english-manual/x-api-keys/regenerate-api-key-confirm-en.png)
 
 Save the displayed API Key and API Key Secret.
 
-![Displayed API Key and API Key Secret](/img/setup/x-api-keys/step5-x-devcondole-4keys2.png)
+![API Key and API Key Secret dialog with credential values redacted](/img/english-manual/x-api-keys/api-key-secret-en.png)
 
 ## 8. Generate the Access Token and Access Token Secret
 
 In the Access Token section, click **Generate** or **Regenerate**.
 
-![Generate Access Token and Access Token Secret](/img/setup/x-api-keys/step5-x-devcondole-4keys3.png)
+![Generate button in the Access Token section](/img/english-manual/x-api-keys/generate-access-token-en.png)
 
 Save the displayed Access Token and Access Token Secret.
 
-![Displayed Access Token and Access Token Secret](/img/setup/x-api-keys/step5-x-devcondole-4keys4.png)
+![Access Token and Access Token Secret dialog with credential values redacted](/img/english-manual/x-api-keys/access-token-secret-en.png)
 
 You now have all four credentials required by Torai.
 

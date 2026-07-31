@@ -2,6 +2,10 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+const isEnglish = process.env.DOCUSAURUS_CURRENT_LOCALE === 'en';
+const siteUrl = 'https://docs.try-try.com';
+const localePath = isEnglish ? '/en' : '';
+
 /**
  * Creating a sidebar enables you to:
  - create an ordered group of docs
@@ -78,6 +82,21 @@ const sidebars: SidebarsConfig = {
       label: 'リファレンス',
       link: { type: 'generated-index' },
       items: ['reference/limits', 'reference/glossary'],
+    },
+    {
+      type: 'link',
+      label: 'サポート',
+      href: `${siteUrl}${localePath}/contact`,
+    },
+    {
+      type: 'link',
+      label: 'プライバシーポリシー',
+      href: `${siteUrl}${localePath}/privacy-policy`,
+    },
+    {
+      type: 'link',
+      label: '使用許諾書',
+      href: `${siteUrl}${localePath}/license-agreement`,
     },
   ],
 };

@@ -14,11 +14,11 @@ This page explains how to connect Torai to Google Apps Script and complete ident
 
 Open the Torai sign-in page and sign in with your Google Account.
 
-![Torai sign-in](/img/setup/g-sheet/step10_torai_signin.jpg)
+![Torai sign-in](/img/english-manual/torai-sign-in/sign-in-en.png)
 
 After signing in, open **Profile > API Keys** from the left menu or Profile menu. If you have not subscribed yet, see [Torai Subscription](./torai-subscription).
 
-![Profile > API Keys](/img/getting-start/torai/step10_gas_url.jpg)
+![Profile > API Keys](/img/english-manual/torai-sign-in/api-keys-en.png)
 
 ## 2. Open the API Keys page
 
@@ -34,17 +34,15 @@ Publishing and X Marketing both use the Google Apps Script web app URL. If the G
 
 The button opens the copy page for the distributed spreadsheet, which already includes the Apps Script project. For a new setup, copy this template instead of pasting code into a blank sheet manually.
 
-![API Keys page](/img/getting-start/torai/apiKey_tab.jpg)
+![API Keys page](/img/english-manual/torai-sign-in/api-keys-en.png)
 
 ## 3. Start changing the Google Sheet URL
 
 On the API Keys page, enter the web app URL in the **Google Sheet URL** field. If a URL is already registered, click **Change**.
 
-![Enter the web app URL](/img/getting-start/torai/step10_gas_url.jpg)
+![Enter the web app URL](/img/english-manual/torai-sign-in/api-keys-en.png)
 
 Paste the web app URL copied from the Apps Script deployment completion page.
-
-![Web app URL](/img/getting-start/torai/gas_url.jpg)
 
 :::caution
 Use the Apps Script web app URL that ends in `/exec`. Do not use the Apps Script editor URL or the Google Sheet URL.
@@ -58,23 +56,21 @@ After you enter the Google Sheet URL, Torai asks Apps Script to generate a verif
 
 From the spreadsheet menu, click **Torai connection - Generate verification code**.
 
-![Generate verification code in the spreadsheet](/img/getting-start/torai/step11_get_personal_code.jpg)
+![Generate verification code in the spreadsheet](/img/english-manual/torai-sign-in/g-sheet-torai-link.jpeg)
 
 Copy the displayed verification code. It is valid for ten minutes.
 
-![Displayed verification code](/img/getting-start/torai/step11_show_personal_code.jpg)
+![Displayed verification code](/img/english-manual/torai-sign-in/g-sheet-torai-verification-code.jpeg)
 
 ## 5. Paste the verification code into Torai
 
 Return to the API Keys page in Torai and paste the code into the verification-code field.
 
-![Paste verification code](/img/getting-start/torai/step12_save_code.jpg)
+![Paste verification code](/img/english-manual/torai-sign-in/torai-enter-gas-url.jpeg)
 
 Click **Save** or **Verify**.
 
 When verification succeeds, your Torai account and Apps Script are linked.
-
-![Verification complete](/img/getting-start/torai/step12_confirm_code.jpg)
 
 :::caution
 To prevent account takeover, this connection cannot be transferred to another Torai account. To use a different account, create a new Google Sheet and Apps Script project.
@@ -88,7 +84,7 @@ To create post drafts or AI reply drafts in the Response Inbox, register a Gemin
 
 Paste the key into the Gemini API Key field and save it.
 
-![Enter Gemini API key](/img/getting-start/torai/gemini_key_1.jpg)
+![Enter Gemini API key](/img/english-manual/torai-sign-in/gemini_api_key.png)
 
 ChatGPT and Anthropic are not currently available because their APIs use pay-per-use pricing.
 
@@ -104,7 +100,7 @@ To receive a Discord notification when automated posting to X completes, registe
 
 Turn notifications on, enter the Webhook URL, and save. The URL is not displayed again after it has been saved.
 
-![Enable Discord notifications and enter a Webhook URL](/img/getting-start/discord/discord21.jpg)
+![Enable Discord notifications and enter a Webhook URL](/img/getting-start/discord/06-torai-discord-setting-en.png)
 
 If a **Send test** button is available, send a test before or after saving and confirm that the message arrives in Discord.
 

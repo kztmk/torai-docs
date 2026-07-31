@@ -24,16 +24,16 @@
     "description": "The label of footer link with label=Xマーケティング linking to /docs/usage/x-marketing"
   },
   "link.item.label.問合せ": {
-    "message": "Contact",
-    "description": "The label of footer link with label=問合せ linking to /contact"
+    "message": "Support",
+    "description": "The label of footer link with label=問合せ linking to https://docs.try-try.com/en/contact"
   },
   "link.item.label.利用規約": {
-    "message": "Terms of Use",
+    "message": "Terms and Conditions",
     "description": "The label of footer link with label=利用規約 linking to https://doc-torai.try-try.com/terms-and-conditions-ja"
   },
   "link.item.label.プライバシーポリシー": {
     "message": "Privacy Policy",
-    "description": "The label of footer link with label=プライバシーポリシー linking to https://doc-torai.try-try.com/privacy-policy-ja"
+    "description": "The label of footer link with label=プライバシーポリシー linking to https://docs.try-try.com/en/privacy-policy"
   },
   "link.item.label.クッキーポリシー": {
     "message": "Cookie Policy",
@@ -44,8 +44,8 @@
     "description": "The label of footer link with label=免責事項 linking to https://doc-torai.try-try.com/disclaimer-ja"
   },
   "link.item.label.使用許諾書": {
-    "message": "Licence Agreement",
-    "description": "The label of footer link with label=使用許諾書 linking to https://doc-torai.try-try.com/license-agreement-ja"
+    "message": "License Agreement",
+    "description": "The label of footer link with label=使用許諾書 linking to https://docs.try-try.com/en/license-agreement"
   },
   "link.item.label.ブログ": {
     "message": "Blog",

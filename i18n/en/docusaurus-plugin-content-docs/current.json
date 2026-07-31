@@ -26,5 +26,17 @@
   "sidebar.tutorialSidebar.category.リファレンス": {
     "message": "Reference",
     "description": "The label for category 'リファレンス' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.link.サポート": {
+    "message": "Support",
+    "description": "The label for link 'サポート' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.link.プライバシーポリシー": {
+    "message": "Privacy Policy",
+    "description": "The label for link 'プライバシーポリシー' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.link.使用許諾書": {
+    "message": "License Agreement",
+    "description": "The label for link '使用許諾書' in sidebar 'tutorialSidebar'"
   }
 }
