@@ -151,7 +151,9 @@ const config: Config = {
             },
             {
               label: '問合せ',
-              to: '/contact',
+              href: isEnglish
+                ? 'https://docs.try-try.com/en/contact'
+                : 'https://docs.try-try.com/contact',
             },
           ],
         },
@@ -164,7 +166,9 @@ const config: Config = {
             },
             {
               label: 'プライバシーポリシー',
-              to: '/privacy-policy',
+              href: isEnglish
+                ? 'https://docs.try-try.com/en/privacy-policy'
+                : 'https://docs.try-try.com/privacy-policy',
             },
             {
               label: 'クッキーポリシー',
@@ -176,7 +180,9 @@ const config: Config = {
             },
             {
               label: '使用許諾書',
-              to: '/license-agreement',
+              href: isEnglish
+                ? 'https://docs.try-try.com/en/license-agreement'
+                : 'https://docs.try-try.com/license-agreement',
             },
           ],
         },
