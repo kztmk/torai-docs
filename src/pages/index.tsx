@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Heading from '@theme/Heading';
 import Layout from '@theme/Layout';
+import blogPostList from '@generated/docusaurus-plugin-content-blog/default/blog-post-list-prop-default.json';
 import type { ReactNode } from 'react';
 
 import styles from './index.module.css';
@@ -398,14 +399,40 @@ function FinalCta() {
   );
 }
 
-function LatestNews() {
+type RecentBlogPost = {
+  title: string;
+  permalink: string;
+  date: string;
+  unlisted?: boolean;
+};
+
+function LatestNews({english = false}: {english?: boolean}) {
+  const posts = (blogPostList.items as RecentBlogPost[])
+    .filter((post) => !post.unlisted)
+    .slice(0, 4);
+  const dateFormatter = new Intl.DateTimeFormat(english ? 'en-US' : 'ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    timeZone: 'UTC',
+  });
+
   return (
     <section className={styles.latestNews}>
       <div className={`container ${styles.latestInner}`}>
-        <div><Eyebrow>NEWS</Eyebrow><Heading as="h2">最新情報</Heading></div>
-        <Link className={styles.newsCard} to="/blog/blog-20260711">
-          <time>2026.07.11</time><strong>V2サービス開始しました。</strong><span>詳しく見る →</span>
-        </Link>
+        <div className={styles.latestHeading}>
+          <div><Eyebrow>NEWS</Eyebrow><Heading as="h2">{english ? 'Latest news' : '新着記事'}</Heading></div>
+          <Link to="/blog">{english ? 'View all posts →' : 'ブログ一覧を見る →'}</Link>
+        </div>
+        <div className={styles.newsGrid}>
+          {posts.map((post) => (
+            <Link className={styles.newsCard} to={post.permalink} key={post.permalink}>
+              <time dateTime={post.date}>{dateFormatter.format(new Date(post.date))}</time>
+              <strong>{post.title}</strong>
+              <span>{english ? 'Read more →' : '詳しく見る →'}</span>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -659,14 +686,7 @@ function EnglishHome(): ReactNode {
           </div>
         </section>
 
-        <section className={styles.latestNews}>
-          <div className={`container ${styles.latestInner}`}>
-            <div><Eyebrow>NEWS</Eyebrow><Heading as="h2">Latest news</Heading></div>
-            <Link className={styles.newsCard} to="/blog/blog-20260711">
-              <time>2026.07.11</time><strong>Torai V2 is now available.</strong><span>Read more →</span>
-            </Link>
-          </div>
-        </section>
+        <LatestNews english />
       </main>
     </Layout>
   );
