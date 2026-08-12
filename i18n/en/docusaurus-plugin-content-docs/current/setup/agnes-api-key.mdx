@@ -6,6 +6,22 @@ description: Get the Agnes AI API key used for AI image generation.
 
 # Get an Agnes AI API Key
 
+**Agnes AI** is, as of August 10, 2026, an AI site where you can create images for free. You can get an API key without registering a credit card.
+
+:::info
+Agnes AI's FAQ states:
+
+**Is the API free to use?**
+
+Yes, Our core AI models are free to use indefinitely. You can continue using the free models without a time limit.
+
+**What are the limitations for free users?**
+
+Free users are subject to RPM limits, which means the number of requests per minute may be limited. If you reach the limit, please wait for a short period before making another request.
+
+The FAQ does not state an exact limit value. On the cheapest paid plan ($2/month), the limit is 1,500 requests per 5 hours.
+:::
+
 To use Torai's **AI Image Generator**, get an API key from the Agnes AI website.
 
 Agnes AI is an external multimodal AI API (text, image, and video generation) offered on a free/pay-as-you-go basis. Torai treats the key you register as your own (BYOK: Bring Your Own Key) and uses it only for image generation.
@@ -20,19 +36,36 @@ Agnes AI is not a service provided by Torai. Always check Agnes AI's own current
 
 Go to [Agnes AI](https://agnes-ai.com/), create an account, and issue an API key.
 
-### 2. Copy the API key
+Open the Agnes AI website. Select **Login** → **API Platform**.
 
-Copy the issued API key.
+![Open the Agnes AI website](/img/torai-tools/agnes/agnes01.jpeg)
+
+Choose a sign-in method and log in.
+![Log in to the Agnes AI website](/img/torai-tools/agnes/agnes02.jpeg)
+
+Select **API Keys** from the left menu, then click **Create new secret key** in the right pane.
+![Open the Agnes AI website](/img/torai-tools/agnes/agnes03.jpeg)
+
+Enter a name for the key and click **Save**.
+![Open the Agnes AI website](/img/torai-tools/agnes/agnes04.jpeg)
+
+The key is created — click **Copy**.
+![Open the Agnes AI website](/img/torai-tools/agnes/agnes05.jpeg)
+
+The created key is also shown here, where you can copy it as well.
+![Open the Agnes AI website](/img/torai-tools/agnes/agnes06.jpeg)
 
 ## Register it in Torai
+
+:::info
+Complete [Google Sheets Setup](./apps-script-deploy-link) and enable GAS integration before saving your Agnes AI API key.
+:::
 
 Enter the key in the **Agnes AI API Key** field under **Profile > API Keys** in Torai, then save.
 
 If GAS integration (Google Sheets and Apps Script) is already set up, the key is automatically synced to Torai's Apps Script side when you save it. Image generation requests are made through Apps Script, so if this sync has not completed, generating an image will fail with "Agnes AI API key is not set."
 
-:::info
-Complete [Google Sheets Setup](./apps-script-deploy-link) and enable GAS integration before saving your Agnes AI API key.
-:::
+![Save the Agnes AI API key in Torai](/img/torai-tools/en/agnes_torai.jpeg)
 
 ## Related pages
 

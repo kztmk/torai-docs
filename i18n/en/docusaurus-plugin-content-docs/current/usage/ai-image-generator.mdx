@@ -26,7 +26,12 @@ Image generation itself calls Agnes AI through Apps Script, so GAS integration i
 
 Open **AI Image Generator** under **Tools** in the left menu.
 
+![Open AI Image Generator from the left menu](/img/torai-tools/en/image_gene01.jpeg)
+
 You can also open the same screen as a modal from the image icon button inside the X post creation form.
+
+![Open AI Image Generator from a new post](/img/torai-tools/en/image_gene02.png)
+![Open AI Image Generator from a new post](/img/torai-tools/en/image_gene03.jpeg)
 
 ## 2. Generate an image
 
@@ -40,6 +45,7 @@ Enter the following and click **Generate image**.
 
 When generation completes, the image is added to the gallery at the bottom of the screen. Generating multiple times in the same session stacks the newest images at the top.
 
+![AI Image Generator](/img/torai-tools/en/image_gene04.jpeg)
 :::caution
 Agnes AI's free tier has fairly low rate limits. Generating several images in quick succession may result in a rate-limit error.
 :::
@@ -48,21 +54,33 @@ Agnes AI's free tier has fairly low rate limits. Generating several images in qu
 
 Click **Use** on an image card in the gallery to save that image to Google Drive.
 
+![Save an AI-generated image to Google Drive](/img/torai-tools/en/image_gene06.jpeg)
+
 The first time, or if your Google access has expired, a popup asks you to authorize access to your Google account. Review it and grant access.
 
-Images are saved to the **X_Post_MediaFiles / AI_Generated** folder. Once saved, the image is removed from the gallery — saved images are not kept in the gallery.
+![Save an AI-generated image to Google Drive](/img/torai-tools/en/image_gene05.jpeg)
+
+Images are saved to the **X_Post_MediaFiles / AI_Generated** folder. Once saved, the card shows a green **Saved** badge. Saved cards remain in the gallery, so you can compare multiple images you generated and saved in the same session.
 
 ### Opened from the post creation form
 
 If you generated and saved the image from the modal inside the post creation form, clicking **Use** both saves the image and adds it directly as an attachment to that post. You do not need to select it again from Google Drive.
+![Save an AI-generated image to Google Drive](/img/torai-tools/en/image_gene07.jpeg)
+![Save an AI-generated image to Google Drive](/img/torai-tools/en/image_gene08.jpeg)
+![Save an AI-generated image to Google Drive](/img/torai-tools/en/image_gene09.png)
 
 ### Opened as a standalone Tools page
 
 If you opened the AI Image Generator as its own page from the **Tools** menu, saved images are not automatically added to a post. When creating a post later, select the image from the **Google Drive** button (Picker) in the post form.
+![Save an AI-generated image to Google Drive](/img/torai-tools/en/image_gene06.jpeg)
 
 ## 4. Discard images you don't need
 
 Click the trash icon in the top-right corner of an image card to discard it immediately. Discarded images are never saved to Google Drive.
+
+:::info
+The trash icon is only shown on images that have **not yet been saved** to Google Drive. Once a card shows the **Saved** badge, the trash icon disappears — removing a saved card from Torai's screen would not delete the file from Google Drive, so the icon is hidden to avoid that confusion. To delete a saved image file itself, delete it directly in Google Drive (in the **X_Post_MediaFiles / AI_Generated** folder).
+:::
 
 The gallery also resets every time you open the AI Image Generator screen again. Images generated (but not saved) in a previous session are not kept.
 
