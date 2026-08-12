@@ -1,0 +1,77 @@
+---
+sidebar_position: 5
+title: Agnes AI API Key の取得
+description: AI画像生成に使うAgnes AI API Keyを取得します。
+---
+
+# Agnes AI API Key の取得
+
+**Agnes AI**は、2026年8月10日時点では無料で画像を作成できるAIサイトです。クレジットカードの登録なしでAPIキーの取得ができます。
+
+:::info
+Agnes AIのFAQでは、
+
+**Is the API free to use?**
+（APIは無料で使用できますか？）
+
+Yes, Our core AI models are free to use indefinitely. You can continue using the free models without a time limit.
+(はい、無料です。当社のコアAIモデルは、無期限で無料でご利用いただけます。無料モデルは時間制限なく引き続きお使いいただけます。)
+
+**What are the limitations for free users?**
+（無料ユーザーにはどのような制限がありますか？）
+
+Free users are subject to RPM limits, which means the number of requests per minute may be limited. If you reach the limit, please wait for a short period before making another request.
+（無料ユーザーはRPM制限の対象となります。これは、1分間にリクエストできる回数が制限されることを意味します。制限に達した場合は、しばらく待ってから再度リクエストを行ってください。）
+
+と記載がありますが、制限値については記載がありません。最低価格（月額$2）のプランで5時間で1500回です。
+:::
+
+虎威の「AI画像生成」を使う場合は、Agnes AIのサイトでAPI Keyを取得します。
+
+Agnes AIは、テキスト・画像・動画生成に対応したマルチモーダルAI APIを無料/従量制で提供する外部サービスです。虎威は取得したAPIキーをご自身のもの（BYOK：Bring Your Own Key）として扱い、画像生成にのみ使用します。
+
+:::caution
+Agnes AIは虎威が提供するサービスではありません。料金、無料枠、利用規約、生成された画像の著作権や利用範囲については、必ずAgnes AI側の最新情報をご自身で確認してください。
+:::
+
+## APIキー取得方法
+
+### 1. Agnes AIのサイトへアクセス
+
+[Agnes AI](https://agnes-ai.com/) へアクセスし、アカウントを作成してAPIキーを発行します。
+
+Agnes AIのサイトへアクセスします。「Login」→「API Platform」を選択します。
+
+![Agnes AIのサイトへ](/img/torai-tools/agnes/agnes01.jpeg)
+
+ログイン方法を選択し、ログインします。
+![Agnes AIのサイトへログイン](/img/torai-tools/agnes/agnes02.jpeg)
+
+左側メニューから「API Keys」を選択し、右ペインの「Create new secret key」をクリックします。
+![Agnes AIのサイトへ](/img/torai-tools/agnes/agnes03.jpeg)
+
+作成するキーの名前を入力し、「Save」をクリックします。
+![Agnes AIのサイトへ](/img/torai-tools/agnes/agnes04.jpeg)
+
+キーが作成されますので、「コピー」をクリックします。
+![Agnes AIのサイトへ](/img/torai-tools/agnes/agnes05.jpeg)
+
+作成されたキーが表示されています。こちらでもキーをコピーすることができます。
+![Agnes AIのサイトへ](/img/torai-tools/agnes/agnes06.jpeg)
+
+## 虎威への登録
+
+:::info
+Agnes AI API Keyを保存する前に、先に [Google スプレッドシートの設定](./apps-script-deploy-link) を完了し、GAS連携を有効にしておいてください。
+:::
+
+取得したキーは、虎威の「プロフィール > APIキー」にある「Agnes AI API Key」欄に入力して保存します。
+
+保存すると、GAS連携（Googleスプレッドシート・Apps Script）が完了している場合、APIキーは虎威のApps Script側にも自動的に同期されます。画像生成のリクエストはApps Script経由で行われるため、この同期が完了していないと画像生成時に「Agnes AI APIキーが設定されていません」というエラーになります。
+
+![虎威へAgnes AIのAPIキー保存](/img/torai-tools/ja/agnes_torai.jpeg)
+
+## 関連ページ
+
+- [虎威へのサインインと基本設定](./torai-sign-in)
+- [AI画像生成](../usage/ai-image-generator)

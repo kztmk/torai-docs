@@ -38,6 +38,7 @@ const sidebars: SidebarsConfig = {
         'setup/apps-script-deploy-link',
         'setup/x-api-keys',
         'setup/gemini-api-key',
+        'setup/agnes-api-key',
         'setup/discord',
         'setup/torai-sign-in',
       ],
@@ -54,6 +55,9 @@ const sidebars: SidebarsConfig = {
         'usage/thread-posts',
         'usage/x-marketing',
         'usage/maintenance',
+        'usage/ai-image-generator',
+        'usage/weekly-post-generator',
+        'usage/x-search-tools',
       ],
     },
     {
